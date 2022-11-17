@@ -1,0 +1,166 @@
+﻿<UserControl x:Class="UniScanWPF.Table.UI.StatusStrip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" Loaded="UserControl_Loaded">
+    <Grid>
+        <DockPanel>
+            <DockPanel.Background>
+                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/title_dummy.png"/>
+            </DockPanel.Background>
+
+
+            <Border BorderBrush="Black" BorderThickness="2" DockPanel.Dock="Left" Margin="1">
+                <DockPanel Name="VersionBuildStatus" Margin="1">
+                    <Grid Margin="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Content="Version" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                                   Background="{StaticResource NormalBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="1" Content="{Binding Path=VersionString}" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                                   Background="{StaticResource FontWhiteBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                    </Grid>
+
+                    <Grid Margin="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Content="Build" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                                   Background="{StaticResource NormalBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="1" Content="{Binding Path=BuildString}" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                                   Background="{StaticResource FontWhiteBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                    </Grid>
+                </DockPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="2" DockPanel.Dock="Right" Margin="1">
+                <DockPanel Name="IOStatus" Margin="1">
+                    <Grid Margin="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="System" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{StaticResource NormalBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="1" Content="POW" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{Binding Path=InPowerBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"
+                               MouseDoubleClick="IoLabel_MouseDoubleClick"/>
+                        <Label Grid.Column="2" Grid.Row="1" Content="EMG" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{Binding Path=InEmergencyBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="3" Grid.Row="1" Content="FAN" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                               Background="{Binding Path=OutFanBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"
+                               MouseDoubleClick="IoLabel_MouseDoubleClick"/>
+                    </Grid>
+
+                    <Grid Margin="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Door" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{StaticResource NormalBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="1" Content="1" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{Binding Path=InDoorBrush1}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"
+                               MouseDoubleClick="IoLabel_MouseDoubleClick"/>
+                        <Label Grid.Column="2" Content="2" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{Binding Path=InDoorBrush2}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"
+                               MouseDoubleClick="IoLabel_MouseDoubleClick"/>
+                        <Label Grid.Column="3" Content="Lock" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{Binding Path=OutDoorLockBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"
+                               MouseDoubleClick="IoLabel_MouseDoubleClick"/>
+                    </Grid>
+
+                    <Grid Margin="1" Visibility="Collapsed">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Cylinder" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{StaticResource NormalBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="1" Content="Up" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{Binding Path=InCylinderUpBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="2" Content = "Sol" BorderThickness="1" BorderBrush="Black" FontSize="12"
+                       Background="{Binding Path=OutCylinderUpBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="3" Content="Down" Grid.Row="1" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{Binding Path=InCylinderDownBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="4" Content = "Sol" Grid.Row="1" BorderThickness="1" BorderBrush="Black" FontSize="12"
+                       Background="{Binding Path=OutCylinderDownBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                    </Grid>
+
+                    <Grid Margin="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Lamp" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{StaticResource NormalBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="1" Content="RED" BorderThickness="1" BorderBrush="Black" FontSize="16" 
+                       Background="{Binding Path=OutLampRedBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"
+                               MouseDoubleClick="IoLabel_MouseDoubleClick"/>
+                        <Label Grid.Column="2" Content="YLW" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{Binding Path=OutLampYellowBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"
+                               MouseDoubleClick="IoLabel_MouseDoubleClick"/>
+                        <Label Grid.Column="3" Content="GRN" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{Binding Path=OutLampGreenBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"
+                               MouseDoubleClick="IoLabel_MouseDoubleClick"/>
+                    </Grid>
+                </DockPanel>
+            </Border>
+            
+            <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Center" Margin="10,1,10,1">
+                <DockPanel Name="ModelStatus" Margin="1">
+                    <Grid Margin="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="350"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Content="Model" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                                   Background="{StaticResource NormalBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="1" Content="{Binding Path=CurrentModel.ModelDescription.Name}" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                                   Background="{StaticResource FontWhiteBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                    </Grid>
+
+                    <Grid Margin="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Paste" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{StaticResource NormalBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="1" Content="{Binding Path=CurrentModel.ModelDescription.Paste}" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                       Background="{StaticResource FontWhiteBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                    </Grid>
+
+                    <Grid Margin="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="70"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Content="Thickness" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                               Background="{StaticResource NormalBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                        <Label Grid.Column="1" Content="{Binding Path=CurrentModel.ModelDescription.Thickness}" BorderThickness="1" BorderBrush="Black" FontSize="16"
+                               Background="{StaticResource FontWhiteBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                    </Grid>
+                </DockPanel>
+            </Border>
+        </DockPanel>
+    </Grid>
+</UserControl>

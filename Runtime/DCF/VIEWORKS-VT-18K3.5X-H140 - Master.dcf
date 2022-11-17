@@ -1,0 +1,34 @@
+/
+/
+/
+[CAMERA_NAME]
+Generic Device
+[CONFIG_FILE]
+50CF
+RAPIXOCXP
+Thursday, May 26, 2022 14:55:16
+[INFO_FILE_REV]
+10.41.2929.2181
+RAPIXOCXP
+[REG_DIGIT]
+INFO_TYPE                                                             1
+[STANDARD_FEATURES]
+STR_TriggerRescalerMode                                               "On"
+FLOAT_TriggerRescalerRate                                             "3.5763656"
+STR_TriggerMode                                                       "On"
+ENUM_TriggerSelector                                                  "LineStart"
+ENUM_TriggerSource                                                    "CXPin"
+ENUM_OperationMode                                                    "TDI"
+[STANDARD_FEATURES_DIGITIZER]
+INT_M_SOURCE_SIZE_Y                                                   "15000"
+ENUM_f_CounterTimerTimerCombination_Selector                          "M_TIMER1"
+FLOAT_M_TIMER_DELAY                                                   "1000"
+ENUM_f_CounterTimerTimerCombination_Selector                          "M_TIMER1"
+FLOAT_M_TIMER_DURATION                                                "1000"
+ENUM_f_CounterTimerTimerCombination_Selector                          "M_TIMER1"
+ENUM_M_TIMER_STATE                                                    "M_ENABLE"
+ENUM_f_CounterTimerTimerCombination_Selector                          "M_TIMER1"
+ENUM_M_TIMER_TRIGGER_SOURCE                                           "M_AUX_IO2"
+ENUM_f_DigIOSignalSource_Selector                                     "M_TL_TRIGGER"
+ENUM_M_IO_SOURCE                                                      "M_TIMER1"
+[EOF]

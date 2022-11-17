@@ -1,0 +1,106 @@
+﻿<Window x:Class="UniScanWPF.Table.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" UseLayoutRounding="True"
+        mc:Ignorable="d" MaxHeight="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}"
+        ResizeMode="CanMinimize" WindowStyle="None" Loaded="Window_Loaded" Background="{StaticResource MainBrush}">
+    <Grid Background="{DynamicResource FrameBrush}" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition/>
+                <ColumnDefinition  Width="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/title_dummy.png"/>
+            </Grid.Background>
+            <Image Grid.Column="0" Margin="5" Source="pack://siteoforigin:,,,/Resources/samsung_logo.png" Stretch="Fill"/>
+            <Label Name="programTitle" Grid.Column="1" FontSize="50" FontWeight="Bold" FontFamily="맑은 고딕" VerticalContentAlignment="Center" HorizontalAlignment="Center"
+                   Content="{Binding ProgramTitle, Mode=OneTime}"/>
+        </Grid>
+        <DockPanel Grid.Row="1">
+            <Frame Name="mainFrame" NavigationUIVisibility="Hidden"/>
+        </DockPanel>
+        
+        <Grid Name="statusStripGrid" Grid.Row="2"/>
+        
+        <StackPanel Name="MenuPanel" Margin="5" Orientation="Horizontal" HorizontalAlignment="Right">
+            <RadioButton Name="InspectRadioButton" Checked="InspectRadioButton_Checked" Height="75" Width="75" Style="{StaticResource DefaultRadioButton}" IsEnabled="{Binding Inspectable}" Background="White" FontSize="16" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Image Margin="3" Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/Inspection_black.png"/>
+                    <TextBlock Text="Inspect" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                </Grid>
+            </RadioButton>
+            <RadioButton Name="ModelRadioButton" Checked="ModelRadioButton_Checked" Height="75" Width="75" Style="{StaticResource DefaultRadioButton}" IsEnabled="{Binding ModelSelectable}"  Background="White" FontSize="16" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Image Margin="3" Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/Model integrated.png"/>
+                    <TextBlock Text="Model" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                </Grid>
+            </RadioButton>
+            <RadioButton Name="TeachRadioButton" Checked="TeachRadioButton_Checked" Height="75" Width="75" Style="{StaticResource DefaultRadioButton}" IsEnabled="{Binding Teachable}" Background="White" FontSize="16" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Image Margin="3" Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/Teach integrated.png"/>
+                    <TextBlock Text="Teach" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                </Grid>
+            </RadioButton>
+            <RadioButton Name="ReportRadioButton" Checked="ReportRadioButton_Checked" Height="75" Width="75" Style="{StaticResource DefaultRadioButton}" Background="White" FontSize="16" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Image Margin="3" Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/Report integrated.png"/>
+                    <TextBlock Text="Report" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                </Grid>
+            </RadioButton>
+            <RadioButton Name="HistoryRadioButton" Checked="HistoryRadioButton_Checked" Height="75" Width="75" Style="{StaticResource DefaultRadioButton}" Background="White" FontSize="16" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Image Margin="3" Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/History.png"/>
+                    <TextBlock Text="History" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                </Grid>
+            </RadioButton>
+            <RadioButton Name="SettingRadioButton" Checked="SettingRadioButton_Checked" Height="75" Width="75" Style="{StaticResource DefaultRadioButton}"  Background="White" FontSize="16" FontWeight="Bold" IsEnabled="{Binding ModelSelectable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Image  Margin="3" Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/Setting integrated.png"/>
+                    <TextBlock Text="Setting" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                </Grid>
+            </RadioButton>
+            <Button Margin="1" Click="Exit_Button_Click" Height="75" Width="75" Style="{StaticResource DefaultButton}" Background="White" FontSize="16" FontWeight="Bold" ToolTip="Start">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Image  Margin="2" Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/Exit integrated.png"/>
+                    <TextBlock Text="Exit" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

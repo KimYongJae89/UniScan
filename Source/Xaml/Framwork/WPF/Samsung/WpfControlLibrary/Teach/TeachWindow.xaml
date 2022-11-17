@@ -1,0 +1,91 @@
+﻿<Window x:Class="WpfControlLibrary.Teach.TeachWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfControlLibrary.Teach"
+        mc:Ignorable="d"
+        Title="TeachWindow" Height="800" Width="800"
+        Loaded="Grid_Loaded"
+        KeyDown="Window_KeyDown">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <RadioButton Name="selRadBtn" Width="100" Style="{StaticResource {x:Type ToggleButton}}" IsChecked="True">Select</RadioButton>
+            <RadioButton Name="rctRadBtn" Width="100" Style="{StaticResource {x:Type ToggleButton}}">Rectangle</RadioButton>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Border Name="dd" BorderThickness="1" BorderBrush="Red">
+                <Grid Margin="5">
+                    <Image Source="{Binding BitmapSource}" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" 
+                       HorizontalAlignment="Left"
+                       Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Border}}, Path=ActualWidth}"/>
+
+                    <Thumb Opacity="0"
+                           DragStarted="Thumb_DragStarted"
+                           DragDelta="Thumb_DragDelta"
+                           DragCompleted="Thumb_DragCompleted">
+                    </Thumb>
+
+                    <Canvas>
+                        <Rectangle StrokeThickness="4" Stroke="Blue"
+                               Canvas.Left="{Binding Path=DrawingHandler.DragRect.X}"
+                               Canvas.Top="{Binding Path=DrawingHandler.DragRect.Y}"
+                               Width="{Binding Path=DrawingHandler.DragRect.Width}"
+                               Height="{Binding Path=DrawingHandler.DragRect.Height}">
+                        </Rectangle>
+                    </Canvas>
+
+                    <ItemsControl ItemsSource="{Binding Path=DrawingHandler.List}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Canvas>
+                                    <Path Data="{Binding Path=Geometry}" StrokeThickness="1" Stroke="Blue"/>
+
+                                    <ItemsControl ItemsSource="{Binding Path=Trackers, NotifyOnSourceUpdated=True}"
+                                                  Visibility="{Binding Path=IsSelected, Converter={StaticResource BoolToVisConverter}}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <Path Data="{Binding Path=Geometry}"
+                                                          Stroke="DarkGray" 
+                                                          Fill="White" 
+                                                          StrokeThickness="2"
+                                                          Cursor="{Binding Path=Cursor}"
+                                                          >
+                                                    </Path>
+                                                    
+                                                    <Thumb Opacity="0"
+                                                           Canvas.Left="{Binding Rect.Left}"
+                                                           Canvas.Top="{Binding Rect.Top}"
+                                                           Canvas.Right="{Binding Rect.Right}"
+                                                           Canvas.Bottom="{Binding Rect.Bottom}"
+                                                           DragStarted="Tracker_DragStarted"
+                                                           DragDelta="Tracker_DragDelta"
+                                                           DragCompleted="Tracker_DragCompleted"
+                                                           Cursor="{Binding Path=Cursor}"
+                                                           >
+                                                    </Thumb>
+                                                </Canvas>
+                                                
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Canvas>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

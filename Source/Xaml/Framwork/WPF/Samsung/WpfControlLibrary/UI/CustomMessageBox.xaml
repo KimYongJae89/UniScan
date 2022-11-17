@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfControlLibrary.UI.CustomMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="CustomMessageBox" 
+        MinWidth="600" MaxHeight="750" MaxWidth="750" 
+        Background="Transparent" 
+        SizeToContent="WidthAndHeight" 
+        WindowStartupLocation="CenterScreen"  
+        ShowInTaskbar="False" ResizeMode="NoResize" 
+        WindowStyle="None" Topmost="True" Height="250" Closed="Window_Closed">
+    <Border Height="250" BorderBrush="LightSlateGray" BorderThickness="1" CornerRadius="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Fill="{StaticResource MainBrush}"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                       Margin="30,10,10,10" Name="MessageTitle"  
+                       FontWeight="Bold" TextTrimming="CharacterEllipsis" 
+                       LineHeight="22" FontSize="24" 
+                       VerticalAlignment="Center" Foreground="{StaticResource FontWhiteBrush}"/>
+            <Rectangle Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Fill="{StaticResource NormalBrush}" Margin="0"/>
+            <Image Name="img" Grid.Row="1" Grid.Column="0" Stretch="Fill" Width="100" Height="100" />
+            <TextBlock Margin="20,15,20,15"
+                TextWrapping="Wrap" Name="txtMsg" 
+                Grid.Row="1" Grid.Column="1" FontSize="22" LineHeight="20" Foreground="{StaticResource FontBrush}"  />
+            <Grid Grid.Row="2" Grid.Column="1" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                    <Button Name="btnOk" Content="OK" FontWeight="Bold" Click="Button_Click" Style="{StaticResource YesButton}" Background="{DynamicResource LightGreenBrush}"/>
+                    <Button Name="btnYes" Content="Yes" Click="Button_Click" FontWeight="Bold" Style="{StaticResource YesButton}"  Background="{DynamicResource LightGreenBrush}"/>
+                    <Button Name="btnNo" Content="No" Click="Button_Click" FontWeight="Bold" Style="{StaticResource NoButton}"  Background="{DynamicResource LightRedBrush}"/>
+                    <Button Name="btnCancel" Content="Cancel"  Click="Button_Click" FontWeight="Bold" Style="{StaticResource NoButton}" Background="{DynamicResource LightRedBrush}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F944A89B-488F-4BD0-9F9A-4C36E93DFD44}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UniScanWPF.Table</RootNamespace>
+    <AssemblyName>UniScanWPF.Table</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Remote|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Remote\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\uniscan.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <HintPath>..\..\..\..\..\..\..\Shared\ReferenceDll\Interop.Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Interop.Excel">
+      <HintPath>..\..\..\..\..\..\..\Shared\ReferenceDll\Interop.Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.VBIDE">
+      <HintPath>..\..\..\..\..\..\..\Shared\ReferenceDll\Interop.VBIDE.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Algorithm\MarginMeasureAlgorithm.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converter\InverseBooleanConverter.cs" />
+    <Compile Include="Converter\InverseNumericConverter.cs" />
+    <Compile Include="Converter\MarginReportConverter.cs" />
+    <Compile Include="Converter\ValueSelectConverter.cs" />
+    <Compile Include="Data\CoordinateConvertor.cs" />
+    <Compile Include="Data\Defect.cs" />
+    <Compile Include="Data\Measure.cs" />
+    <Compile Include="Data\Model.cs" />
+    <Compile Include="Data\Production.cs" />
+    <Compile Include="Data\ProductionManager.cs" />
+    <Compile Include="Data\IResultObject.cs" />
+    <Compile Include="Device\MachineObserver.cs" />
+    <Compile Include="Device\IOBox.cs" />
+    <Compile Include="Device\MotionBox.cs" />
+    <Compile Include="Device\PortMap.cs" />
+    <Compile Include="Inspect\MarginMeasurePoint.cs" />
+    <Compile Include="Operation\GrabOperator.cs" />
+    <Compile Include="Operation\MachineOperator.cs" />
+    <Compile Include="Operation\Operators\TaskOperator.cs" />
+    <Compile Include="Operation\ResultCombiner.cs" />
+    <Compile Include="Operation\Operators\StoringOperator.cs" />
+    <Compile Include="Operation\Operators\TrainOperator.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Operation\BufferManager.cs" />
+    <Compile Include="Operation\Operators\MarkingOperator.cs" />
+    <Compile Include="Operation\Operators\ScanOperator.cs" />
+    <Compile Include="Operation\Operators\LightTuneOperator.cs" />
+    <Compile Include="Operation\OperationManager.cs" />
+    <Compile Include="Operation\Operators\ExtractOperator.cs" />
+    <Compile Include="Operation\Operators\InspectOperator.cs" />
+    <Compile Include="Inspect\PatternGroup.cs" />
+    <Compile Include="Inspect\StripeChecker.cs" />
+    <Compile Include="Operation\ResultStorage.cs" />
+    <Compile Include="Settings\ConfigHelper.cs" />
+    <Compile Include="Settings\DeveloperSettings.cs" />
+    <Compile Include="Data\InfoBox.cs" />
+    <Compile Include="Settings\UISettings.cs" />
+    <Compile Include="UI\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImagePanel.xaml.cs">
+      <DependentUpon>ImagePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InspectParamWindow.xaml.cs">
+      <DependentUpon>InspectParamWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ModelDescriptionWindow.xaml.cs">
+      <DependentUpon>ModelDescriptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InfoPage.xaml.cs">
+      <DependentUpon>InfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ModelPage.xaml.cs">
+      <DependentUpon>ModelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TeachPage.xaml.cs">
+      <DependentUpon>TeachPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Operation\Operator.cs" />
+    <Compile Include="SystemManager.cs" />
+    <Compile Include="UI\InspectPage.xaml.cs">
+      <DependentUpon>InspectPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ReportPage.xaml.cs">
+      <DependentUpon>ReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StatusStrip.xaml.cs">
+      <DependentUpon>StatusStrip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MarginTeachWindow.xaml.cs">
+      <DependentUpon>MarginTeachWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Reference\DynMvp.Data\DynMvp.Data.csproj">
+      <Project>{88f6f6be-0858-41e6-9ce2-3704aefc12a7}</Project>
+      <Name>DynMvp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Reference\DynMvp.Device\DynMvp.Device.csproj">
+      <Project>{6bcc6601-4e70-4066-889c-cda17497878a}</Project>
+      <Name>DynMvp.Device</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Reference\DynMvp.Vision\DynMvp.Vision.csproj">
+      <Project>{146f582a-9d90-4ebb-8d2a-52c34d1a6faa}</Project>
+      <Name>DynMvp.Vision</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Reference\DynMvp\DynMvp.csproj">
+      <Project>{532b9dd5-c3dc-4f76-8cf4-233c867fc2d3}</Project>
+      <Name>DynMvp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Reference\UniEye.Base\UniEye.Base.csproj">
+      <Project>{0bd31b0d-4675-460f-bf03-82afafdd1d1f}</Project>
+      <Name>UniEye.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfControlLibrary\WpfControlLibrary.csproj">
+      <Project>{879ee343-d5d0-48a4-9f9a-fec6ce364786}</Project>
+      <Name>WpfControlLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\HistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ImagePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\InspectParamWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ModelDescriptionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\InfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ModelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TeachPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\InspectPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\ReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\StatusStrip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\MarginTeachWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Asterisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Exit integrated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Model integrated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Monitoring integrated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Report integrated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\samsung_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Setting integrated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Teach integrated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\title_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\title_dummy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\unieye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\uniscan.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Light1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Align integrated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Inspection_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Stop1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Model_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Recyclebin+Close-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Recyclebin+Open-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ArrowDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ArrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ArrowRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ArrowUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SettingHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hide_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GuideLine512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\History.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewModel.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir $(TargetDir)Resources\
+copy $(ProjectDir)Resources\*.* $(TargetDir)Resources\*.*
+copy $(TargetDir)$(TargetName).exe $(SolutionDir)..\Build\$(ConfigurationName)\
+copy $(TargetDir)$(TargetName).exe.config $(SolutionDir)..\Build\$(ConfigurationName)\
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)..\Build\$(ConfigurationName)\</PostBuildEvent>
+  </PropertyGroup>
+</Project>

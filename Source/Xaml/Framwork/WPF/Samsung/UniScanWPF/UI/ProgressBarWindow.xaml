@@ -1,0 +1,28 @@
+﻿<Window x:Class="UniScanWPF.UI.ProgressBarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniScanWPF.UI" Loaded="Window_Loaded"
+        mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Title="ProgressBarWindow" Height="200" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.ColumnSpan="2" Fill="{StaticResource MainBrush}"/>
+        <Rectangle Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2" Fill="{StaticResource NormalBrush}" Margin="0"/>
+        <TextBlock Text="{Binding TitleText, UpdateSourceTrigger=PropertyChanged}" FontSize="30" FontWeight="Bold" Foreground="{StaticResource FontWhiteBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" FontSize="24" Foreground="{StaticResource FontBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ProgressBar Value="{Binding ProgressPos, UpdateSourceTrigger=PropertyChanged}" Margin="20, 10, 20, 10" Grid.Row="1" Grid.ColumnSpan="2" Foreground="Black" Background="White" Style="{DynamicResource DefaultProgressBarStyle}" />
+            <Button x:Name="btnCancel" Margin="150, 5, 150, 5" Content="Cancel" FontWeight="Bold" Grid.Row="2" Click="Button_Click" Style="{StaticResource NoButton}" Background="{DynamicResource LightRedBrush}" FontSize="20"/>
+        </Grid>
+    </Grid>
+</Window>

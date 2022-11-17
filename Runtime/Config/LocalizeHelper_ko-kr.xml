@@ -1,0 +1,1646 @@
+<LocalizeHelper>
+  <LocalizedCategoryAttributeUniScanG>
+    <String>
+      <Key>Teach</Key>
+      <Value>설정</Value>
+    </String>
+    <String>
+      <Key>Update</Key>
+      <Value>업데이트</Value>
+    </String>
+  </LocalizedCategoryAttributeUniScanG>
+  <LocalizedDescriptionAttributeUniScanG>
+    <String>
+      <Key>Refresh Time [ms]</Key>
+      <Value>갱신 시간 [ms]</Value>
+    </String>
+    <String>
+      <Key>Teach Interval</Key>
+      <Value>티치 주기</Value>
+    </String>
+  </LocalizedDescriptionAttributeUniScanG>
+  <LocalizedDisplayNameAttributeUniScanG>
+    <String>
+      <Key>Refresh Time [ms]</Key>
+      <Value>갱신 시간 [ms]</Value>
+    </String>
+    <String>
+      <Key>Teach Interval</Key>
+      <Value>티치 주기</Value>
+    </String>
+  </LocalizedDisplayNameAttributeUniScanG>
+  <Message>
+    <String>
+      <Key>Are you really going to delete the models [Count : {0}] ?</Key>
+      <Value>선택된 모델을 제거하시겠습니까? [{0} 개] ?</Value>
+    </String>
+    <String>
+      <Key>Are you really going to delete the selected patterns?</Key>
+      <Value>선택한 패턴을 삭제하시겠습니까?</Value>
+    </String>
+    <String>
+      <Key>Are you sure you want to exit the program ?</Key>
+      <Value>프로그램을 종료하시겠습니까 ?</Value>
+    </String>
+    <String>
+      <Key>Build Summary</Key>
+      <Value>요약 생성</Value>
+    </String>
+    <String>
+      <Key>Closing..</Key>
+      <Value>닫는 중..</Value>
+    </String>
+    <String>
+      <Key>Do you want save current zoom scale? ({0:F0}%)</Key>
+      <Value>현재 배율을 저장하시겠습니까? ({0:F0}%)</Value>
+    </String>
+    <String>
+      <Key>Door is open !!</Key>
+      <Value>문이 열려있습니다 !!</Value>
+    </String>
+    <String>
+      <Key>Enter Lot No.</Key>
+      <Value>로트 번호 입력</Value>
+    </String>
+    <String>
+      <Key>Homing fail !!</Key>
+      <Value>원점 실패 !!</Value>
+    </String>
+    <String>
+      <Key>Idle</Key>
+      <Value>유휴</Value>
+    </String>
+    <String>
+      <Key>Invalid model info.</Key>
+      <Value>모델 정보가 잘못되었습니다.</Value>
+    </String>
+    <String>
+      <Key>Is Loop Test Mode?</Key>
+      <Value>반복 테스트 모드 입니까?</Value>
+    </String>
+    <String>
+      <Key>Load</Key>
+      <Value>불러오기</Value>
+    </String>
+    <String>
+      <Key>Margin(All)</Key>
+      <Value>마진(모두)</Value>
+    </String>
+    <String>
+      <Key>Margin(Circle)</Key>
+      <Value>마진(원형)</Value>
+    </String>
+    <String>
+      <Key>Margin(Off)</Key>
+      <Value>마진(끄기)</Value>
+    </String>
+    <String>
+      <Key>Move Home</Key>
+      <Value>집 가는 중</Value>
+    </String>
+    <String>
+      <Key>Operation Cancled</Key>
+      <Value>작업 취소됨</Value>
+    </String>
+    <String>
+      <Key>Pattern(Lump)</Key>
+      <Value>전극(럼프)</Value>
+    </String>
+    <String>
+      <Key>Pattern(Normal)</Key>
+      <Value>전극(일반)</Value>
+    </String>
+    <String>
+      <Key>Pattern(Off)</Key>
+      <Value>전극(끄기)</Value>
+    </String>
+    <String>
+      <Key>Previous Image is Saving. Try Later.</Key>
+      <Value>이전 이미지가 저장중입니다. 잠시 후에 시도하세요.</Value>
+    </String>
+    <String>
+      <Key>Run</Key>
+      <Value>작동</Value>
+    </String>
+    <String>
+      <Key>Save</Key>
+      <Value>저장</Value>
+    </String>
+    <String>
+      <Key>Shape(All)</Key>
+      <Value>해상도(전부)</Value>
+    </String>
+    <String>
+      <Key>Shape(Off)</Key>
+      <Value>해상도(끄기)</Value>
+    </String>
+    <String>
+      <Key>Sheet is rotated. ({0:F1}[deg])</Key>
+      <Value>시트가 회전되어 있습니다. ({0:F1}[deg])</Value>
+    </String>
+    <String>
+      <Key>This model is exist.</Key>
+      <Value>모델이 이미 존재합니다.</Value>
+    </String>
+    <String>
+      <Key>Trainning..</Key>
+      <Value>트레이닝..</Value>
+    </String>
+    <String>
+      <Key>Wait</Key>
+      <Value>대기</Value>
+    </String>
+    <String>
+      <Key>Wait Previous Save Task Done...</Key>
+      <Value>이전 저장이 완료되기를 기다리는 중...</Value>
+    </String>
+  </Message>
+  <UniScanG.Module.Monitor.MainWindow>
+    <String>
+      <Key>Exit</Key>
+      <Value>종료</Value>
+    </String>
+    <String>
+      <Key>Monitoring</Key>
+      <Value>모니터링</Value>
+    </String>
+    <String>
+      <Key>Report</Key>
+      <Value>보고서</Value>
+    </String>
+    <String>
+      <Key>Setting</Key>
+      <Value>설정</Value>
+    </String>
+  </UniScanG.Module.Monitor.MainWindow>
+  <UniScanG.Module.Monitor.UI.Inspect.MenuControl>
+    <String>
+      <Key>Auto</Key>
+      <Value>자동</Value>
+    </String>
+    <String>
+      <Key>Start</Key>
+      <Value>시작</Value>
+    </String>
+    <String>
+      <Key>Stop</Key>
+      <Value>정지</Value>
+    </String>
+  </UniScanG.Module.Monitor.UI.Inspect.MenuControl>
+  <UniScanG.Module.Monitor.UI.Inspect.ProductionControl>
+    <String>
+      <Key>[EA]</Key>
+      <Value>[EA]</Value>
+    </String>
+    <String>
+      <Key>Blot</Key>
+      <Value>번짐</Value>
+    </String>
+    <String>
+      <Key>Good</Key>
+      <Value>정상</Value>
+    </String>
+    <String>
+      <Key>Margin</Key>
+      <Value>마진</Value>
+    </String>
+    <String>
+      <Key>NG</Key>
+      <Value>불량</Value>
+    </String>
+    <String>
+      <Key>Pass</Key>
+      <Value>통과</Value>
+    </String>
+    <String>
+      <Key>Pinhole</Key>
+      <Value>핀홀</Value>
+    </String>
+    <String>
+      <Key>Productions</Key>
+      <Value>제작</Value>
+    </String>
+  </UniScanG.Module.Monitor.UI.Inspect.ProductionControl>
+  <UniScanG.Module.Monitor.UI.Inspect.ResultControl>
+    <String>
+      <Key>[EA]</Key>
+      <Value>[EA]</Value>
+    </String>
+    <String>
+      <Key>[um]</Key>
+      <Value>[um]</Value>
+    </String>
+    <String>
+      <Key>Blot</Key>
+      <Value>번짐</Value>
+    </String>
+    <String>
+      <Key>C</Key>
+      <Value>C</Value>
+    </String>
+    <String>
+      <Key>Comm Opened</Key>
+      <Value>Comm Opened</Value>
+    </String>
+    <String>
+      <Key>Defect</Key>
+      <Value>결함</Value>
+    </String>
+    <String>
+      <Key>L</Key>
+      <Value>L</Value>
+    </String>
+    <String>
+      <Key>Margin</Key>
+      <Value>마진</Value>
+    </String>
+    <String>
+      <Key>State</Key>
+      <Value>상태</Value>
+    </String>
+    <String>
+      <Key>Too Dark</Key>
+      <Value>Too Dark</Value>
+    </String>
+    <String>
+      <Key>W</Key>
+      <Value>W</Value>
+    </String>
+  </UniScanG.Module.Monitor.UI.Inspect.ResultControl>
+  <UniScanG.Module.Monitor.UI.Inspect.StateControl>
+    <String>
+      <Key>Accept</Key>
+      <Value>정상</Value>
+    </String>
+    <String>
+      <Key>Distance</Key>
+      <Value>거리</Value>
+    </String>
+    <String>
+      <Key>Idle</Key>
+      <Value>유휴</Value>
+    </String>
+    <String>
+      <Key>m</Key>
+      <Value>m</Value>
+    </String>
+    <String>
+      <Key>Reject</Key>
+      <Value>불량</Value>
+    </String>
+    <String>
+      <Key>Result</Key>
+      <Value>결과</Value>
+    </String>
+    <String>
+      <Key>Run</Key>
+      <Value>작동</Value>
+    </String>
+    <String>
+      <Key>Scan</Key>
+      <Value>스캔</Value>
+    </String>
+    <String>
+      <Key>Skip</Key>
+      <Value>통과</Value>
+    </String>
+    <String>
+      <Key>State</Key>
+      <Value>상태</Value>
+    </String>
+    <String>
+      <Key>Wait</Key>
+      <Value>대기</Value>
+    </String>
+  </UniScanG.Module.Monitor.UI.Inspect.StateControl>
+  <UniScanG.Module.Monitor.UI.Report.ReportPage>
+    <String>
+      <Key>Date</Key>
+      <Value>날짜</Value>
+    </String>
+    <String>
+      <Key>From</Key>
+      <Value>부터</Value>
+    </String>
+    <String>
+      <Key>Length [um]</Key>
+      <Value>길이 [um]</Value>
+    </String>
+    <String>
+      <Key>Lot</Key>
+      <Value>로트</Value>
+    </String>
+    <String>
+      <Key>Model</Key>
+      <Value>모델</Value>
+    </String>
+    <String>
+      <Key>Production Info</Key>
+      <Value>생산 정보</Value>
+    </String>
+    <String>
+      <Key>Search</Key>
+      <Value>검색</Value>
+    </String>
+    <String>
+      <Key>To</Key>
+      <Value>까지</Value>
+    </String>
+  </UniScanG.Module.Monitor.UI.Report.ReportPage>
+  <UniScanG.Module.Monitor.UI.Report.ReportPage.inspectionList>
+    <String>
+      <Key>BlotSize</Key>
+      <Value>번짐 크기</Value>
+    </String>
+    <String>
+      <Key>DefectCount</Key>
+      <Value>불량 개수</Value>
+    </String>
+    <String>
+      <Key>Judgment</Key>
+      <Value>판정</Value>
+    </String>
+    <String>
+      <Key>MarginSize</Key>
+      <Value>마진 크기</Value>
+    </String>
+    <String>
+      <Key>RollPos</Key>
+      <Value>롤 위치</Value>
+    </String>
+    <String>
+      <Key>ZoneIndex</Key>
+      <Value>영역 번호</Value>
+    </String>
+  </UniScanG.Module.Monitor.UI.Report.ReportPage.inspectionList>
+  <UniScanG.Module.Monitor.UI.Report.ReportPage.productionList>
+    <String>
+      <Key>Count</Key>
+      <Value>개수</Value>
+    </String>
+    <String>
+      <Key>Date</Key>
+      <Value>날짜</Value>
+    </String>
+    <String>
+      <Key>Lot</Key>
+      <Value>로트</Value>
+    </String>
+    <String>
+      <Key>Model</Key>
+      <Value>모델</Value>
+    </String>
+    <String>
+      <Key>Time</Key>
+      <Value>시간</Value>
+    </String>
+  </UniScanG.Module.Monitor.UI.Report.ReportPage.productionList>
+  <UniScanWPF.Table.Data.DefectType>
+    <String>
+      <Key>Lump</Key>
+      <Value>럼프</Value>
+    </String>
+    <String>
+      <Key>Margin</Key>
+      <Value>마진</Value>
+    </String>
+    <String>
+      <Key>Pattern</Key>
+      <Value>패턴</Value>
+    </String>
+    <String>
+      <Key>Shape</Key>
+      <Value>해상도</Value>
+    </String>
+  </UniScanWPF.Table.Data.DefectType>
+  <UniScanWPF.Table.MainWindow>
+    <String>
+      <Key>Exit</Key>
+      <Value>종료</Value>
+    </String>
+    <String>
+      <Key>History</Key>
+      <Value>기록</Value>
+    </String>
+    <String>
+      <Key>Inspect</Key>
+      <Value>검사</Value>
+    </String>
+    <String>
+      <Key>Model</Key>
+      <Value>모델</Value>
+    </String>
+    <String>
+      <Key>Report</Key>
+      <Value>보고서</Value>
+    </String>
+    <String>
+      <Key>Setting</Key>
+      <Value>설정</Value>
+    </String>
+    <String>
+      <Key>Teach</Key>
+      <Value>티치</Value>
+    </String>
+  </UniScanWPF.Table.MainWindow>
+  <UniScanWPF.Table.UI.InspectPage>
+    <String>
+      <Key>-</Key>
+      <Value>-</Value>
+    </String>
+    <String>
+      <Key>+</Key>
+      <Value>+</Value>
+    </String>
+    <String>
+      <Key>Average</Key>
+      <Value>평균</Value>
+    </String>
+    <String>
+      <Key>Count</Key>
+      <Value>개수</Value>
+    </String>
+    <String>
+      <Key>Defect</Key>
+      <Value>불량</Value>
+    </String>
+    <String>
+      <Key>Designed</Key>
+      <Value>설계</Value>
+    </String>
+    <String>
+      <Key>Extract</Key>
+      <Value>추출</Value>
+    </String>
+    <String>
+      <Key>Filter</Key>
+      <Value>필터</Value>
+    </String>
+    <String>
+      <Key>Fit</Key>
+      <Value>Fit</Value>
+    </String>
+    <String>
+      <Key>H</Key>
+      <Value>H</Value>
+    </String>
+    <String>
+      <Key>Home</Key>
+      <Value>원점</Value>
+    </String>
+    <String>
+      <Key>Inspect</Key>
+      <Value>검사</Value>
+    </String>
+    <String>
+      <Key>Judgement</Key>
+      <Value>판정</Value>
+    </String>
+    <String>
+      <Key>L [um]</Key>
+      <Value>L [um]</Value>
+    </String>
+    <String>
+      <Key>Lot</Key>
+      <Value>로트</Value>
+    </String>
+    <String>
+      <Key>M</Key>
+      <Value>M</Value>
+    </String>
+    <String>
+      <Key>Margin(All)</Key>
+      <Value>마진(모두)</Value>
+    </String>
+    <String>
+      <Key>Margin(Circle)</Key>
+      <Value>마진(원형)</Value>
+    </String>
+    <String>
+      <Key>Margin(Off)</Key>
+      <Value>마진(숨김)</Value>
+    </String>
+    <String>
+      <Key>MAX</Key>
+      <Value>최대</Value>
+    </String>
+    <String>
+      <Key>Measured Margin</Key>
+      <Value>마진 측정</Value>
+    </String>
+    <String>
+      <Key>MIN</Key>
+      <Value>최소</Value>
+    </String>
+    <String>
+      <Key>Model</Key>
+      <Value>모델</Value>
+    </String>
+    <String>
+      <Key>Name</Key>
+      <Value>이름</Value>
+    </String>
+    <String>
+      <Key>Param</Key>
+      <Value>파라메터</Value>
+    </String>
+    <String>
+      <Key>Pattern(All)</Key>
+      <Value>패턴(모두)</Value>
+    </String>
+    <String>
+      <Key>Pattern(Lump)</Key>
+      <Value>패턴(럼프)</Value>
+    </String>
+    <String>
+      <Key>Pattern(Normal)</Key>
+      <Value>패턴(일반)</Value>
+    </String>
+    <String>
+      <Key>Pattern(Off)</Key>
+      <Value>패턴(숨김)</Value>
+    </String>
+    <String>
+      <Key>Scan</Key>
+      <Value>스켄</Value>
+    </String>
+    <String>
+      <Key>Shape(All)</Key>
+      <Value>해상도(모두)</Value>
+    </String>
+    <String>
+      <Key>Shape(Off)</Key>
+      <Value>해상도(숨김)</Value>
+    </String>
+    <String>
+      <Key>SPEC</Key>
+      <Value>SPEC</Value>
+    </String>
+    <String>
+      <Key>Start</Key>
+      <Value>시작</Value>
+    </String>
+    <String>
+      <Key>Stop</Key>
+      <Value>정지</Value>
+    </String>
+    <String>
+      <Key>Storing</Key>
+      <Value>저장</Value>
+    </String>
+    <String>
+      <Key>um</Key>
+      <Value>um</Value>
+    </String>
+    <String>
+      <Key>W [um]</Key>
+      <Value>W [um]</Value>
+    </String>
+  </UniScanWPF.Table.UI.InspectPage>
+  <UniScanWPF.Table.UI.InspectParamWindow>
+    <String>
+      <Key>%</Key>
+      <Value>%</Value>
+    </String>
+    <String>
+      <Key>(test)</Key>
+      <Value>(test)</Value>
+    </String>
+    <String>
+      <Key>0~255</Key>
+      <Value>0~255</Value>
+    </String>
+    <String>
+      <Key>Allow Rotate Limit</Key>
+      <Value>허용 회전 한계</Value>
+    </String>
+    <String>
+      <Key>AT</Key>
+      <Value>AT</Value>
+    </String>
+    <String>
+      <Key>Circular Threshold</Key>
+      <Value>원형 임계치</Value>
+    </String>
+    <String>
+      <Key>Common</Key>
+      <Value>공통</Value>
+    </String>
+    <String>
+      <Key>Debug Mode</Key>
+      <Value>디버그 모드</Value>
+    </String>
+    <String>
+      <Key>deg</Key>
+      <Value>deg</Value>
+    </String>
+    <String>
+      <Key>Designed</Key>
+      <Value>설계</Value>
+    </String>
+    <String>
+      <Key>Difference</Key>
+      <Value>차이</Value>
+    </String>
+    <String>
+      <Key>EA</Key>
+      <Value>EA</Value>
+    </String>
+    <String>
+      <Key>ETC</Key>
+      <Value>기타</Value>
+    </String>
+    <String>
+      <Key>Ignore Range</Key>
+      <Value>무시 영역</Value>
+    </String>
+    <String>
+      <Key>Judgement SPEC.</Key>
+      <Value>판정 SPEC.</Value>
+    </String>
+    <String>
+      <Key>Lower</Key>
+      <Value>하한</Value>
+    </String>
+    <String>
+      <Key>Lump</Key>
+      <Value>럼프</Value>
+    </String>
+    <String>
+      <Key>Lump Detect Mode</Key>
+      <Value>럼프 검출 모드</Value>
+    </String>
+    <String>
+      <Key>Margin</Key>
+      <Value>마진</Value>
+    </String>
+    <String>
+      <Key>Margin Threshold</Key>
+      <Value>마진 상/하한</Value>
+    </String>
+    <String>
+      <Key>Max</Key>
+      <Value>최대</Value>
+    </String>
+    <String>
+      <Key>Max Defect Count</Key>
+      <Value>최대 불량 개수</Value>
+    </String>
+    <String>
+      <Key>Max Size</Key>
+      <Value>최대 크기</Value>
+    </String>
+    <String>
+      <Key>Meander</Key>
+      <Value>사행</Value>
+    </String>
+    <String>
+      <Key>Measure</Key>
+      <Value>측정</Value>
+    </String>
+    <String>
+      <Key>Min</Key>
+      <Value>최소</Value>
+    </String>
+    <String>
+      <Key>Min Size</Key>
+      <Value>최소 크기</Value>
+    </String>
+    <String>
+      <Key>Minimum Chip Size</Key>
+      <Value>최소 전극 크기</Value>
+    </String>
+    <String>
+      <Key>Pattern</Key>
+      <Value>패턴</Value>
+    </String>
+    <String>
+      <Key>Sensitivity</Key>
+      <Value>민감도</Value>
+    </String>
+    <String>
+      <Key>Shape</Key>
+      <Value>형상</Value>
+    </String>
+    <String>
+      <Key>Sheet Boundary</Key>
+      <Value>시트 외곽</Value>
+    </String>
+    <String>
+      <Key>Sheet Dilate Length</Key>
+      <Value>시트 침식 길이</Value>
+    </String>
+    <String>
+      <Key>um</Key>
+      <Value>um</Value>
+    </String>
+    <String>
+      <Key>Upper</Key>
+      <Value>상한</Value>
+    </String>
+    <String>
+      <Key>Use</Key>
+      <Value>사용</Value>
+    </String>
+  </UniScanWPF.Table.UI.InspectParamWindow>
+  <UniScanWPF.Table.UI.MarginTeachWindow>
+    <String>
+      <Key>Auto</Key>
+      <Value>자동</Value>
+    </String>
+    <String>
+      <Key>Binal</Key>
+      <Value>이진</Value>
+    </String>
+    <String>
+      <Key>Draw</Key>
+      <Value>그리기</Value>
+    </String>
+    <String>
+      <Key>Gray</Key>
+      <Value>그레이</Value>
+    </String>
+    <String>
+      <Key>Image</Key>
+      <Value>이미지</Value>
+    </String>
+    <String>
+      <Key>L</Key>
+      <Value>L</Value>
+    </String>
+    <String>
+      <Key>Select</Key>
+      <Value>선택</Value>
+    </String>
+    <String>
+      <Key>Test</Key>
+      <Value>테스트</Value>
+    </String>
+    <String>
+      <Key>Threshold Value</Key>
+      <Value>이진화 값</Value>
+    </String>
+    <String>
+      <Key>Use Local Setting</Key>
+      <Value>지역설정사용</Value>
+    </String>
+    <String>
+      <Key>W</Key>
+      <Value>W</Value>
+    </String>
+    <String>
+      <Key></Key>
+      <Value></Value>
+    </String>
+    <String>
+      <Key></Key>
+      <Value></Value>
+    </String>
+    <String>
+      <Key></Key>
+      <Value></Value>
+    </String>
+  </UniScanWPF.Table.UI.MarginTeachWindow>
+  <UniScanWPF.Table.UI.ModelDescriptionWindow>
+    <String>
+      <Key>Cancel</Key>
+      <Value>Cancel</Value>
+    </String>
+    <String>
+      <Key>L</Key>
+      <Value>L</Value>
+    </String>
+    <String>
+      <Key>Margin</Key>
+      <Value>마진</Value>
+    </String>
+    <String>
+      <Key>Name</Key>
+      <Value>이름</Value>
+    </String>
+    <String>
+      <Key>New Model</Key>
+      <Value>새 모델</Value>
+    </String>
+    <String>
+      <Key>OK</Key>
+      <Value>OK</Value>
+    </String>
+    <String>
+      <Key>Paste</Key>
+      <Value>페이스트</Value>
+    </String>
+    <String>
+      <Key>Screen</Key>
+      <Value>스크린</Value>
+    </String>
+    <String>
+      <Key>Thickness</Key>
+      <Value>두께</Value>
+    </String>
+    <String>
+      <Key>W</Key>
+      <Value>W</Value>
+    </String>
+  </UniScanWPF.Table.UI.ModelDescriptionWindow>
+  <UniScanWPF.Table.UI.ModelPage>
+    <String>
+      <Key>Delete</Key>
+      <Value>삭제</Value>
+    </String>
+    <String>
+      <Key>DELETE</Key>
+      <Value>삭제</Value>
+    </String>
+    <String>
+      <Key>EDIT</Key>
+      <Value>편집</Value>
+    </String>
+    <String>
+      <Key>Last Modified Date</Key>
+      <Value>최종수정날짜</Value>
+    </String>
+    <String>
+      <Key>List</Key>
+      <Value>목록</Value>
+    </String>
+    <String>
+      <Key>Margin</Key>
+      <Value>마진</Value>
+    </String>
+    <String>
+      <Key>Model</Key>
+      <Value>모델</Value>
+    </String>
+    <String>
+      <Key>Name</Key>
+      <Value>이름</Value>
+    </String>
+    <String>
+      <Key>NEW</Key>
+      <Value>생성</Value>
+    </String>
+    <String>
+      <Key>Paste</Key>
+      <Value>페이스트</Value>
+    </String>
+    <String>
+      <Key>Registration Date</Key>
+      <Value>등록일</Value>
+    </String>
+    <String>
+      <Key>Screen</Key>
+      <Value>스크린</Value>
+    </String>
+    <String>
+      <Key>Search Name</Key>
+      <Value>검색어</Value>
+    </String>
+    <String>
+      <Key>SELECT</Key>
+      <Value>선택</Value>
+    </String>
+    <String>
+      <Key>Teach</Key>
+      <Value>티치</Value>
+    </String>
+    <String>
+      <Key>Thickness</Key>
+      <Value>두께</Value>
+    </String>
+  </UniScanWPF.Table.UI.ModelPage>
+  <UniScanWPF.Table.UI.ReportPage>
+    <String>
+      <Key>%</Key>
+      <Value>%</Value>
+    </String>
+    <String>
+      <Key>Average</Key>
+      <Value>평균</Value>
+    </String>
+    <String>
+      <Key>Bottom</Key>
+      <Value>하</Value>
+    </String>
+    <String>
+      <Key>Coat-Print</Key>
+      <Value>성형-인쇄</Value>
+    </String>
+    <String>
+      <Key>Count</Key>
+      <Value>개수</Value>
+    </String>
+    <String>
+      <Key>Date</Key>
+      <Value>날짜</Value>
+    </String>
+    <String>
+      <Key>Defect</Key>
+      <Value>불량</Value>
+    </String>
+    <String>
+      <Key>Designed</Key>
+      <Value>설계</Value>
+    </String>
+    <String>
+      <Key>Difference</Key>
+      <Value>차이</Value>
+    </String>
+    <String>
+      <Key>End Date</Key>
+      <Value>종료 날짜</Value>
+    </String>
+    <String>
+      <Key>Filter</Key>
+      <Value>필터</Value>
+    </String>
+    <String>
+      <Key>Guide Line</Key>
+      <Value>보조선</Value>
+    </String>
+    <String>
+      <Key>Height</Key>
+      <Value>높이</Value>
+    </String>
+    <String>
+      <Key>Heigth</Key>
+      <Value>높이</Value>
+    </String>
+    <String>
+      <Key>Hide</Key>
+      <Value>숨기기</Value>
+    </String>
+    <String>
+      <Key>Inspection Settings</Key>
+      <Value>검사 설정</Value>
+    </String>
+    <String>
+      <Key>Judgement</Key>
+      <Value>판정</Value>
+    </String>
+    <String>
+      <Key>L [um]</Key>
+      <Value>L [um]</Value>
+    </String>
+    <String>
+      <Key>Left</Key>
+      <Value>좌</Value>
+    </String>
+    <String>
+      <Key>Lot List</Key>
+      <Value>로트 목록</Value>
+    </String>
+    <String>
+      <Key>Lower</Key>
+      <Value>하한</Value>
+    </String>
+    <String>
+      <Key>Lower [px]</Key>
+      <Value>하한 [px]</Value>
+    </String>
+    <String>
+      <Key>Margin</Key>
+      <Value>마진</Value>
+    </String>
+    <String>
+      <Key>Margin [um]</Key>
+      <Value>마진 [um]</Value>
+    </String>
+    <String>
+      <Key>MAX</Key>
+      <Value>최대</Value>
+    </String>
+    <String>
+      <Key>Meander</Key>
+      <Value>사행</Value>
+    </String>
+    <String>
+      <Key>Meander [um]</Key>
+      <Value>사행 [um]</Value>
+    </String>
+    <String>
+      <Key>Measure</Key>
+      <Value>측정</Value>
+    </String>
+    <String>
+      <Key>Middle</Key>
+      <Value>중</Value>
+    </String>
+    <String>
+      <Key>MIN</Key>
+      <Value>최소</Value>
+    </String>
+    <String>
+      <Key>Name</Key>
+      <Value>이름</Value>
+    </String>
+    <String>
+      <Key>Open Margin Data</Key>
+      <Value>마진 경로 열기</Value>
+    </String>
+    <String>
+      <Key>Open Report Data</Key>
+      <Value>보고서 경로 열기</Value>
+    </String>
+    <String>
+      <Key>Pattern</Key>
+      <Value>패턴</Value>
+    </String>
+    <String>
+      <Key>px</Key>
+      <Value>px</Value>
+    </String>
+    <String>
+      <Key>Report</Key>
+      <Value>보고서</Value>
+    </String>
+    <String>
+      <Key>Right</Key>
+      <Value>우</Value>
+    </String>
+    <String>
+      <Key>Sensitivity</Key>
+      <Value>민감도</Value>
+    </String>
+    <String>
+      <Key>Shape</Key>
+      <Value>형상</Value>
+    </String>
+    <String>
+      <Key>Sheet-Print</Key>
+      <Value>시트-인쇄</Value>
+    </String>
+    <String>
+      <Key>Show Report Path</Key>
+      <Value>보고서 경로 보기</Value>
+    </String>
+    <String>
+      <Key>Size</Key>
+      <Value>크기</Value>
+    </String>
+    <String>
+      <Key>Size [um]</Key>
+      <Value>크기 [um]</Value>
+    </String>
+    <String>
+      <Key>SPEC</Key>
+      <Value>SPEC</Value>
+    </String>
+    <String>
+      <Key>Start Date</Key>
+      <Value>시작 날짜</Value>
+    </String>
+    <String>
+      <Key>Summary</Key>
+      <Value>요약</Value>
+    </String>
+    <String>
+      <Key>Sync Reset</Key>
+      <Value>싱크 초기화</Value>
+    </String>
+    <String>
+      <Key>Top</Key>
+      <Value>상</Value>
+    </String>
+    <String>
+      <Key>um</Key>
+      <Value>um</Value>
+    </String>
+    <String>
+      <Key>Update</Key>
+      <Value>업데이트</Value>
+    </String>
+    <String>
+      <Key>Upper</Key>
+      <Value>상한</Value>
+    </String>
+    <String>
+      <Key>Upper [px]</Key>
+      <Value>상한 [px]</Value>
+    </String>
+    <String>
+      <Key>W [um]</Key>
+      <Value>W [um]</Value>
+    </String>
+    <String>
+      <Key>Width</Key>
+      <Value>폭</Value>
+    </String>
+  </UniScanWPF.Table.UI.ReportPage>
+  <UniScanWPF.Table.UI.SettingPage>
+    <String>
+      <Key>[EA]</Key>
+      <Value>[개]</Value>
+    </String>
+    <String>
+      <Key>[Lv]</Key>
+      <Value>[Lv]</Value>
+    </String>
+    <String>
+      <Key>[mm]</Key>
+      <Value>[mm]</Value>
+    </String>
+    <String>
+      <Key>[um/s]</Key>
+      <Value>[um/s]</Value>
+    </String>
+    <String>
+      <Key>[um]</Key>
+      <Value>[um]</Value>
+    </String>
+    <String>
+      <Key>Axis X</Key>
+      <Value>X축</Value>
+    </String>
+    <String>
+      <Key>Axis Y</Key>
+      <Value>Y축</Value>
+    </String>
+    <String>
+      <Key>Bottom</Key>
+      <Value>하단</Value>
+    </String>
+    <String>
+      <Key>DST</Key>
+      <Value>DST</Value>
+    </String>
+    <String>
+      <Key>Find Limit</Key>
+      <Value>Find Limit</Value>
+    </String>
+    <String>
+      <Key>FOV</Key>
+      <Value>FOV</Value>
+    </String>
+    <String>
+      <Key>Home</Key>
+      <Value>Home</Value>
+    </String>
+    <String>
+      <Key>L</Key>
+      <Value>L</Value>
+    </String>
+    <String>
+      <Key>Length</Key>
+      <Value>거리</Value>
+    </String>
+    <String>
+      <Key>Light Tune</Key>
+      <Value>조명 보정</Value>
+    </String>
+    <String>
+      <Key>Light Value</Key>
+      <Value>조명값</Value>
+    </String>
+    <String>
+      <Key>Margin Measure</Key>
+      <Value>마진 측정</Value>
+    </String>
+    <String>
+      <Key>Motion</Key>
+      <Value>모션</Value>
+    </String>
+    <String>
+      <Key>Neg</Key>
+      <Value>Neg</Value>
+    </String>
+    <String>
+      <Key>Noise Filter Level</Key>
+      <Value>잡음 필터 레벨</Value>
+    </String>
+    <String>
+      <Key>Offset</Key>
+      <Value>오프셋</Value>
+    </String>
+    <String>
+      <Key>Operation</Key>
+      <Value>운영</Value>
+    </String>
+    <String>
+      <Key>Overlap</Key>
+      <Value>오버렙</Value>
+    </String>
+    <String>
+      <Key>Pos</Key>
+      <Value>위치</Value>
+    </String>
+    <String>
+      <Key>Robot Working Region</Key>
+      <Value>로봇 작업 영역</Value>
+    </String>
+    <String>
+      <Key>Scan Count</Key>
+      <Value>스캔 횟수</Value>
+    </String>
+    <String>
+      <Key>Scan Length</Key>
+      <Value>스캔 길이</Value>
+    </String>
+    <String>
+      <Key>Scan Pos</Key>
+      <Value>스캔 위치</Value>
+    </String>
+    <String>
+      <Key>Scan Region</Key>
+      <Value>스캔 영역</Value>
+    </String>
+    <String>
+      <Key>Scan Speed</Key>
+      <Value>스캔 속도</Value>
+    </String>
+    <String>
+      <Key>SRC</Key>
+      <Value>SRC</Value>
+    </String>
+    <String>
+      <Key>Target Brightness Mean</Key>
+      <Value>목표 밝기값</Value>
+    </String>
+    <String>
+      <Key>Target Brightness Std</Key>
+      <Value>목표 밝기 분산</Value>
+    </String>
+    <String>
+      <Key>Top</Key>
+      <Value>상단</Value>
+    </String>
+    <String>
+      <Key>W</Key>
+      <Value>W</Value>
+    </String>
+    <String>
+      <Key>X</Key>
+      <Value>X</Value>
+    </String>
+    <String>
+      <Key>Y</Key>
+      <Value>Y</Value>
+    </String>
+  </UniScanWPF.Table.UI.SettingPage>
+  <UniScanWPF.Table.UI.StatusStrip>
+    <String>
+      <Key>1</Key>
+      <Value>1</Value>
+    </String>
+    <String>
+      <Key>2</Key>
+      <Value>2</Value>
+    </String>
+    <String>
+      <Key>bb</Key>
+      <Value>bb</Value>
+    </String>
+    <String>
+      <Key>Build</Key>
+      <Value>빌드</Value>
+    </String>
+    <String>
+      <Key>Cylinder</Key>
+      <Value>실린더</Value>
+    </String>
+    <String>
+      <Key>Door</Key>
+      <Value>문</Value>
+    </String>
+    <String>
+      <Key>Down</Key>
+      <Value>하강</Value>
+    </String>
+    <String>
+      <Key>Emergency</Key>
+      <Value>비상</Value>
+    </String>
+    <String>
+      <Key>EMG</Key>
+      <Value>EMG</Value>
+    </String>
+    <String>
+      <Key>FAN</Key>
+      <Value>FAN</Value>
+    </String>
+    <String>
+      <Key>Green</Key>
+      <Value>녹색</Value>
+    </String>
+    <String>
+      <Key>GRN</Key>
+      <Value>GRN</Value>
+    </String>
+    <String>
+      <Key>Lamp</Key>
+      <Value>램프</Value>
+    </String>
+    <String>
+      <Key>Lock</Key>
+      <Value>잠김</Value>
+    </String>
+    <String>
+      <Key>Model</Key>
+      <Value>모델</Value>
+    </String>
+    <String>
+      <Key>Paste</Key>
+      <Value>페이스트</Value>
+    </String>
+    <String>
+      <Key>POW</Key>
+      <Value>POW</Value>
+    </String>
+    <String>
+      <Key>Power</Key>
+      <Value>전원</Value>
+    </String>
+    <String>
+      <Key>Red</Key>
+      <Value>빨강</Value>
+    </String>
+    <String>
+      <Key>RED</Key>
+      <Value>RED</Value>
+    </String>
+    <String>
+      <Key>Sol</Key>
+      <Value>솔</Value>
+    </String>
+    <String>
+      <Key>State</Key>
+      <Value>상태</Value>
+    </String>
+    <String>
+      <Key>System</Key>
+      <Value>시스템</Value>
+    </String>
+    <String>
+      <Key>Thickness</Key>
+      <Value>두께</Value>
+    </String>
+    <String>
+      <Key>Up</Key>
+      <Value>상승</Value>
+    </String>
+    <String>
+      <Key>Version</Key>
+      <Value>버전</Value>
+    </String>
+    <String>
+      <Key>vv</Key>
+      <Value>vv</Value>
+    </String>
+    <String>
+      <Key>Yellow</Key>
+      <Value>노랑</Value>
+    </String>
+    <String>
+      <Key>YLW</Key>
+      <Value>YLW</Value>
+    </String>
+  </UniScanWPF.Table.UI.StatusStrip>
+  <UniScanWPF.Table.UI.TeachPage>
+    <String>
+      <Key>[um]</Key>
+      <Value>[um]</Value>
+    </String>
+    <String>
+      <Key>Candidate</Key>
+      <Value>후보</Value>
+    </String>
+    <String>
+      <Key>Delete</Key>
+      <Value>삭제</Value>
+    </String>
+    <String>
+      <Key>Diff.</Key>
+      <Value>차이</Value>
+    </String>
+    <String>
+      <Key>Extract</Key>
+      <Value>추출</Value>
+    </String>
+    <String>
+      <Key>FlowPosition</Key>
+      <Value>위치</Value>
+    </String>
+    <String>
+      <Key>H</Key>
+      <Value>H</Value>
+    </String>
+    <String>
+      <Key>Inspect</Key>
+      <Value>검사</Value>
+    </String>
+    <String>
+      <Key>L</Key>
+      <Value>L</Value>
+    </String>
+    <String>
+      <Key>Light Tune</Key>
+      <Value>조명 보정</Value>
+    </String>
+    <String>
+      <Key>M</Key>
+      <Value>M</Value>
+    </String>
+    <String>
+      <Key>MARGIN</Key>
+      <Value>마진</Value>
+    </String>
+    <String>
+      <Key>Name</Key>
+      <Value>이름</Value>
+    </String>
+    <String>
+      <Key>Rectangle</Key>
+      <Value>좌표</Value>
+    </String>
+    <String>
+      <Key>Save</Key>
+      <Value>저장</Value>
+    </String>
+    <String>
+      <Key>Scan</Key>
+      <Value>스캔</Value>
+    </String>
+    <String>
+      <Key>Start</Key>
+      <Value>시작</Value>
+    </String>
+    <String>
+      <Key>Stop</Key>
+      <Value>정지</Value>
+    </String>
+    <String>
+      <Key>Teach</Key>
+      <Value>티치</Value>
+    </String>
+    <String>
+      <Key>Teach Window</Key>
+      <Value>티치 화면</Value>
+    </String>
+    <String>
+      <Key>W</Key>
+      <Value>W</Value>
+    </String>
+  </UniScanWPF.Table.UI.TeachPage>
+  <UniScanWPF.Table.UI.TeachPage.marginDataGrid>
+    <String>
+      <Key>FlowPosition</Key>
+      <Value>위치</Value>
+    </String>
+    <String>
+      <Key>L</Key>
+      <Value>L</Value>
+    </String>
+    <String>
+      <Key>Name</Key>
+      <Value>이름</Value>
+    </String>
+    <String>
+      <Key>Rectangle</Key>
+      <Value>영역</Value>
+    </String>
+    <String>
+      <Key>SubRegions</Key>
+      <Value>하위영역</Value>
+    </String>
+    <String>
+      <Key>W</Key>
+      <Value>W</Value>
+    </String>
+  </UniScanWPF.Table.UI.TeachPage.marginDataGrid>
+  <WpfControlLibrary.UI.AlarmWindow>
+    <String>
+      <Key>Buzzer</Key>
+      <Value>Buzzer</Value>
+    </String>
+    <String>
+      <Key>Code</Key>
+      <Value>Code</Value>
+    </String>
+    <String>
+      <Key>Emergency Alarm</Key>
+      <Value>Emergency Alarm</Value>
+    </String>
+    <String>
+      <Key>Error</Key>
+      <Value>Error</Value>
+    </String>
+    <String>
+      <Key>Level</Key>
+      <Value>Level</Value>
+    </String>
+    <String>
+      <Key>Message</Key>
+      <Value>Message</Value>
+    </String>
+    <String>
+      <Key>Reset</Key>
+      <Value>Reset</Value>
+    </String>
+    <String>
+      <Key>Section</Key>
+      <Value>Section</Value>
+    </String>
+  </WpfControlLibrary.UI.AlarmWindow>
+  <WpfControlLibrary.UI.CustomInputForm>
+    <String>
+      <Key>Cancel</Key>
+      <Value>Cancel</Value>
+    </String>
+    <String>
+      <Key>OK</Key>
+      <Value>OK</Value>
+    </String>
+  </WpfControlLibrary.UI.CustomInputForm>
+  <WpfControlLibrary.UI.CustomMessageBox>
+    <String>
+      <Key>Cancel</Key>
+      <Value>취소</Value>
+    </String>
+    <String>
+      <Key>No</Key>
+      <Value>아니오</Value>
+    </String>
+    <String>
+      <Key>OK</Key>
+      <Value>확인</Value>
+    </String>
+    <String>
+      <Key>Yes</Key>
+      <Value>예</Value>
+    </String>
+  </WpfControlLibrary.UI.CustomMessageBox>
+  <WpfControlLibrary.UI.LogInWindow>
+    <String>
+      <Key>Cancel</Key>
+      <Value>Cancel</Value>
+    </String>
+    <String>
+      <Key>ID</Key>
+      <Value>ID</Value>
+    </String>
+    <String>
+      <Key>OK</Key>
+      <Value>OK</Value>
+    </String>
+    <String>
+      <Key>Passward</Key>
+      <Value>Passward</Value>
+    </String>
+    <String>
+      <Key>User Log In</Key>
+      <Value>User Log In</Value>
+    </String>
+  </WpfControlLibrary.UI.LogInWindow>
+  <WpfControlLibrary.UI.ProgressBarWindow>
+    <String>
+      <Key>Cancel</Key>
+      <Value>Cancel</Value>
+    </String>
+  </WpfControlLibrary.UI.ProgressBarWindow>
+  <WpfControlLibrary.UI.SplashWindow>
+    <String>
+      <Key>Build</Key>
+      <Value>빌드</Value>
+    </String>
+    <String>
+      <Key>End of Initialize</Key>
+      <Value>End of Initialize</Value>
+    </String>
+    <String>
+      <Key>Init Additional Units</Key>
+      <Value>Init Additional Units</Value>
+    </String>
+    <String>
+      <Key>Initialize Data Exporter</Key>
+      <Value>Initialize Data Exporter</Value>
+    </String>
+    <String>
+      <Key>Initialize Device Box</Key>
+      <Value>Initialize Device Box</Value>
+    </String>
+    <String>
+      <Key>Initialize Device Controller</Key>
+      <Value>Initialize Device Controller</Value>
+    </String>
+    <String>
+      <Key>Initialize System</Key>
+      <Value>Initialize System</Value>
+    </String>
+    <String>
+      <Key>Load Algorithm Pool</Key>
+      <Value>Load Algorithm Pool</Value>
+    </String>
+    <String>
+      <Key>Setup Algorithm</Key>
+      <Value>Setup Algorithm</Value>
+    </String>
+    <String>
+      <Key>Setup Result Manager</Key>
+      <Value>Setup Result Manager</Value>
+    </String>
+    <String>
+      <Key>Version</Key>
+      <Value>버전</Value>
+    </String>
+  </WpfControlLibrary.UI.SplashWindow>
+</LocalizeHelper>

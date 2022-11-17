@@ -1,0 +1,171 @@
+﻿<Page x:Class="UniScanWPF.Screen.PinHoleColor.PinHole.UI.ReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UniScanWPF.Screen.PinHoleColor.PinHole.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ReportPage" DataContextChanged="Page_DataContextChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Pin Hole" BorderBrush="Black" BorderThickness="1" FontSize="26"
+               Style="{DynamicResource BasicLabel}" Foreground="{DynamicResource FontBrush}" Background="{DynamicResource LightGreenBrush}"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DockPanel>
+                <Label DockPanel.Dock="Top" Content="Lot Info" BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                        Background="{DynamicResource NormalBrush}"
+                                       Foreground="{DynamicResource FontBrush}" 
+                                       Style="{DynamicResource BasicLabel}"/>
+                <Grid DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Total" BorderThickness="1" BorderBrush="Black"
+                           Background="{DynamicResource LightBrush}"
+                           Foreground="{DynamicResource FontBrush}" 
+                           Style="{DynamicResource BasicLabel}"/>
+                    <Label Content="NG" BorderThickness="1" BorderBrush="Black" Grid.Row="1"
+                           Background="{DynamicResource LightRedBrush}"
+                           Foreground="{DynamicResource FontBrush}" 
+                           Style="{DynamicResource BasicLabel}"/>
+                    <Label Content="Ratio" BorderThickness="1" BorderBrush="Black" Grid.Row="2"
+                           Background="{DynamicResource LightBrush}"
+                           Foreground="{DynamicResource FontBrush}" 
+                           Style="{DynamicResource BasicLabel}"/>
+                    <Label Content="{Binding Total}" BorderThickness="1" BorderBrush="Black" Grid.Column="1"
+                           Background="White"
+                           Foreground="{DynamicResource FontBrush}" 
+                           Style="{DynamicResource BasicLabel}"/>
+                    <Label Content="{Binding Ng}" BorderThickness="1" BorderBrush="Black" Grid.Row="1" Grid.Column="1"
+                           Background="White"
+                           Foreground="{DynamicResource FontBrush}" 
+                           Style="{DynamicResource BasicLabel}"/>
+                    <Label Content="{Binding Ratio}" BorderThickness="1" BorderBrush="Black" Grid.Row="2" Grid.Column="1"
+                           Background="White"
+                           Foreground="{DynamicResource FontBrush}" 
+                           Style="{DynamicResource BasicLabel}"/>
+                </Grid>
+                <Label DockPanel.Dock="Top" Content="Lot List" BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                        Background="{DynamicResource NormalBrush}"
+                                       Foreground="{DynamicResource FontBrush}" 
+                                       Style="{DynamicResource BasicLabel}"/>
+                <ListBox Name="InspectResultList" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="InspectResultList_SelectionChanged">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Padding" Value="2, 0, 3, 0"/>
+                            <Setter Property="Margin" Value="0"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" Background="White" CanVerticallyScroll="True"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Background="{Binding Brush}" Margin="-1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="{Binding Index}" BorderThickness="1" BorderBrush="Black"
+                                       Foreground="{DynamicResource FontBrush}" 
+                                       Style="{DynamicResource BasicLabel}" FontSize="14"/>
+                                <Label Content="{Binding DetectorResult.DefectList.Count}" BorderThickness="1" BorderBrush="Black" Grid.Column="1"
+                                        Foreground="{DynamicResource FontBrush}" 
+                                        Style="{DynamicResource BasicLabel}" FontSize="14"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+            <DockPanel Grid.Column="1">
+                <Label DockPanel.Dock="Top" Content="Defect List" BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                        Background="{DynamicResource NormalBrush}"
+                                       Foreground="{DynamicResource FontBrush}" 
+                                       Style="{DynamicResource BasicLabel}"/>
+                <Grid DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Total" BorderThickness="1" BorderBrush="Black"
+                           Background="{DynamicResource LightBrush}"
+                           Foreground="{DynamicResource FontBrush}" 
+                           Style="{DynamicResource BasicLabel}"/>
+                    <Label Content="{Binding ElementName=InspectResultList, Path=SelectedItem.DetectorResult.DefectList.Count}" BorderThickness="1" BorderBrush="Black" Grid.Column="1"
+                           Background="White"
+                           Foreground="{DynamicResource FontBrush}" 
+                           Style="{DynamicResource BasicLabel}"/>
+                </Grid>
+                <ListBox Name="DefectList" SelectionChanged="ListBox_SelectionChanged" ItemsSource="{Binding ElementName=InspectResultList, Path=SelectedItem.DetectorResult.DefectList}" DockPanel.Dock="Top"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalContentAlignment="Stretch"
+                    Padding="0">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Padding" Value="0"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="240">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Avg" Background="{StaticResource MainBrush}" Foreground="{StaticResource LightBrush}"  FontSize="14" HorizontalContentAlignment="Center" Grid.Column="1"/>
+                                    <Label Content="Type" Background="{StaticResource MainBrush}" Foreground="{StaticResource LightBrush}"  FontSize="14" HorizontalContentAlignment="Center"/>
+                                    <Label Content="Size" Background="{StaticResource MainBrush}" Foreground="{StaticResource LightBrush}"  FontSize="14" HorizontalContentAlignment="Center" Grid.Column="2"/>
+                                    <TextBlock Text="{Binding Size}" Foreground="{StaticResource MainBrush}"  FontSize="14" VerticalAlignment="Center" TextAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+                                    <TextBlock Text="{Binding AvgValue}" Foreground="{StaticResource MainBrush}"  FontSize="14" VerticalAlignment="Center" TextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+                                    <TextBlock Text="{Binding TypeName}" Foreground="{StaticResource MainBrush}"  FontSize="14" VerticalAlignment="Center" TextAlignment="Center" Grid.Row="1"/>
+                                    <Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="3"/>
+                                    <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.RowSpan="3"/>
+                                    <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Grid.RowSpan="3"/>
+                                </Grid>
+                                <Border BorderBrush="Black" BorderThickness="1"/>
+                                <Image Source="{Binding Image}" Grid.Row="1" Stretch="Fill" Margin="10"/>
+                                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+                                <Border BorderBrush="Black" BorderThickness="3" Grid.RowSpan="2" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+            <Frame x:Name="ImageFrame" BorderBrush="Black" BorderThickness="1" Grid.Column="2"/>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="3"/>
+        </Grid>
+    </Grid>
+</Page>

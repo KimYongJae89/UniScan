@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{851FB6FA-7740-44B8-9ED1-AD92058B5F68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UniScanS</RootNamespace>
+    <AssemblyName>UniScanS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics4.Shared.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Shared.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.AppStylistSupport.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.AppStylistSupport.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.DataVisualization.Shared.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.DataVisualization.UltraDataChart.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.Misc.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.Portable.Core.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.Portable.Core.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.SupportDialogs.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.SupportDialogs.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinCalcManager.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinCalcManager.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinCalcManager.v14.2.FormulaBuilder, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinCalcManager.v14.2.FormulaBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinEditors.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinExplorerBar.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinExplorerBar.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinGrid.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinListView.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinListView.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinSchedule.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinSchedule.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinStatusBar.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinStatusBar.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinTabbedMdi.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinTabbedMdi.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinTabControl.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinToolbars.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinTree.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinTree.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\AlarmChecker.cs" />
+    <Compile Include="Data\UI\ErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\UI\ErrorForm.Designer.cs">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\UI\AlarmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\UI\AlarmForm.Designer.cs">
+      <DependentUpon>AlarmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\UI\AlarmCheckerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\UI\AlarmCheckerForm.Designer.cs">
+      <DependentUpon>AlarmCheckerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\Data\ErrorChecker.cs" />
+    <Compile Include="Screen\Data\MonitorSetting.cs" />
+    <Compile Include="Screen\Data\SamePointDefects.cs" />
+    <Compile Include="Data\DataSettingcs.cs" />
+    <Compile Include="Screen\Data\MergeSheetResult.cs" />
+    <Compile Include="Screen\Device\DeviceBox.cs" />
+    <Compile Include="Screen\Device\PortMap.cs" />
+    <Compile Include="Screen\Inspect\InspectRunnerMonitorS.cs" />
+    <Compile Include="Inspect\InspectRunner.cs" />
+    <Compile Include="Screen\Vision\InspectorSetting.cs" />
+    <Compile Include="UI\Etc\ContextInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Etc\ContextInfoForm.Designer.cs">
+      <DependentUpon>ContextInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Etc\MachineStatusStripPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Etc\MachineStatusStripPanel.designer.cs">
+      <DependentUpon>MachineStatusStripPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Etc\StatusStripPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Etc\StatusStripPanel.designer.cs">
+      <DependentUpon>StatusStripPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SheetCombiner.cs" />
+    <Compile Include="Screen\UI\Teach\Monitor\SettingPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screen\UI\Teach\Monitor\SettingPanel.designer.cs">
+      <DependentUpon>SettingPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Report\ReportProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Report\ReportProgressForm.Designer.cs">
+      <DependentUpon>ReportProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Teach\ModellerPageExtender.cs" />
+    <Compile Include="Screen\UI\Teach\Monitor\MasterSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen\UI\Teach\Monitor\MasterSettingForm.Designer.cs">
+      <DependentUpon>MasterSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision\FiducialFinder\FiducialFinderResult.cs" />
+    <Compile Include="Data\Inspect\DataExporter.cs" />
+    <Compile Include="Data\Inspect\InspectionResult.cs" />
+    <Compile Include="Data\ProductionS.cs" />
+    <Compile Include="Data\ProductionManagerS.cs" />
+    <Compile Include="Data\UI\InputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\UI\InputForm.Designer.cs">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inspect\GrabProcesser.cs" />
+    <Compile Include="Screen\AlgorithmArchiver.cs" />
+    <Compile Include="Screen\Data\SheetResult.cs" />
+    <Compile Include="Screen\Inspect\GrabProcesserS.cs" />
+    <Compile Include="Inspect\UnitInspectParam.cs" />
+    <Compile Include="Screen\Inspect\InspectRunnerInspectorS.cs" />
+    <Compile Include="UI\Inspect\ResultPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Inspect\ResultPanel.designer.cs">
+      <DependentUpon>ResultPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\UI\Teach\ModellerPageExtenderS.cs" />
+    <Compile Include="Screen\Vision\AlgorithmCommon.cs" />
+    <Compile Include="Screen\Data\SheetSubResult.cs" />
+    <Compile Include="Screen\Vision\FiducialFinder\FiducialFinderS.cs" />
+    <Compile Include="UI\Etc\ProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Etc\ProgressForm.Designer.cs">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision\SheetInspectParam.cs" />
+    <Compile Include="Vision\FiducialFinder\FiducialPattern.cs" />
+    <Compile Include="Screen\Data\SheetPatternGroup.cs" />
+    <Compile Include="Screen\Data\SheetPattern.cs" />
+    <Compile Include="Inspect\_InspectRunner.cs" />
+    <Compile Include="Inspect\InspectUnit.cs" />
+    <Compile Include="Inspect\ProcessBuffer.cs" />
+    <Compile Include="Screen\Vision\Detector\Dielectric\DielectricDetectorParam.cs" />
+    <Compile Include="Screen\Vision\Detector\Pole\PoleInspectorParam.cs" />
+    <Compile Include="Screen\Vision\Detector\Pole\PoleInspector.cs" />
+    <Compile Include="Screen\Vision\Detector\Shape\ShapeInspectorParam.cs" />
+    <Compile Include="Screen\Vision\Detector\Shape\ShapeInspector.cs" />
+    <Compile Include="Screen\Vision\Detector\Dielectric\DielectricInspector.cs" />
+    <Compile Include="Vision\FiducialFinder\FiducialFinder.cs" />
+    <Compile Include="Vision\FiducialFinder\FiducialFinderParam.cs" />
+    <Compile Include="Screen\Vision\AlgorithmSetting.cs" />
+    <Compile Include="Screen\Vision\Detector\SheetInspectorParam.cs" />
+    <Compile Include="Screen\Vision\Trainer\SheetTrainerParam.cs" />
+    <Compile Include="Screen\Vision\Trainer\SheetTrainer.cs" />
+    <Compile Include="Screen\Vision\ProcessBufferSetS.cs" />
+    <Compile Include="UI\Teach\Inspector\TeachToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Teach\Inspector\TeachToolBar.designer.cs">
+      <DependentUpon>TeachToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\UI\Inspect\InfoPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screen\UI\Inspect\InfoPanel.designer.cs">
+      <DependentUpon>InfoPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\UI\Teach\Inspector\ParamController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screen\UI\Teach\Inspector\ParamController.designer.cs">
+      <DependentUpon>ParamController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Teach\Inspector\ImageController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Teach\Inspector\ImageController.designer.cs">
+      <DependentUpon>ImageController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\UI\UiChangerS.cs" />
+    <Compile Include="SystemManager.cs" />
+    <Compile Include="UI\Etc\ModelPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Etc\ModelPanel.designer.cs">
+      <DependentUpon>ModelPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Etc\UserPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Etc\UserPanel.designer.cs">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\UI\Inspect\DefectPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screen\UI\Inspect\DefectPanel.designer.cs">
+      <DependentUpon>DefectPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Inspect\ImagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Inspect\ImagePanel.designer.cs">
+      <DependentUpon>ImagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Inspect\InspectPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Inspect\InspectPage.designer.cs">
+      <DependentUpon>InspectPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\UI\Report\ReportPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screen\UI\Report\ReportPanel.designer.cs">
+      <DependentUpon>ReportPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Report\ReportPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Report\ReportPage.Designer.cs">
+      <DependentUpon>ReportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\CustomSettings.cs" />
+    <Compile Include="Settings\InspectorCustomSettings.cs" />
+    <Compile Include="Screen\Vision\Detector\SheetInspector.cs" />
+    <Compile Include="Data\Model\ModelDescriptionS.cs" />
+    <Compile Include="Data\Model\ModelManager.cs" />
+    <Compile Include="Screen\MainTabPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screen\MainTabPanel.designer.cs">
+      <DependentUpon>MainTabPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\UI\SettingPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Settings\UI\SettingPage.designer.cs">
+      <DependentUpon>SettingPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\UI\ModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\UI\ModelForm.designer.cs">
+      <DependentUpon>ModelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Model\Model.cs" />
+    <Compile Include="UI\MonitorMainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MonitorMainform.designer.cs">
+      <DependentUpon>MonitorMainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Model\ModelPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Model\ModelPage.designer.cs">
+      <DependentUpon>ModelPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\SystemManagerS.cs" />
+    <Compile Include="UI\Teach\Inspector\TeachPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Teach\Inspector\TeachPage.designer.cs">
+      <DependentUpon>TeachPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Teach\Monitor\TeachPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Teach\Monitor\TeachPage.designer.cs">
+      <DependentUpon>TeachPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InspectorMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InspectorMainForm.designer.cs">
+      <DependentUpon>InspectorMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UiChanger.cs" />
+    <Compile Include="UI\Etc\VncCamButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Etc\VncCamButton.designer.cs">
+      <DependentUpon>VncCamButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\Data\RegionInfo.cs" />
+    <EmbeddedResource Include="Data\UI\ErrorForm.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\UI\AlarmForm.resx">
+      <DependentUpon>AlarmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\UI\InputForm.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\UI\AlarmCheckerForm.resx">
+      <DependentUpon>AlarmCheckerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etc\ContextInfoForm.resx">
+      <DependentUpon>ContextInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\UI\SettingPage.resx">
+      <DependentUpon>SettingPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etc\MachineStatusStripPanel.resx">
+      <DependentUpon>MachineStatusStripPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etc\StatusStripPanel.resx">
+      <DependentUpon>StatusStripPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inspect\ResultPanel.resx">
+      <DependentUpon>ResultPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Teach\Inspector\TeachToolBar.resx">
+      <DependentUpon>TeachToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\UI\Inspect\InfoPanel.resx">
+      <DependentUpon>InfoPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\UI\Teach\Inspector\ParamController.resx">
+      <DependentUpon>ParamController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Teach\Inspector\ImageController.resx">
+      <DependentUpon>ImageController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etc\ModelPanel.resx">
+      <DependentUpon>ModelPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etc\ProgressForm.resx">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etc\UserPanel.resx">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\UI\Inspect\DefectPanel.resx">
+      <DependentUpon>DefectPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inspect\ImagePanel.resx">
+      <DependentUpon>ImagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inspect\InspectPage.resx">
+      <DependentUpon>InspectPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\UI\Report\ReportPanel.resx">
+      <DependentUpon>ReportPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Report\ReportPage.resx">
+      <DependentUpon>ReportPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MonitorMainform.resx">
+      <DependentUpon>MonitorMainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\MainTabPanel.resx">
+      <DependentUpon>MainTabPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Model\ModelPage.resx">
+      <DependentUpon>ModelPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\UI\ModelForm.resx">
+      <DependentUpon>ModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Report\ReportProgressForm.resx">
+      <DependentUpon>ReportProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Teach\Inspector\TeachPage.resx">
+      <DependentUpon>TeachPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\UI\Teach\Monitor\SettingPanel.resx">
+      <DependentUpon>SettingPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\UI\Teach\Monitor\MasterSettingForm.resx">
+      <DependentUpon>MasterSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Teach\Monitor\TeachPage.resx">
+      <DependentUpon>TeachPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InspectorMainForm.resx">
+      <DependentUpon>InspectorMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etc\VncCamButton.resx">
+      <DependentUpon>VncCamButton.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Reference\DynMvp.Data\DynMvp.Data.csproj">
+      <Project>{88f6f6be-0858-41e6-9ce2-3704aefc12a7}</Project>
+      <Name>DynMvp.Data</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp.Device\DynMvp.Device.csproj">
+      <Project>{6bcc6601-4e70-4066-889c-cda17497878a}</Project>
+      <Name>DynMvp.Device</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp.Vision\DynMvp.Vision.csproj">
+      <Project>{146f582a-9d90-4ebb-8d2a-52c34d1a6faa}</Project>
+      <Name>DynMvp.Vision</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp\DynMvp.csproj">
+      <Project>{532b9dd5-c3dc-4f76-8cf4-233c867fc2d3}</Project>
+      <Name>DynMvp</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\UniEye.Base\UniEye.Base.csproj">
+      <Project>{0bd31b0d-4675-460f-bf03-82afafdd1d1f}</Project>
+      <Name>UniEye.Base</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\UniScanS.Common\UniScanS.Common.csproj">
+      <Project>{d4e91ba9-a568-4ec8-93dc-fd14a012026b}</Project>
+      <Name>UniScanS.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\open_folder_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\center_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fine_move_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_position_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\light_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flipX_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flipY_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_fit_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_in_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_out_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_all_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inspection_gray_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inspection_white_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title_dummy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teach_black_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teach_gray_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teach_white_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Model_Sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report_Sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setup_Sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log_gray_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log_white_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gtc_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\samsung_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_folder_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process_shot_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cube3d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select_model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title_bar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title_bar3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inspector1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inspector2Sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inspector1Sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inspector2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LotOver64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LotOver641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title_bar_MLCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inspection_black_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log_back_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="todo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title_bar_MLCC_CAM1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title_bar_MLCC_CAM2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppIcon.ico" />
+    <None Include="Resources\Defect.png" />
+    <None Include="Resources\Teach_white.png" />
+    <None Include="Resources\Teach_gray.png" />
+    <None Include="Resources\Teach_black.png" />
+    <None Include="Resources\Setting_white.png" />
+    <None Include="Resources\Setting_gray.png" />
+    <None Include="Resources\Setting_black.png" />
+    <None Include="Resources\Scanner2.png" />
+    <None Include="Resources\Scanner1.png" />
+    <None Include="Resources\Scanner.png" />
+    <None Include="Resources\Report_white.png" />
+    <None Include="Resources\Report_gray.png" />
+    <None Include="Resources\Report_black.png" />
+    <None Include="Resources\Model_white.png" />
+    <None Include="Resources\Model_gray.png" />
+    <None Include="Resources\Model_black.png" />
+    <None Include="Resources\Log_white.png" />
+    <None Include="Resources\Log_gray.png" />
+    <None Include="Resources\Log_black.png" />
+    <None Include="Resources\Light1.png" />
+    <None Include="Resources\Light.png" />
+    <None Include="Resources\Inspection_white.png" />
+    <None Include="Resources\Inspection_gray.png" />
+    <None Include="Resources\Inspection_black.png" />
+    <None Include="Resources\gun_sight_32.png" />
+    <None Include="Resources\GTC_Edit.png" />
+    <None Include="Resources\GTC.png" />
+    <None Include="Resources\Exit_white.png" />
+    <None Include="Resources\Exit_gray.png" />
+    <None Include="Resources\Exit_black.png" />
+    <None Include="Resources\overlap32.png" />
+    <None Include="Resources\overlap.png" />
+    <None Include="Resources\CCTV.png" />
+    <None Include="Resources\Cam.png" />
+    <None Include="Resources\alert.png" />
+    <Content Include="Resources\Copy32.png" />
+    <Content Include="Resources\Copy64.png" />
+    <None Include="Resources\process_shot_321.png" />
+    <None Include="Resources\title_bar_R2RT.png" />
+    <None Include="Resources\검사 항목.JPG" />
+    <None Include="Resources\Margin.JPG" />
+    <None Include="Resources\검출 Spec.JPG" />
+    <None Include="Resources\Grouping Threshold.JPG" />
+    <None Include="Resources\해상도 검출 기준.JPG" />
+    <None Include="Resources\성형 및 핀홀 Lower, Upper.JPG" />
+    <None Include="Resources\전극 Upper.JPG" />
+    <None Include="Resources\전극 Lower.JPG" />
+    <None Include="Resources\State Manual.JPG" />
+    <None Include="Resources\delete_321.png" />
+    <None Include="Resources\arrow_down.png" />
+    <None Include="Resources\arrow_up.png" />
+    <None Include="Resources\property.png" />
+    <None Include="Resources\format_32.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Build\$(ConfigurationName)\$(TargetFileName)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

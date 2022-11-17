@@ -1,0 +1,21 @@
+﻿<Window x:Class="UniScanWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniScanWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" WindowState="Maximized" ResizeMode="CanMinimize" WindowStyle="None" Loaded="Window_Loaded" Background="{StaticResource MainBrush}">
+    <Grid Background="{DynamicResource NormalBrush}" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="TabFrame" Margin="0" Background="{DynamicResource FrameBrush}" NavigationUIVisibility="Hidden"/>
+        <Grid Name="statusStripGrid" Grid.Row="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/title_dummy.png"/>
+            </Grid.Background>
+        </Grid>
+    </Grid>
+</Window>

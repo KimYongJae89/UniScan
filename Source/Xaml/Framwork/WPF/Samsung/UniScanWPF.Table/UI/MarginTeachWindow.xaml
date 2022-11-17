@@ -1,0 +1,277 @@
+﻿<Window x:Class="UniScanWPF.Table.UI.MarginTeachWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniScanWPF.Table.UI"
+        xmlns:converter="clr-namespace:UniScanWPF.Table.Converter"
+        mc:Ignorable="d"
+        Title="TeachWindow"
+        Height="600"
+        Width="741.738"
+        Loaded="Grid_Loaded"
+        KeyDown="Window_KeyDown"
+        SizeChanged="Window_SizeChanged"
+        Closed="Window_Closed">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+        <converter:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+        <converter:InverseNumericConverter x:Key="InverseNumericConverter" />
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize"
+                    Value="13" />
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize"
+                    Value="13" />
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center" />
+            <Setter Property="Margin"
+                    Value="1.5" />
+        </Style>
+        <Style x:Key="CheckButton"
+               TargetType="CheckBox"
+               BasedOn="{StaticResource {x:Type ToggleButton}}">
+            <Setter Property="Width"
+                    Value="100" />
+            <Setter Property="Margin"
+                    Value="3" />
+            <Setter Property="DockPanel.Dock"
+                    Value="Right" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <DockPanel Grid.Column="0">
+                <RadioButton Name="selRadBtn"
+                             Width="70"
+                             Margin="3"
+                             DockPanel.Dock="Left"
+                             Style="{StaticResource {x:Type ToggleButton}}"
+                             IsChecked="True">Select</RadioButton>
+                <RadioButton Name="rctRadBtn"
+                             Width="70"
+                             Margin="3"
+                             DockPanel.Dock="Left"
+                             Style="{StaticResource {x:Type ToggleButton}}">Draw</RadioButton>
+                <Grid />
+            </DockPanel>
+
+            <DockPanel Grid.Column="1">
+                <Button Width="70"
+                        Margin="3"
+                        DockPanel.Dock="Left"
+                        Click="Button_Click"
+                        Visibility="Visible">Test</Button>
+            </DockPanel>
+
+            <DockPanel Grid.Column="2">
+                <CheckBox Style="{StaticResource ResourceKey=CheckButton}"
+                          Name="useL"
+                          Width="70"
+                          Click="CheckBoxL_Clicked"
+                          IsChecked="{Binding SelectionInfo.IsL}">L</CheckBox>
+                <CheckBox Style="{StaticResource ResourceKey=CheckButton}"
+                          Name="useW"
+                          Width="70"
+                          Click="CheckBoxW_Clicked"
+                          IsChecked="{Binding SelectionInfo.IsW}">W</CheckBox>
+                <Grid />
+            </DockPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0"
+                    Margin="1"
+                    BorderBrush="Black"
+                    Background="LightGray"
+                    BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Grid.Column="0"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              Content="Use Local Setting"
+                              FontSize="12"
+                              IsChecked="{Binding UseLocalSetting}" />
+                    <CheckBox Grid.Column="1"
+                              VerticalAlignment="Top"
+                              HorizontalAlignment="Center"
+                              Content="Auto"
+                              FontSize="12"
+                              IsChecked="{Binding MarginMeasureParam.ThresholdAuto, UpdateSourceTrigger=PropertyChanged}" Checked="CheckBoxAuto_Checked" Margin="7,6,7,0" Unchecked="CheckBoxAuto_Checked" />
+                    <Button Grid.Column="3"
+                            FontFamily="Segoe MDL2 Assets"
+                            IsEnabled="{Binding MarginMeasureParam.ThresholdAuto, Converter={StaticResource InverseBooleanConverter}}"
+                            Content="&#xE70D;"
+                            Click="Button_Down_Click"/>
+                    <TextBox Grid.Column="4"
+                             Margin="0"
+                             HorizontalAlignment="Stretch"
+                             HorizontalContentAlignment="Center"
+                             VerticalAlignment="Stretch"
+                             VerticalContentAlignment="Center"
+                             IsEnabled="{Binding MarginMeasureParam.ThresholdAuto, Converter={StaticResource InverseBooleanConverter}}"
+                             Text="{Binding MarginMeasureParam.Threshold}" />
+                    <Button Grid.Column="5"
+                            FontFamily="Segoe MDL2 Assets"
+                            Content="&#xE70E;"
+                            IsEnabled="{Binding MarginMeasureParam.ThresholdAuto, Converter={StaticResource InverseBooleanConverter}}"
+                            Click="Button_Up_Click" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="2"
+                    Margin="1"
+                    BorderBrush="Black"
+                    Background="LightGray"
+                    BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"
+                               Text="Image" />
+                    <CheckBox Grid.Column="1"
+                              Style="{StaticResource ResourceKey=CheckButton}"
+                              Content="Gray"
+                              Width="auto"
+                              IsChecked="{Binding ShowBinalImage, Converter={StaticResource InverseBooleanConverter}}" />
+                    <CheckBox Grid.Column="2"
+                              Style="{StaticResource ResourceKey=CheckButton}"
+                              Content="Binal"
+                              Width="auto"
+                              IsChecked="{Binding ShowBinalImage}" />
+                    <CheckBox Grid.Column="3"
+                              Style="{StaticResource ResourceKey=CheckButton}"
+                              FontFamily="Segoe MDL2 Assets"
+                              Content="&#xE7B3;"
+                              Width="auto"
+                              IsChecked="{Binding ShowFigures}" />
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2"
+              Name="CanvasGrid">
+            <Border Name="dd"
+                    BorderThickness="1"
+                    BorderBrush="Red"
+                    Padding="5">
+                <Canvas>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="{Binding Scale}"
+                                            ScaleY="{Binding Scale}" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                    <Grid>
+                        <Image Source="{Binding ShowBitmapSource}"
+                               RenderOptions.BitmapScalingMode="HighQuality" />
+                        <Thumb Opacity="0"
+                               DragStarted="Thumb_DragStarted"
+                               DragDelta="Thumb_DragDelta"
+                               DragCompleted="Thumb_DragCompleted"></Thumb>
+                        <Canvas>
+                            <Rectangle StrokeThickness="4"
+                                       Stroke="Blue"
+                                       StrokeDashArray="1"
+                                       Canvas.Left="{Binding Path=DrawingHandler.DragRect.X}"
+                                       Canvas.Top="{Binding Path=DrawingHandler.DragRect.Y}"
+                                       Width="{Binding Path=DrawingHandler.DragRect.Width}"
+                                       Height="{Binding Path=DrawingHandler.DragRect.Height}"></Rectangle>
+                        </Canvas>
+                        <ItemsControl ItemsSource="{Binding Path=DrawingHandler.List}"
+                                      Visibility="{Binding ShowFigures, Converter={StaticResource BoolToVisConverter}}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Canvas>
+                                        <Path Data="{Binding Path=Geometry}"
+                                              StrokeThickness="3"
+                                              Stroke="Yellow" />
+                                        <ItemsControl ItemsSource="{Binding Path=Trackers, NotifyOnSourceUpdated=True}"
+                                                      Visibility="{Binding Path=IsSelected, Converter={StaticResource BoolToVisConverter}}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Canvas>
+                                                        <Canvas.RenderTransform>
+                                                            <ScaleTransform x:Name="scaleTransform"
+                                                                            CenterX="{Binding Path=CenterX}"
+                                                                            CenterY="{Binding Path=CenterY}"
+                                                                            ScaleX="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=Scale, Converter={StaticResource InverseNumericConverter} }"
+                                                                            ScaleY="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=Scale, Converter={StaticResource InverseNumericConverter} }" />
+                                                        </Canvas.RenderTransform>
+                                                        <Path Data="{Binding Path=Geometry}"
+                                                              Stroke="DarkGray"
+                                                              Fill="White"
+                                                              StrokeThickness="2"
+                                                              Cursor="{Binding Path=Cursor}" />
+                                                        <Border BorderThickness="2"
+                                                                BorderBrush="DarkGray"
+                                                                Background="White"
+                                                                Canvas.Left="{Binding Rect.Left}"
+                                                                Canvas.Top="{Binding Rect.Top}">
+                                                            <Thumb Opacity="1"
+                                                                   Background="Red"
+                                                                   Width="{Binding Rect.Width}"
+                                                                   Height="{Binding Rect.Height}"
+                                                                   DragStarted="Tracker_DragStarted"
+                                                                   DragDelta="Tracker_DragDelta"
+                                                                   DragCompleted="Tracker_DragCompleted"
+                                                                   Cursor="{Binding Path=Cursor}" />
+                                                        </Border>
+                                                    </Canvas>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </Canvas>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+                </Canvas>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

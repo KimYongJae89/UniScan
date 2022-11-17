@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="UniScanG.Module.Monitor.UI.Inspect.MenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UniScanG.Module.Monitor.UI.Inspect"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="90">
+    <Grid>
+        <StackPanel Background="LightGray">
+
+            <!--자동-->
+            <Button Width="90" Height="90" Margin="0,3,0,3" BorderThickness="0" Background="Transparent" Click="AutoButton_Click">
+                <StackPanel>
+                    <Image Width="50" Height="50" Source="../../Resource/auto.png" />
+                    <TextBlock HorizontalAlignment="Center" Text="Auto" FontFamily="맑은 고딕" FontSize="20" />
+                </StackPanel>
+            </Button>
+            
+            <!--시작-->
+            <Button Width="90" Height="90" Margin="0,3,0,3" BorderThickness="0" Background="Transparent" Click="StartButton_Click">
+                <StackPanel>
+                    <Image Width="50" Height="50" Source="../../Resource/Start.png"  />
+                    <TextBlock HorizontalAlignment="Center" Text="Start" FontSize="20" />
+                </StackPanel>
+            </Button>
+
+            <!--정지-->
+            <Button Width="90" Height="90" Margin="0,3,0,3" BorderThickness="0" Background="Transparent" Click="StopButton_Click">
+                <StackPanel>
+                    <Image Width="50" Height="50" Source="../../Resource/Stop.png" />
+                    <TextBlock HorizontalAlignment="Center" Text="Stop" FontFamily="맑은 고딕" FontSize="20" />
+                </StackPanel>
+            </Button>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

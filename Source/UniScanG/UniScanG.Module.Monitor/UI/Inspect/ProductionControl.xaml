@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="UniScanG.Module.Monitor.UI.Inspect.ProductionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UniScanG.Module.Monitor.UI.Inspect"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0" Height="60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1.1*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Border BorderThickness="1" BorderBrush="Gray" Background="Black" />
+                <TextBlock FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Text="Productions" />
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="Gray" Background="LightGray" />
+                <Grid Grid.Column="0">
+                    <TextBlock FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Done, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBlock FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Text="[EA]" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1" Height="130">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2.4*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.3*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" BorderBrush="Gray" Background="LawnGreen" />
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Good" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="1" BorderThickness="1" BorderBrush="Gray" Background="LightGreen" />
+            <TextBlock Grid.Column="0" Grid.Row="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Good, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" BorderBrush="Gray" Background="Yellow" />
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="Pass" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="1" BorderThickness="1" BorderBrush="Gray" Background="LightGoldenrodYellow" />
+            <TextBlock Grid.Column="1" Grid.Row="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Pass, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Border Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" BorderBrush="Gray" Background="DeepPink" />
+            <TextBlock Grid.Column="2" Grid.Row="0" Text="NG" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <Border Grid.Column="2" Grid.Row="1" Grid.RowSpan="1" BorderThickness="1" BorderBrush="Gray" Background="LightPink" />
+            <Grid Grid.Column="2" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" BorderBrush="Gray" Background="LightPink" />
+                <TextBlock Grid.Column="0" Grid.Row="0" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Ng, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" BorderBrush="Gray" Background="Pink" />
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="0.8*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Column="0" Grid.Row="0">
+                        <Border BorderThickness="1" BorderBrush="Gray" />
+                        <TextBlock Margin="3,3,3,3" Text="Margin" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="0">
+                        <Border BorderThickness="1" BorderBrush="Gray" />
+                        <TextBlock Margin="3,3,3,3" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=NgMargin, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+
+                    <Grid Grid.Column="0" Grid.Row="1">
+                        <Border BorderThickness="1" BorderBrush="Gray" />
+                        <TextBlock Margin="3,3,3,3" Text="Blot" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="1">
+                        <Border BorderThickness="1" BorderBrush="Gray" />
+                        <TextBlock Margin="3,3,3,3" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=NgBlot, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+
+                    <Grid Grid.Column="0" Grid.Row="2">
+                        <Border BorderThickness="1" BorderBrush="Gray" />
+                        <TextBlock Margin="3,3,3,3" Text="Pinhole" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="2" >
+                        <Border BorderThickness="1" BorderBrush="Gray" />
+                        <TextBlock Margin="3,3,3,3" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=NgPinhole, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</UserControl>

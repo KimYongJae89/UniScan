@@ -1,0 +1,31 @@
+/Matrox Electronic Systems Ltd.
+/Slave DCF making tool for Matrox Rapixo CXP DF.
+/
+/
+/
+/
+[CAMERA_NAME]
+VIEWORKS - VT-18K3.5X-H140 
+[CONFIG_FILE]
+50CF
+RAPIXOCXP
+Thu May 26 14:55:47 2022
+[INFO_FILE_REV]
+0010.0013.0000
+RAPIXOCXP
+[REG_DIGIT]
+INFO_XSIZE                                  0x45a0
+INFO_YSIZE                                  0x3a98
+INFO_TYPE                                   0x1
+INFO_SIGNALTYPE                             0x5
+INFO_STREAM_ID_0                            0x0
+INFO_CXPMODE                                0x48
+INFO_CHANNEL                                0xf
+INFO_TESTMODE                               0x2
+INFO_DEPTH                                  0x8
+INFO_BAND                                   0x1
+INFO_BAYER                                  0x0
+INFO_PIXELFORMAT                            0x01080001
+DIG_GVCTLL                                  0x00000127
+DIG_GVCTLH                                  0x00010100
+[EOF]

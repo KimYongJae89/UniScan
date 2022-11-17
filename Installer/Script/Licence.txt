@@ -1,0 +1,7 @@
+Installer V2.5
+ - MILX B2995 PP2
+ - CoaxLink / Memento12.1.1.24
+ - DigitalPro V16.0.0.0002
+ - Fuji_ALPHA5_V3.5
+ - MotionComposer V16.0.0.0002
+ - Basler pylon 5.0.5.8999

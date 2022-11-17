@@ -1,0 +1,626 @@
+﻿<Window x:Class="UniScanWPF.Table.UI.InspectParamWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniScanWPF.Table.UI"
+        xmlns:converter="clr-namespace:UniScanWPF.Table.Converter"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing"
+        ResizeMode="NoResize"
+        SizeToContent="Height"
+        Width="660"
+        WindowStyle="ToolWindow">
+    <Window.Resources>
+        <converter:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+
+        <Style TargetType="{x:Type Grid}">
+            <Setter Property="Background"
+                    Value="{DynamicResource LightBrush}" />
+        </Style>
+        
+        <Style TargetType="{x:Type Label}"
+               x:Key="Title"
+               BasedOn="{StaticResource BasicLabel}">
+            <Setter Property="DockPanel.Dock"
+                    Value="Top" />
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="Background"
+                    Value="{DynamicResource NormalBrush}" />
+            <Setter Property="Foreground"
+                    Value="{DynamicResource FontBrush}" />
+        </Style>
+
+        <Style TargetType="{x:Type Label}"
+               x:Key="Unit"
+               BasedOn="{StaticResource BasicLabel}">
+            <Setter Property="FontSize"
+                    Value="12" />
+            <Setter Property="Background"
+                    Value="{DynamicResource LightBrush}" />
+            <Setter Property="Foreground"
+                    Value="{DynamicResource FontBrush}" />
+            <Setter Property="Margin"
+                    Value="1" />
+        </Style>
+
+        <Style TargetType="{x:Type Label}"
+               BasedOn="{StaticResource BasicLabel}">
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="Background"
+                    Value="{DynamicResource LightBrush}" />
+            <Setter Property="Foreground"
+                    Value="{DynamicResource FontBrush}" />
+            <Setter Property="Margin"
+                    Value="1" />
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="Background"
+                    Value="White" />
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="BorderThickness"
+                    Value="1" />
+            <Setter Property="BorderBrush"
+                    Value="Black" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="Background"
+                    Value="White" />
+            <Setter Property="Foreground"
+                    Value="{DynamicResource FontBrush}" />
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Stretch" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center" />
+            <Setter Property="Margin"
+                    Value="1" />
+        </Style>
+    </Window.Resources>
+    
+    <Grid Margin="2"
+          Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Border Name="PatternBorder"
+                    BorderThickness="1"
+                    Margin="2">
+                <DockPanel>
+                    <Label Content="Pattern"
+                           Style="{DynamicResource Title}" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Upper" />
+                        <TextBox Grid.Row="0"
+                                 Grid.Column="2"
+                                 Text="{Binding PatternUpper, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="0"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="0~255" />
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Lower" />
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="2"
+                                 Text="{Binding PatternLower, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="1"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="0~255" />
+
+                        <Label Grid.Row="2"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Min Size" />
+                        <TextBox Grid.Row="2"
+                                 Grid.Column="2"
+                                 Text="{Binding PatternMinDefectSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="2"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+
+                        <Label Grid.Row="3"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Max Size" />
+                        <CheckBox Grid.Row="3"
+                                  Grid.Column="1"
+                                  IsChecked="{Binding UsePatternMaxDefectSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Grid.Row="3"
+                                 Grid.Column="2"
+                                 Text="{Binding PatternMaxDefectSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 IsEnabled="{Binding UsePatternMaxDefectSize, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="3"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+
+                        <Label Grid.Row="4"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Ignore Range" />
+                        <TextBox Grid.Row="4"
+                                 Grid.Column="2"
+                                 Text="{Binding PatternIgnoreRangeLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="4"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+                    </Grid>
+                </DockPanel>
+            </Border>
+
+            <Border Name="MarginBorder"
+                    BorderThickness="1"
+                    Margin="2">
+                <DockPanel>
+                    <Label Content="Margin"
+                           Style="{StaticResource Title}" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Upper" />
+                        <TextBox Grid.Row="0"
+                                 Grid.Column="2"
+                                 Text="{Binding MarginUpper, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="0"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="0~255" />
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Lower" />
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="2"
+                                 Text="{Binding MarginLower, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="1"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="0~255" />
+
+                        <Label Grid.Row="2"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Min Size" />
+                        <TextBox Grid.Row="2"
+                                 Grid.Column="2"
+                                 Text="{Binding MarginMinDefectSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="2"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+
+                        <Label Grid.Row="3"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Max Size" />
+                        <CheckBox Grid.Row="3"
+                                  Grid.Column="1"
+                                  IsChecked="{Binding UseMarginMaxDefectSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Grid.Row="3"
+                                 Grid.Column="2"
+                                 Text="{Binding MarginMaxDefectSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 IsEnabled="{Binding UseMarginMaxDefectSize, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="3"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+
+                        <Label Grid.Row="4"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Ignore Range" />
+                        <TextBox Grid.Row="4"
+                                 Grid.Column="2"
+                                 Text="{Binding MarginIgnoreRangeLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="4"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+                    </Grid>
+                </DockPanel>
+            </Border>
+
+            <Border Name="ShapeBorder"
+                    BorderThickness="1"
+                    Margin="2">
+                <DockPanel>
+                    <Label Content="Shape"
+                           Style="{StaticResource Title}" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Difference" />
+                        <CheckBox Grid.Row="0"
+                                  Grid.Column="1"
+                                  IsChecked="{Binding UseShapeInspect, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox  FontSize="16"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  FontWeight="Bold"
+                                  HorizontalContentAlignment="Center"
+                                  VerticalContentAlignment="Center"
+                                  Background="White"
+                                  Foreground="{DynamicResource FontBrush}"
+                                  Text="{Binding DiffThreshold, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                  IsEnabled="{Binding UseShapeInspect, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="0"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+                    </Grid>
+                </DockPanel>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <Border Name="MeanderBorder"
+                    BorderThickness="1"
+                    Margin="2"
+                    Visibility="Collapsed">
+                <DockPanel>
+                    <Label Content="Meander"
+                           Style="{DynamicResource Title}" />
+                    <Grid Name="MeanderGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.3*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Content="Sensitivity" />
+                        <TextBox Grid.Row="0"
+                                 Grid.Column="1"
+                                 Text="{Binding MeanderSensitivity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="0"
+                               Grid.Column="2"
+                               Content="%" />
+                    </Grid>
+                </DockPanel>
+            </Border>
+
+            <Border Name="LumpBorder"
+                    BorderThickness="1"
+                    Margin="2">
+                <DockPanel>
+                    <Label Content="Lump"
+                           Style="{StaticResource Title}" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.6*" />
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="0.7*"/>
+                            <ColumnDefinition Width="0.7*"/>
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Use" />
+                        <CheckBox Grid.Row="0"
+                                  Grid.Column="1"
+                                  IsChecked="{Binding UseLumpDetect, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <Label Grid.Row="0"
+                               Grid.Column="2"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="Min" />
+                        <Label Grid.Row="0"
+                               Grid.Column="3"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="Max" />
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Upper" />
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="2"
+                                 Text="{Binding LumpUpperMin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="3"
+                                 Text="{Binding LumpUpperMax, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="1"
+                               Grid.Column="4"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="0~255" />
+
+                        <Label Grid.Row="2"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Lower" />
+                        <TextBox Grid.Row="2"
+                                 Grid.Column="2"
+                                 Text="{Binding LumpLowerMin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Grid.Row="2"
+                                 Grid.Column="3"
+                                 Text="{Binding LumpLowerMax, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="2"
+                               Grid.Column="4"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="0~255" />
+
+                        <Label Grid.Row="3"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Min Size" />
+                        <TextBox Grid.Row="3"
+                                 Grid.Column="2"
+                                 Grid.ColumnSpan="2"
+                                 Text="{Binding LumpMinDefectSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Grid.Row="3"
+                               Grid.Column="4"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+
+                        <Label Grid.Row="4"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Content="Max Size" />
+                        <CheckBox Grid.Row="4"
+                                  Grid.Column="1"
+                                  IsChecked="{Binding UseLumpMaxDefectSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Grid.Row="4"
+                                 Grid.Column="2"
+                                 Grid.ColumnSpan="2"
+                                 Text="{Binding LumpMaxDefectSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 IsEnabled="{Binding UseLumpMaxDefectSize, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="4"
+                               Grid.Column="4"
+                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+                    </Grid>
+                </DockPanel>
+            </Border>
+
+            <Border Name="MeasureBorder"
+                    BorderThickness="1"
+                    Margin="2">
+                <DockPanel>
+                    <Label Content="Margin"
+                           Style="{DynamicResource Title}" />
+                    <Grid Name="MeasureGrid"
+                          Background="{DynamicResource LightBrush}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width=".6*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Grid.Row="0"                               Grid.Column="0"
+                               Content="Designed" />
+                        <TextBox Grid.Row="0"                                 Grid.Column="1"                                 Grid.ColumnSpan="2" IsEnabled="False"
+                                 Text="{Binding MarginMeasureParam.DesignedUm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                 />
+                        <Label Grid.Row="0"                               Grid.Column="3"                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+
+                        <Label Grid.Row="1"                               Grid.Column="0"
+                               Content="Judgement SPEC." />
+                        <TextBox Grid.Row="1"                                 Grid.Column="1"                                 Grid.ColumnSpan="2"
+                                 Text="{Binding MarginMeasureParam.JudgementSpecUm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                 />
+                        <Label Grid.Row="1"                               Grid.Column="3"                               Style="{StaticResource ResourceKey=Unit}"
+                               Content="um" />
+                    </Grid>
+                </DockPanel>
+            </Border>
+            
+            <Border Name="CommonBorder"
+                    BorderThickness="1"
+                    Margin="2">
+                <DockPanel>
+                    <Label Content="Common"
+                           Style="{DynamicResource Title}" />
+                    <Grid Name="CommonGrid"
+                          Background="{DynamicResource LightBrush}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Grid Name="CommoneExtractGrid"
+                              Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2.0*" />
+                                <ColumnDefinition Width=".6*" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="60" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="0"
+                                   Content="Sheet Boundary" />
+                            <TextBox Grid.Row="0"
+                                     Grid.Column="2"
+                                     Text="{Binding MaxMarginLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <Label Grid.Row="0"
+                                   Grid.Column="3"
+                                   Style="{StaticResource ResourceKey=Unit}"
+                                   Content="um" />
+
+                            <Label Grid.Row="1"
+                                   Grid.Column="0"
+                                   Content="Allow Rotate Limit" />
+                            <TextBox Grid.Row="1"
+                                     Grid.Column="2"
+                                     Text="{Binding AllowRotateLimitDeg, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=F1}" />
+                            <Label Grid.Row="1"
+                                   Grid.Column="3"
+                                   Style="{StaticResource ResourceKey=Unit}"
+                                   Content="deg" />
+
+                            <Label Grid.Row="2"
+                                   Grid.Column="0"
+                                   Content="Minimum Chip Size" />
+                            <TextBox Grid.Row="2"
+                                     Grid.Column="2"
+                                     Text="{Binding MinPatternLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=F1}" />
+                            <Label Grid.Row="2"
+                                   Grid.Column="3"
+                                   Style="{StaticResource ResourceKey=Unit}"
+                                   Content="um" />
+
+                        </Grid>
+
+                        <Grid Name="CommoneInspectGrid"
+                              Grid.Row="1"
+                              Background="{DynamicResource LightBrush}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2.0*" />
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="60" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="0"
+                                   Content="Circular Threshold" />
+                            <TextBox Grid.Row="0"
+                                     Grid.Column="2"
+                                     Text="{Binding CircularThreshold, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <Label Grid.Row="0"
+                                   Grid.Column="3"
+                                   Style="{StaticResource ResourceKey=Unit}"
+                                   Content="%" />
+
+                            <Label Grid.Row="1"
+                                   Grid.Column="0"
+                                   Content="Max Defect Count" />
+                            <TextBox Grid.Row="1"
+                                     Grid.Column="2"
+                                     Text="{Binding MaxDefectCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <Label Grid.Row="1"
+                                   Grid.Column="3"
+                                   Style="{StaticResource ResourceKey=Unit}"
+                                   Content="EA" />
+                        </Grid>
+                    </Grid>
+                </DockPanel>
+            </Border>
+
+            <Border Name="ETCBorder"
+                    BorderThickness="1"
+                    Margin="2"
+                    Visibility="Collapsed">
+                <DockPanel>
+                    <Label Content="ETC"
+                           Style="{DynamicResource Title}" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.0*" />
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Content="Debug Mode" />
+                        <CheckBox Name="etcDebugMode"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  IsChecked="{Binding SaveDebugImage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </DockPanel>
+            </Border>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

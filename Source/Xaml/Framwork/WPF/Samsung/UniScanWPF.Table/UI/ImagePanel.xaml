@@ -1,0 +1,114 @@
+﻿<Page x:Class="UniScanWPF.Table.UI.ImagePanel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UniScanWPF.Table.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ImagePanel">
+    <Page.Resources>
+        <local:GuideLineConverter x:Key="GuideLineConverter"/>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Page.Resources>
+    
+    <Grid Background="Black">
+        <Canvas Name="mainCanvas" SizeChanged="MainCanvas_SizeChanged">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform x:Name="translateTransform"/>
+                    <ScaleTransform x:Name="scaleTransform"/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            
+            <Canvas>
+                <Rectangle Name="RobotWorkingRectangle"
+                       Stroke="{StaticResource RedBrush}"
+                       Canvas.Left="{Binding DispRobotRegion.Left, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                       Canvas.Top="{Binding DispRobotRegion.Top, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                       Width="{Binding DispRobotRegion.Width, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                       Height="{Binding DispRobotRegion.Height, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"/>
+            </Canvas>
+            
+            <Canvas Name="imageCanvas">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform 
+                            ScaleX="{Binding ResizeRatio, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                            ScaleY="{Binding ResizeRatio, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+            </Canvas>
+
+            <Canvas Name="FigureLayoutCanvas">
+                <Canvas Name="LumpLayoutCanvas" Opacity="0.7" />
+                <Canvas Name="PatternLayoutCanvas" Opacity="0.7"/>
+                <Canvas Name="CircularPatternLayoutCanvas" Opacity="0.7"/>
+                <Canvas Name="MarginLayoutCanvas" Opacity="0.7"/>
+                <Canvas Name="CircularMarginLayoutCanvas" Opacity="0.7"/>
+                <Canvas Name="ShapeLayoutCanvas" Opacity="0.7"/>
+                <Canvas Name="MarginDistLayoutCanvas" Opacity="0.7"/>
+                <Canvas Name="MeanderLayoutCanvas" Opacity="0.7"/>
+                <Canvas Name="PLengthLayoutCanvas" Opacity="0.7"/>
+                <Canvas Name="SelectionLayoutCanvas" Opacity="1.0"/>
+            </Canvas>         
+        </Canvas>
+
+        <Thumb Opacity="0"
+               DragDelta="Thumb_DragDelta"
+               MouseWheel="Thumb_MouseWheel"
+               DragStarted="Thumb_DragStarted">            
+        </Thumb>
+
+        <Line StrokeThickness="2" Stroke="Yellow" StrokeDashArray="5"
+              Visibility="{Binding ShowGuideLine, Converter={StaticResource BooleanToVisibilityConverter}}"
+              X1="0"
+              Y1="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}, AncestorLevel=1}, Path=ActualHeight, Converter={StaticResource GuideLineConverter}}" 
+              X2="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}, AncestorLevel=1}, Path=ActualWidth}" 
+              Y2="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}, AncestorLevel=1}, Path=ActualHeight, Converter={StaticResource GuideLineConverter}}" 
+              />
+
+        <Line StrokeThickness="2" Stroke="Yellow" StrokeDashArray="5"
+              Visibility="{Binding ShowGuideLine, Converter={StaticResource BooleanToVisibilityConverter}}"
+              X1="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}, AncestorLevel=1}, Path=ActualWidth, Converter={StaticResource GuideLineConverter}}" 
+              Y1="0" 
+              X2="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}, AncestorLevel=1}, Path=ActualWidth, Converter={StaticResource GuideLineConverter}}" 
+              Y2="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}, AncestorLevel=1}, Path=ActualHeight}" 
+              />
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Background="White" Click="PrevButton_Click"  Margin="2" Height="35" Width="35" Style="{StaticResource CircleButton}" FontSize="50" FontWeight="Bold" IsEnabled="{Binding IsCanPrev, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Image Source="pack://siteoforigin:,,,/Resources/ArrowLeft.png" Margin="5"/>
+                </Button>
+                <ComboBox Name="comboBox"  Margin="2" Width="70" Background="White" FontSize="20" FontWeight="Bold"
+                          Text="{Binding CurLoadItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          SelectionChanged="ComboBox_SelectionChanged"/>
+                <Button Background="White" Click="NextButton_Click" Margin="2" Height="35" Width="35" Style="{StaticResource CircleButton}" FontSize="50" FontWeight="Bold" IsEnabled="{Binding IsCanNext, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Image Source="pack://siteoforigin:,,,/Resources/ArrowRight.png" Margin="5"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+                <Button PreviewMouseDown="ZoomIn_PreviewMouseDown"  Margin="2" Height="75" Width="75" Style="{StaticResource CircleButton}" Background="White" Opacity="0.6" FontSize="50" FontWeight="Bold" Visibility="{Binding Zoomable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <ContentControl>
+                        <TextBlock Margin="0, -14, 0, 0" Text="+"/>
+                    </ContentControl>
+                    
+                </Button>
+                <Button PreviewMouseDown="ZoomOut_PreviewMouseDown" Margin="2" Height="75" Width="75" Style="{StaticResource CircleButton}" Background="White" Opacity="0.6" FontSize="50" FontWeight="Bold" Visibility="{Binding Zoomable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <ContentControl>
+                        <TextBlock Margin="0, -14, 0, 0" Text="-"/>
+                    </ContentControl>
+                </Button>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+                <Button PreviewMouseDown="ZoomFit_PreviewMouseDown" Margin="2" Height="75" Width="75" Style="{StaticResource CircleButton}" Content="Fit" Background="White" Opacity="0.6" FontSize="20" FontWeight="Bold" Visibility="{Binding Zoomable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox IsChecked="{Binding FigureVisible}" Margin="2" Height="75" Width="75" Style="{StaticResource CircleCheckBox}" Content="Defect" Background="White" Opacity="0.6" FontSize="20" FontWeight="Bold"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

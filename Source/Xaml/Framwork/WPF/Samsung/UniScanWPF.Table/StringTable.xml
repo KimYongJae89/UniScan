@@ -1,0 +1,238 @@
+<LocalizeHelper>
+  <InspectPage>
+    <String>
+      <Key>Defect List</Key>
+      <Value>불량 목록</Value>
+    </String>
+    <String>
+      <Key>Inspect</Key>
+      <Value>검사</Value>
+    </String>
+    <String>
+      <Key>Total</Key>
+      <Value>전체</Value>
+    </String>
+  </InspectPage>
+  <LightPage>
+    <String>
+      <Key>Iteration</Key>
+      <Value>반복</Value>
+    </String>
+    <String>
+      <Key>Light</Key>
+      <Value>조명</Value>
+    </String>
+    <String>
+      <Key>Light Tune</Key>
+      <Value>조명 조정</Value>
+    </String>
+    <String>
+      <Key>Margin</Key>
+      <Value>여유</Value>
+    </String>
+    <String>
+      <Key>Pattern</Key>
+      <Value>패턴</Value>
+    </String>
+    <String>
+      <Key>State</Key>
+      <Value>상태</Value>
+    </String>
+  </LightPage>
+  <MachinePage>
+    <String>
+      <Key>H</Key>
+      <Value>H</Value>
+    </String>
+    <String>
+      <Key>M</Key>
+      <Value>M</Value>
+    </String>
+    <String>
+      <Key>Machine</Key>
+      <Value>장비</Value>
+    </String>
+  </MachinePage>
+  <MainPage>
+    <String>
+      <Key>End Time</Key>
+      <Value>종료 시간</Value>
+    </String>
+    <String>
+      <Key>Inspect</Key>
+      <Value>검사</Value>
+    </String>
+    <String>
+      <Key>Menu</Key>
+      <Value>메뉴</Value>
+    </String>
+    <String>
+      <Key>Model</Key>
+      <Value>모델</Value>
+    </String>
+    <String>
+      <Key>Name</Key>
+      <Value>이름</Value>
+    </String>
+    <String>
+      <Key>Scan</Key>
+      <Value>스캔</Value>
+    </String>
+    <String>
+      <Key>Start Time</Key>
+      <Value>시작 시간</Value>
+    </String>
+    <String>
+      <Key>Teach</Key>
+      <Value>티칭</Value>
+    </String>
+  </MainPage>
+  <PatternWindow>
+    <String>
+      <Key>Candidate Pattern</Key>
+      <Value>후보 패턴</Value>
+    </String>
+    <String>
+      <Key>Inspect Pattern</Key>
+      <Value>검사 패턴</Value>
+    </String>
+    <String>
+      <Key>Teach Window</Key>
+      <Value>티칭 윈도우</Value>
+    </String>
+  </PatternWindow>
+  <ReportPage>
+    <String>
+      <Key>Clear</Key>
+      <Value>초기화</Value>
+    </String>
+    <String>
+      <Key>Color</Key>
+      <Value>색상</Value>
+    </String>
+    <String>
+      <Key>Date</Key>
+      <Value>날짜</Value>
+    </String>
+    <String>
+      <Key>End Date</Key>
+      <Value>종료 일자</Value>
+    </String>
+    <String>
+      <Key>End Time</Key>
+      <Value>종료 시간</Value>
+    </String>
+    <String>
+      <Key>Lot No</Key>
+      <Value>로트 번호</Value>
+    </String>
+    <String>
+      <Key>NG</Key>
+      <Value>불량</Value>
+    </String>
+    <String>
+      <Key>Pin Hole</Key>
+      <Value>핀홀</Value>
+    </String>
+    <String>
+      <Key>Preset</Key>
+      <Value>Preset</Value>
+    </String>
+    <String>
+      <Key>Production Info</Key>
+      <Value>생산 정보</Value>
+    </String>
+    <String>
+      <Key>Production List</Key>
+      <Value>생산 목록</Value>
+    </String>
+    <String>
+      <Key>Ratio</Key>
+      <Value>비율</Value>
+    </String>
+    <String>
+      <Key>Start Date</Key>
+      <Value>시작 일자</Value>
+    </String>
+    <String>
+      <Key>Start Time</Key>
+      <Value>시작 시간</Value>
+    </String>
+    <String>
+      <Key>Total</Key>
+      <Value>전체</Value>
+    </String>
+    <String>
+      <Key>Type</Key>
+      <Value>종류</Value>
+    </String>
+  </ReportPage>
+  <ScanPage>
+    <String>
+      <Key>Scan</Key>
+      <Value>스캔</Value>
+    </String>
+  </ScanPage>
+  <StatusStrip>
+    <String>
+      <Key>1</Key>
+      <Value>1</Value>
+    </String>
+    <String>
+      <Key>2</Key>
+      <Value>2</Value>
+    </String>
+    <String>
+      <Key>Cylinder</Key>
+      <Value>실린더</Value>
+    </String>
+    <String>
+      <Key>Door</Key>
+      <Value>문</Value>
+    </String>
+    <String>
+      <Key>Down</Key>
+      <Value>하강</Value>
+    </String>
+    <String>
+      <Key>Emergency</Key>
+      <Value>비상</Value>
+    </String>
+    <String>
+      <Key>Green</Key>
+      <Value>녹</Value>
+    </String>
+    <String>
+      <Key>Lamp</Key>
+      <Value>램프</Value>
+    </String>
+    <String>
+      <Key>Lock</Key>
+      <Value>Lock</Value>
+    </String>
+    <String>
+      <Key>Power</Key>
+      <Value>전원</Value>
+    </String>
+    <String>
+      <Key>Red</Key>
+      <Value>적</Value>
+    </String>
+    <String>
+      <Key>Sol</Key>
+      <Value>Sol</Value>
+    </String>
+    <String>
+      <Key>State</Key>
+      <Value>상태</Value>
+    </String>
+    <String>
+      <Key>Up</Key>
+      <Value>Up</Value>
+    </String>
+    <String>
+      <Key>Yellow</Key>
+      <Value>황</Value>
+    </String>
+  </StatusStrip>
+</LocalizeHelper>

@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80AF2E1B-7B13-491D-9C7B-8DFF5414A618}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UniScanX.MPAlignment</RootNamespace>
+    <AssemblyName>UniScanX.MPAlignment_TEST</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\UniScan\MPAlignment\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\UniScan\MPAlignment_Algo\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics4.Shared.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.SupportDialogs.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinCalcManager.v14.2.FormulaBuilder, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinListView.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinTree.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="ReaLTaiizor, Version=3.7.7.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReaLTaiizor.3.7.7.4\lib\net461\ReaLTaiizor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algo\AlgorithmArchiver.cs" />
+    <Compile Include="Algo\MPAlgorithmParam.cs" />
+    <Compile Include="Algo\MPAlgorithmResult.cs" />
+    <Compile Include="Algo\MPParamController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Algo\MPParamController.Designer.cs">
+      <DependentUpon>MPParamController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Algo\MPAlgorithm.cs" />
+    <Compile Include="Algo\TestAlgoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Algo\TestAlgoForm.Designer.cs">
+      <DependentUpon>TestAlgoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Algo\UI\MPParamControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Algo\UI\MPParamControl.designer.cs">
+      <DependentUpon>MPParamControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Algo\UI\PatternMatchingParamControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Algo\UI\PatternMatchingParamControl.designer.cs">
+      <DependentUpon>PatternMatchingParamControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Algo\UI\ProbeContainable.cs" />
+    <Compile Include="Algo\UI\TargetParamControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Algo\UI\TargetParamControl.designer.cs">
+      <DependentUpon>TargetParamControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Algo\UI\VisionParamControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Algo\UI\VisionParamControl.Designer.cs">
+      <DependentUpon>VisionParamControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Basic.cs" />
+    <Compile Include="Data\DataExporter.cs" />
+    <Compile Include="Data\InspectionResult.cs" />
+    <Compile Include="Data\Model.cs" />
+    <Compile Include="Data\ModelDescription.cs" />
+    <Compile Include="Data\ModelManager.cs" />
+    <Compile Include="Devices\DeviceController.cs" />
+    <Compile Include="Devices\DIO\PortMap.cs" />
+    <Compile Include="Devices\iPulse.cs" />
+    <Compile Include="Devices\MCFunc.cs" />
+    <Compile Include="Devices\Devices.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operation\InspectRunner.cs" />
+    <Compile Include="Operation\InspectRunnerExtender.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\MachineSettings.cs" />
+    <Compile Include="Settings\MPSettings.cs" />
+    <Compile Include="SystemManager.cs" />
+    <Compile Include="UI\Components\AlertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Components\AlertForm.designer.cs">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\InputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Components\InputForm.Designer.cs">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\ModelInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Components\ModelInfoForm.Designer.cs">
+      <DependentUpon>ModelInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\NoticeMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Components\NoticeMessageForm.Designer.cs">
+      <DependentUpon>NoticeMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Components\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\NumericUpdownAoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\NumericUpdownAoi.Designer.cs">
+      <DependentUpon>NumericUpdownAoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\ProductModelCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\ProductModelCard.Designer.cs">
+      <DependentUpon>ProductModelCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\TestConponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Components\TestConponent.Designer.cs">
+      <DependentUpon>TestConponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\InspectPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Pages\InspectPage.designer.cs">
+      <DependentUpon>InspectPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\LogPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Pages\LogPage.designer.cs">
+      <DependentUpon>LogPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\ModellerPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Pages\ModellerPage.Designer.cs">
+      <DependentUpon>ModellerPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\ProductModelManagePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Pages\ProductModelManagePage.Designer.cs">
+      <DependentUpon>ProductModelManagePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\ReportPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Pages\ReportPage.designer.cs">
+      <DependentUpon>ReportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\TestPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pages\TestPage.Designer.cs">
+      <DependentUpon>TestPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\UserConfigPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Pages\UserConfigPage.designer.cs">
+      <DependentUpon>UserConfigPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UiChanger.cs" />
+    <EmbeddedResource Include="Algo\MPParamController.resx">
+      <DependentUpon>MPParamController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Algo\TestAlgoForm.resx">
+      <DependentUpon>TestAlgoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Algo\UI\MPParamControl.resx">
+      <DependentUpon>MPParamControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Algo\UI\PatternMatchingParamControl.resx">
+      <DependentUpon>PatternMatchingParamControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Algo\UI\TargetParamControl.resx">
+      <DependentUpon>TargetParamControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Algo\UI\VisionParamControl.resx">
+      <DependentUpon>VisionParamControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\Components\AlertForm.resx">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\InputForm.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\ModelInfoForm.resx">
+      <DependentUpon>ModelInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\NoticeMessageForm.resx">
+      <DependentUpon>NoticeMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\NumericUpdownAoi.resx">
+      <DependentUpon>NumericUpdownAoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\ProductModelCard.resx">
+      <DependentUpon>ProductModelCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pages\InspectPage.resx">
+      <DependentUpon>InspectPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pages\LogPage.resx">
+      <DependentUpon>LogPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pages\ModellerPage.resx">
+      <DependentUpon>ModellerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pages\ProductModelManagePage.resx">
+      <DependentUpon>ProductModelManagePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pages\ReportPage.resx">
+      <DependentUpon>ReportPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pages\TestPage.resx">
+      <DependentUpon>TestPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pages\UserConfigPage.resx">
+      <DependentUpon>UserConfigPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Reference\DynMvp.Data\DynMvp.Data.csproj">
+      <Project>{88f6f6be-0858-41e6-9ce2-3704aefc12a7}</Project>
+      <Name>DynMvp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp.Device\DynMvp.Device.csproj">
+      <Project>{6bcc6601-4e70-4066-889c-cda17497878a}</Project>
+      <Name>DynMvp.Device</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp.Vision\DynMvp.Vision.csproj">
+      <Project>{146f582a-9d90-4ebb-8d2a-52c34d1a6faa}</Project>
+      <Name>DynMvp.Vision</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp\DynMvp.csproj">
+      <Project>{532b9dd5-c3dc-4f76-8cf4-233c867fc2d3}</Project>
+      <Name>DynMvp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\UniEye.Base\UniEye.Base.csproj">
+      <Project>{0bd31b0d-4675-460f-bf03-82afafdd1d1f}</Project>
+      <Name>UniEye.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unieye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfid_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addproduct_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\board_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\createdirectory_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletefid_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor_481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emptyTray_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamationmark_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grab_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grab_481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gray_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hansol tech.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hansol tech1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hansol_ci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cancel_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insepct_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insepct_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inspect_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadboard_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logs_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\machineImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\machineImage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngboard_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nodata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productmanage_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting_481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashDesign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teach_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wastebasket_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomfit_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomout_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License-LGPL.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Build\$(ConfigurationName)\$(TargetFileName)
+copy $(TargetPath).config $(SolutionDir)..\Build\$(ConfigurationName)\$(TargetFileName).config
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)..\Build\$(ConfigurationName)\$(TargetName).pdb
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

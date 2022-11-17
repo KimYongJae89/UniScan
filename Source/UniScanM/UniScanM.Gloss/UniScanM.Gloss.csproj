@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F39A45C6-FE07-4B27-9F9B-7AA93F0E6BEB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UniScanM.Gloss</RootNamespace>
+    <AssemblyName>UniScanM.Gloss</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>uniscan.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics4.Documents.Excel.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Documents.Excel.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Shared.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.AppStylistSupport.v14.2, Version=14.2.20142.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.AppStylistSupport.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.DataVisualization.Shared.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.DataVisualization.UltraDataChart.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.Misc.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.Portable.Core.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.Portable.Core.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinChart.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinChart.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinEditors.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinGrid.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinStatusBar.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinStatusBar.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinTabControl.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinToolbars.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\CalData.cs" />
+    <Compile Include="Data\DataExporter.cs" />
+    <Compile Include="Data\DBDataExporter.cs" />
+    <Compile Include="Data\GlossCalibrationData.cs" />
+    <Compile Include="Data\GlossData.cs" />
+    <Compile Include="Data\InspectionResult.cs" />
+    <Compile Include="Data\GlossScanData.cs" />
+    <Compile Include="Data\GlossScanWidth.cs" />
+    <Compile Include="Device\DeviceBox.cs" />
+    <Compile Include="Device\PortMap.cs" />
+    <Compile Include="MachineIF\CommandInfo.cs" />
+    <Compile Include="MachineIF\CommManager.cs" />
+    <Compile Include="MachineIF\MachineIfDataExporter.cs" />
+    <Compile Include="MachineIF\MachineIfProtocolList.cs" />
+    <Compile Include="MachineIF\PLCInspectStarter.cs" />
+    <Compile Include="MachineIF\UniScanSCommandParser.cs" />
+    <Compile Include="Operation\GlossDataCalculator.cs" />
+    <Compile Include="Operation\GlossMotionController.cs" />
+    <Compile Include="Operation\InspectRunner.cs" />
+    <Compile Include="Operation\InspectRunnerExtender.cs" />
+    <Compile Include="Operation\MelsecMonitor.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AliveService.cs" />
+    <Compile Include="Service\CheckLotNoService.cs" />
+    <Compile Include="Settings\Attribute.cs" />
+    <Compile Include="Settings\ChartSetting.cs" />
+    <Compile Include="Settings\GlossSettings.cs" />
+    <Compile Include="State\InspectionState.cs" />
+    <Compile Include="SystemManager.cs" />
+    <Compile Include="UI\Chart\ChartOption.cs" />
+    <Compile Include="UI\InspectionPanelLeft.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\InspectionPanelLeft.Designer.cs">
+      <DependentUpon>InspectionPanelLeft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InspectionPanelRight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\InspectionPanelRight.Designer.cs">
+      <DependentUpon>InspectionPanelRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IOSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\IOSettingForm.designer.cs">
+      <DependentUpon>IOSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManualPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ManualPanel.Designer.cs">
+      <DependentUpon>ManualPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Chart\ProfilePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Chart\ProfilePanel.designer.cs">
+      <DependentUpon>ProfilePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ReportPageController.cs.cs" />
+    <Compile Include="UI\ReportPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ReportPanel.Designer.cs">
+      <DependentUpon>ReportPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ScanWidthSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ScanWidthSettingForm.Designer.cs">
+      <DependentUpon>ScanWidthSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SettingPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SettingPage.Designer.cs">
+      <DependentUpon>SettingPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Chart\TrendPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Chart\TrendPanel.designer.cs">
+      <DependentUpon>TrendPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SimpleMotionSpeedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SimpleMotionSpeedForm.designer.cs">
+      <DependentUpon>SimpleMotionSpeedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UiChanger.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\InspectionPanelLeft.resx">
+      <DependentUpon>InspectionPanelLeft.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InspectionPanelRight.resx">
+      <DependentUpon>InspectionPanelRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\IOSettingForm.resx">
+      <DependentUpon>IOSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManualPanel.resx">
+      <DependentUpon>ManualPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Chart\ProfilePanel.resx">
+      <DependentUpon>ProfilePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ReportPanel.resx">
+      <DependentUpon>ReportPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ScanWidthSettingForm.resx">
+      <DependentUpon>ScanWidthSettingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SettingPage.resx">
+      <DependentUpon>SettingPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Chart\TrendPanel.resx">
+      <DependentUpon>TrendPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SimpleMotionSpeedForm.resx">
+      <DependentUpon>SimpleMotionSpeedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Reference\DynMvp.Data\DynMvp.Data.csproj">
+      <Project>{88f6f6be-0858-41e6-9ce2-3704aefc12a7}</Project>
+      <Name>DynMvp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp.Device\DynMvp.Device.csproj">
+      <Project>{6bcc6601-4e70-4066-889c-cda17497878a}</Project>
+      <Name>DynMvp.Device</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp.Vision\DynMvp.Vision.csproj">
+      <Project>{146f582a-9d90-4ebb-8d2a-52c34d1a6faa}</Project>
+      <Name>DynMvp.Vision</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp\DynMvp.csproj">
+      <Project>{532b9dd5-c3dc-4f76-8cf4-233c867fc2d3}</Project>
+      <Name>DynMvp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\UniEye.Base\UniEye.Base.csproj">
+      <Project>{0bd31b0d-4675-460f-bf03-82afafdd1d1f}</Project>
+      <Name>UniEye.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UniScanM\UniScanM.csproj">
+      <Project>{b76f4559-5319-42f1-9ff5-b50a86f9f42a}</Project>
+      <Name>UniScanM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="uniscan.ico" />
+    <None Include="Resources\add_32.png" />
+    <None Include="Resources\delete_32.png" />
+    <Content Include="Resources\Exit.png" />
+    <Content Include="Resources\login.png" />
+    <Content Include="Resources\Monitoring.png" />
+    <Content Include="Resources\Report.png" />
+    <None Include="Resources\save32.png" />
+    <Content Include="Resources\Setting.png" />
+    <Content Include="Resources\zoom_fit_32.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Build\$(ConfigurationName)\$(TargetFileName)
+copy $(TargetPath).config $(SolutionDir)..\Build\$(ConfigurationName)\$(TargetFileName).config
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)..\Build\$(ConfigurationName)\$(TargetName).pdb
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

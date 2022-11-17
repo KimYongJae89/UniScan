@@ -1,0 +1,55 @@
+﻿<Window x:Class="WpfControlLibrary.UI.CustomInputForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="CustomMessageBox" 
+        MinWidth="500" MaxHeight="752" MaxWidth="750" 
+        Background="Transparent" 
+        SizeToContent="WidthAndHeight" 
+        WindowStartupLocation="CenterScreen"  
+        ShowInTaskbar="False" ResizeMode="NoResize" 
+        WindowStyle="None" Topmost="True" MinHeight="160" Closed="Window_Closed">
+    <Border  BorderBrush="LightSlateGray" 
+        BorderThickness="1" CornerRadius="0">
+        <Grid  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" Fill="{StaticResource NormalBrush}" Margin="0"/>
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Fill="{StaticResource MainBrush}"/>
+            <Grid Grid.Row="0" Grid.ColumnSpan="2" 
+                MinHeight="40" >
+                <TextBlock Margin="20,10,10,10" Name="MessageTitle"  
+                           FontWeight="Bold" TextTrimming="CharacterEllipsis" 
+                           LineHeight="22" FontSize="20" 
+                           VerticalAlignment="Center" Foreground="{StaticResource FontWhiteBrush}"/>
+            </Grid>
+            <Image Name="img" Margin="20,10,5,10" Grid.Row="1" 
+                Grid.Column="0" Stretch="Fill" Grid.RowSpan="2" />
+            <TextBlock Margin="20,35,10,10" 
+                TextWrapping="Wrap" Name="txtMsg" 
+                       FontWeight="Bold"
+                Grid.Row="1" Grid.Column="1" FontSize="20" Foreground="{StaticResource FontBrush}"  />
+            <TextBox VerticalAlignment="Center" CharacterCasing="Upper"
+                x:Name="txtInput"
+                Margin="20,0,10,20" 
+                TextWrapping="Wrap"
+                Grid.Row="2" Grid.Column="1" FontSize="20" Foreground="{StaticResource FontBrush}" KeyDown="TxtInput_KeyDown"  />
+            <Grid Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                    <Button Name="btnOk" Content="OK" Click="Button_Click" Style="{StaticResource YesButton}" Background="{DynamicResource LightGreenBrush}"/>
+                    <Button Name="btnCancel" Content="Cancel"  Click="Button_Click" Style="{StaticResource NoButton}" Background="{DynamicResource LightRedBrush}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

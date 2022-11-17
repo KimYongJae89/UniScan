@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{973EF609-111C-4845-B222-48D2653A27C0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UniScanG.Module.Controller</RootNamespace>
+    <AssemblyName>UniScanG.Module.Controller</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>uniscan.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Remote|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Remote\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics4.Shared.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Shared.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.AppStylistSupport.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.AppStylistSupport.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.Misc.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.SupportDialogs.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.SupportDialogs.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinDock.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinDock.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinEditors.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinRadialMenu.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinRadialMenu.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinStatusBar.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinStatusBar.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinTabControl.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinToolbars.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinTree.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.UltraWinTree.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.v14.2.Design, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Shared\ReferenceDll\Infragistics4.Win.v14.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\ErrorCode.cs" />
+    <Compile Include="Device\DeviceControllerExtender.cs" />
+    <Compile Include="Device\Laser\ErrorCode.cs" />
+    <Compile Include="Device\Laser\HanbitLaser.cs" />
+    <Compile Include="Device\Laser\HanbitLaserControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Device\Laser\HanbitLaserControlForm.Designer.cs">
+      <DependentUpon>HanbitLaserControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Device\Laser\HanbitLaserExtender.cs" />
+    <Compile Include="Device\Laser\LaserStatusStripPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Device\Laser\LaserStatusStripPanel.Designer.cs">
+      <DependentUpon>LaserStatusStripPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Device\PortMap.cs" />
+    <Compile Include="Device\Printer\PrinterStatusStripPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Device\Printer\PrinterStatusStripPanel.Designer.cs">
+      <DependentUpon>PrinterStatusStripPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Device\Printer\PrinterControlFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Device\Printer\PrinterControlFrom.Designer.cs">
+      <DependentUpon>PrinterControlFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Device\Sensor\StickerSensor.cs" />
+    <Compile Include="Device\Stage\TestbedStage.cs" />
+    <Compile Include="Device\Stage\TestbedStageControlButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Device\Stage\TestbedStageControlButton.designer.cs">
+      <DependentUpon>TestbedStageControlButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Device\Stage\TestbedStageControlPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Device\Stage\TestbedStageControlPanel.Designer.cs">
+      <DependentUpon>TestbedStageControlPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exchange\ModelExecuter.cs" />
+    <Compile Include="Inspect\AlarmManager.cs" />
+    <Compile Include="Inspect\InspectorWaiter.cs" />
+    <Compile Include="MachineIF\ABMachineIfDataAdapterCM.cs" />
+    <Compile Include="MachineIF\MachineIfDataAdapterMelsec.cs" />
+    <Compile Include="UI\Inspect\ExtraImagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Inspect\ExtraImagePanel.designer.cs">
+      <DependentUpon>ExtraImagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Inspect\MarginPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Inspect\MarginPanel.Designer.cs">
+      <DependentUpon>MarginPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MonitorMainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MonitorMainform.designer.cs">
+      <DependentUpon>MonitorMainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings\CollectLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Settings\CollectLogForm.Designer.cs">
+      <DependentUpon>CollectLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings\SettingAlarmPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Settings\SettingAlarmPage.Designer.cs">
+      <DependentUpon>SettingAlarmPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings\SettingGradeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Settings\SettingGradeControl.Designer.cs">
+      <DependentUpon>SettingGradeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings\SettingGradePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Settings\SettingGradePage.Designer.cs">
+      <DependentUpon>SettingGradePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings\SettingPageExtender.cs" />
+    <Compile Include="UI\Inspect\InfoPanelBufferState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Inspect\InfoPanelBufferState.Designer.cs">
+      <DependentUpon>InfoPanelBufferState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Teach\AutoTeachButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Teach\AutoTeachButton.designer.cs">
+      <DependentUpon>AutoTeachButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Teach\LightSettingButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Teach\LightSettingButton.designer.cs">
+      <DependentUpon>LightSettingButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Teach\LightSettingPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Teach\LightSettingPanel.Designer.cs">
+      <DependentUpon>LightSettingPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exchange\CommExecuter.cs" />
+    <Compile Include="Exchange\InspectExecuter.cs" />
+    <Compile Include="Exchange\JobExecuter.cs" />
+    <Compile Include="Inspect\InspectRunnerMonitorG.cs" />
+    <Compile Include="MachineIF\MachineIfData.cs" />
+    <Compile Include="MachineIF\MachineIfDataAdapterIo.cs" />
+    <Compile Include="MachineIF\MachineIfMonitor.cs" />
+    <Compile Include="Exchange\StateExecuter.cs" />
+    <Compile Include="Device\DeviceController.cs" />
+    <Compile Include="MachineIF\MachineProtocolList.cs" />
+    <Compile Include="MonitorConfigHelper.cs" />
+    <Compile Include="Exchange\Server.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MonitorOperator.cs" />
+    <Compile Include="Settings\MonitorSystemSettings.cs" />
+    <Compile Include="Settings\UI\InspectorFovPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Settings\UI\InspectorFovPanel.designer.cs">
+      <DependentUpon>InspectorFovPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\UI\MonitorSystemSettingPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Settings\UI\MonitorSystemSettingPanel.designer.cs">
+      <DependentUpon>MonitorSystemSettingPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\UI\FovSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\UI\FovSettingForm.Designer.cs">
+      <DependentUpon>FovSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemManagerG.cs" />
+    <Compile Include="UI\MonitorUiController.cs" />
+    <Compile Include="UI\MonitorUiChangerG.cs" />
+    <Compile Include="UI\RepeatedDefectAlarmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RepeatedDefectAlarmForm.Designer.cs">
+      <DependentUpon>RepeatedDefectAlarmForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Device\Laser\HanbitLaserControlForm.resx">
+      <DependentUpon>HanbitLaserControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Device\Laser\LaserStatusStripPanel.resx">
+      <DependentUpon>LaserStatusStripPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Device\Printer\PrinterControlFrom.resx">
+      <DependentUpon>PrinterControlFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Device\Printer\PrinterStatusStripPanel.resx">
+      <DependentUpon>PrinterStatusStripPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Device\Stage\TestbedStageControlButton.resx">
+      <DependentUpon>TestbedStageControlButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Device\Stage\TestbedStageControlPanel.resx">
+      <DependentUpon>TestbedStageControlPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inspect\ExtraImagePanel.resx">
+      <DependentUpon>ExtraImagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inspect\InfoPanelBufferState.resx">
+      <DependentUpon>InfoPanelBufferState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inspect\MarginPanel.resx">
+      <DependentUpon>MarginPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MonitorMainform.resx">
+      <DependentUpon>MonitorMainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Settings\CollectLogForm.resx">
+      <DependentUpon>CollectLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Settings\SettingAlarmPage.resx">
+      <DependentUpon>SettingAlarmPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Settings\SettingGradeControl.resx">
+      <DependentUpon>SettingGradeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Settings\SettingGradePage.resx">
+      <DependentUpon>SettingGradePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Teach\AutoTeachButton.resx">
+      <DependentUpon>AutoTeachButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Teach\LightSettingButton.resx">
+      <DependentUpon>LightSettingButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Teach\LightSettingPanel.resx">
+      <DependentUpon>LightSettingPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Settings\UI\InspectorFovPanel.resx">
+      <DependentUpon>InspectorFovPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\UI\MonitorSystemSettingPanel.resx">
+      <DependentUpon>MonitorSystemSettingPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\UI\FovSettingForm.resx">
+      <DependentUpon>FovSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RepeatedDefectAlarmForm.resx">
+      <DependentUpon>RepeatedDefectAlarmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Reference\DynMvp.Data\DynMvp.Data.csproj">
+      <Project>{88f6f6be-0858-41e6-9ce2-3704aefc12a7}</Project>
+      <Name>DynMvp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp.Device\DynMvp.Device.csproj">
+      <Project>{6BCC6601-4E70-4066-889C-CDA17497878A}</Project>
+      <Name>DynMvp.Device</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp.Vision\DynMvp.Vision.csproj">
+      <Project>{146F582A-9D90-4EBB-8D2A-52C34D1A6FAA}</Project>
+      <Name>DynMvp.Vision</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\DynMvp\DynMvp.csproj">
+      <Project>{532b9dd5-c3dc-4f76-8cf4-233c867fc2d3}</Project>
+      <Name>DynMvp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reference\UniEye.Base\UniEye.Base.csproj">
+      <Project>{0bd31b0d-4675-460f-bf03-82afafdd1d1f}</Project>
+      <Name>UniEye.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UniScanG.Common\UniScanG.Common.csproj">
+      <Project>{278fa4c9-9e04-44ec-acb2-2cbf0201e47b}</Project>
+      <Name>UniScanG.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UniScanG\UniScanG.csproj">
+      <Project>{89da2494-05a2-4464-8658-2c5193b9463b}</Project>
+      <Name>UniScanG</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\machine32.png" />
+    <Content Include="uniscan.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Device\UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Build\$(ConfigurationName)\$(TargetFileName)
+copy $(TargetPath).config $(SolutionDir)..\Build\$(ConfigurationName)\$(TargetFileName).config
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)..\Build\$(ConfigurationName)\$(TargetName).pdb
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tableLayoutPanelModelList.CellBorderStyle" type="System.Windows.Forms.TableLayoutPanelCellBorderStyle, System.Windows.Forms">
+    <value>Single</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tableLayoutPanelModelList.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="resource.Name" xml:space="preserve">
+    <value>Malgun Gothic</value>
+  </data>
+  <data name="resource.SizeInPoints" type="System.Single, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="appearance1.TextHAlignAsString" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="appearance1.TextVAlignAsString" xml:space="preserve">
+    <value>Middle</value>
+  </data>
+  <data name="labelModelList.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelModelList.Font" type="System.Drawing.Font, System.Drawing">
+    <value>맑은 고딕, 20pt, style=Bold</value>
+  </data>
+  <data name="labelModelList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelModelList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="labelModelList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="labelModelList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1456, 90</value>
+  </data>
+  <data name="labelModelList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelModelList.Text" xml:space="preserve">
+    <value>Model List</value>
+  </data>
+  <data name="&gt;&gt;labelModelList.Name" xml:space="preserve">
+    <value>labelModelList</value>
+  </data>
+  <data name="&gt;&gt;labelModelList.Type" xml:space="preserve">
+    <value>Infragistics.Win.Misc.UltraLabel, Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;labelModelList.Parent" xml:space="preserve">
+    <value>tableLayoutPanelModelList</value>
+  </data>
+  <data name="&gt;&gt;labelModelList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="findModel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="findModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 96</value>
+  </data>
+  <data name="findModel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 0</value>
+  </data>
+  <data name="findModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1160, 57</value>
+  </data>
+  <data name="findModel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;findModel.Name" xml:space="preserve">
+    <value>findModel</value>
+  </data>
+  <data name="&gt;&gt;findModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;findModel.Parent" xml:space="preserve">
+    <value>tableLayoutPanelModelList</value>
+  </data>
+  <data name="&gt;&gt;findModel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="columnName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnName.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <metadata name="columnRegistrationDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnRegistrationDate.HeaderText" xml:space="preserve">
+    <value>Registration Date</value>
+  </data>
+  <data name="columnRegistrationDate.MinimumWidth" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="columnRegistrationDate.Width" type="System.Int32, mscorlib">
+    <value>364</value>
+  </data>
+  <metadata name="columnLastModifiedDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnLastModifiedDate.HeaderText" xml:space="preserve">
+    <value>Last Modified Date</value>
+  </data>
+  <data name="columnLastModifiedDate.MinimumWidth" type="System.Int32, mscorlib">
+    <value>210</value>
+  </data>
+  <data name="columnLastModifiedDate.Width" type="System.Int32, mscorlib">
+    <value>394</value>
+  </data>
+  <metadata name="columnComment.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnComment.HeaderText" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="columnComment.Width" type="System.Int32, mscorlib">
+    <value>235</value>
+  </data>
+  <data name="modelList.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="modelList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 163</value>
+  </data>
+  <data name="modelList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="modelList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1456, 830</value>
+  </data>
+  <data name="modelList.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;modelList.Name" xml:space="preserve">
+    <value>modelList</value>
+  </data>
+  <data name="&gt;&gt;modelList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;modelList.Parent" xml:space="preserve">
+    <value>tableLayoutPanelModelList</value>
+  </data>
+  <data name="&gt;&gt;modelList.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="resource.Name1" xml:space="preserve">
+    <value>Malgun Gothic</value>
+  </data>
+  <data name="resource.SizeInPoints1" type="System.Single, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="appearance2.TextHAlignAsString" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="appearance2.TextVAlignAsString" xml:space="preserve">
+    <value>Middle</value>
+  </data>
+  <data name="total.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="total.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="total.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 92</value>
+  </data>
+  <data name="total.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="total.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 70</value>
+  </data>
+  <data name="total.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="total.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;total.Name" xml:space="preserve">
+    <value>total</value>
+  </data>
+  <data name="&gt;&gt;total.Type" xml:space="preserve">
+    <value>Infragistics.Win.Misc.UltraLabel, Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;total.Parent" xml:space="preserve">
+    <value>tableLayoutPanelModelList</value>
+  </data>
+  <data name="&gt;&gt;total.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="resource.Name2" xml:space="preserve">
+    <value>Malgun Gothic</value>
+  </data>
+  <data name="resource.SizeInPoints2" type="System.Single, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="appearance3.TextHAlignAsString" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="appearance3.TextVAlignAsString" xml:space="preserve">
+    <value>Middle</value>
+  </data>
+  <data name="labelTotal.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="labelTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 92</value>
+  </data>
+  <data name="labelTotal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="labelTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 70</value>
+  </data>
+  <data name="labelTotal.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="labelTotal.Text" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="&gt;&gt;labelTotal.Name" xml:space="preserve">
+    <value>labelTotal</value>
+  </data>
+  <data name="&gt;&gt;labelTotal.Type" xml:space="preserve">
+    <value>Infragistics.Win.Misc.UltraLabel, Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;labelTotal.Parent" xml:space="preserve">
+    <value>tableLayoutPanelModelList</value>
+  </data>
+  <data name="&gt;&gt;labelTotal.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tableLayoutPanelModelList.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanelModelList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tableLayoutPanelModelList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tableLayoutPanelModelList.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanelModelList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1458, 994</value>
+  </data>
+  <data name="tableLayoutPanelModelList.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelModelList.Name" xml:space="preserve">
+    <value>tableLayoutPanelModelList</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelModelList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelModelList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelModelList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanelModelList.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelModelList" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="findModel" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="modelList" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="total" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelTotal" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,143,Absolute,143,Percent,100,Absolute,38,Absolute,38,Absolute,38,Absolute,38" /&gt;&lt;Rows Styles="Absolute,90,Absolute,70,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="resource.BoldAsString" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="resource.Name3" xml:space="preserve">
+    <value>Malgun Gothic</value>
+  </data>
+  <data name="resource.SizeInPoints3" type="System.Single, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="buttonApply.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="buttonApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>905, 0</value>
+  </data>
+  <data name="buttonApply.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 2</value>
+  </data>
+  <data name="buttonApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 88</value>
+  </data>
+  <data name="buttonApply.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonApply.Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="&gt;&gt;buttonApply.Name" xml:space="preserve">
+    <value>buttonApply</value>
+  </data>
+  <data name="&gt;&gt;buttonApply.Type" xml:space="preserve">
+    <value>Infragistics.Win.Misc.UltraButton, Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;buttonApply.Parent" xml:space="preserve">
+    <value>panelParamTop</value>
+  </data>
+  <data name="&gt;&gt;buttonApply.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="columnTaught.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="propertyGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="propertyGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 90</value>
+  </data>
+  <data name="propertyGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 8, 8, 8</value>
+  </data>
+  <data name="propertyGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 904</value>
+  </data>
+  <data name="propertyGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid.Name" xml:space="preserve">
+    <value>propertyGrid</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid.Parent" xml:space="preserve">
+    <value>panelParam</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="resource.Name4" xml:space="preserve">
+    <value>Malgun Gothic</value>
+  </data>
+  <data name="resource.SizeInPoints4" type="System.Single, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="appearance5.TextHAlignAsString" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="appearance5.TextVAlignAsString" xml:space="preserve">
+    <value>Middle</value>
+  </data>
+  <data name="labelParam.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="labelParam.Font" type="System.Drawing.Font, System.Drawing">
+    <value>맑은 고딕, 20pt, style=Bold</value>
+  </data>
+  <data name="labelParam.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelParam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="labelParam.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="labelParam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>905, 88</value>
+  </data>
+  <data name="labelParam.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="labelParam.Text" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
+  <data name="&gt;&gt;labelParam.Name" xml:space="preserve">
+    <value>labelParam</value>
+  </data>
+  <data name="&gt;&gt;labelParam.Type" xml:space="preserve">
+    <value>Infragistics.Win.Misc.UltraLabel, Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;labelParam.Parent" xml:space="preserve">
+    <value>panelParamTop</value>
+  </data>
+  <data name="&gt;&gt;labelParam.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelParamTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelParamTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelParamTop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panelParamTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 90</value>
+  </data>
+  <data name="panelParamTop.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;panelParamTop.Name" xml:space="preserve">
+    <value>panelParamTop</value>
+  </data>
+  <data name="&gt;&gt;panelParamTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelParamTop.Parent" xml:space="preserve">
+    <value>panelParam</value>
+  </data>
+  <data name="&gt;&gt;panelParamTop.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelParam.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="panelParam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1458, 0</value>
+  </data>
+  <data name="panelParam.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="panelParam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 994</value>
+  </data>
+  <data name="panelParam.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelParam.Name" xml:space="preserve">
+    <value>panelParam</value>
+  </data>
+  <data name="&gt;&gt;panelParam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelParam.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelParam.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="resource.BoldAsString1" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="resource.Name5" xml:space="preserve">
+    <value>맑은 고딕</value>
+  </data>
+  <data name="resource.SizeInPoints5" type="System.Single, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="buttonDelete.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="buttonDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 400</value>
+  </data>
+  <data name="buttonDelete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 200</value>
+  </data>
+  <data name="buttonDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="buttonDelete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;buttonDelete.Name" xml:space="preserve">
+    <value>buttonDelete</value>
+  </data>
+  <data name="&gt;&gt;buttonDelete.Type" xml:space="preserve">
+    <value>Infragistics.Win.Misc.UltraButton, Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;buttonDelete.Parent" xml:space="preserve">
+    <value>panelSideButton</value>
+  </data>
+  <data name="&gt;&gt;buttonDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="resource.BoldAsString2" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="resource.Name6" xml:space="preserve">
+    <value>맑은 고딕</value>
+  </data>
+  <data name="resource.SizeInPoints6" type="System.Single, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="buttonNew.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="buttonNew.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 200</value>
+  </data>
+  <data name="buttonNew.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 200</value>
+  </data>
+  <data name="buttonNew.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="buttonNew.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="&gt;&gt;buttonNew.Name" xml:space="preserve">
+    <value>buttonNew</value>
+  </data>
+  <data name="&gt;&gt;buttonNew.Type" xml:space="preserve">
+    <value>Infragistics.Win.Misc.UltraButton, Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;buttonNew.Parent" xml:space="preserve">
+    <value>panelSideButton</value>
+  </data>
+  <data name="&gt;&gt;buttonNew.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="resource.BoldAsString3" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="resource.Name7" xml:space="preserve">
+    <value>맑은 고딕</value>
+  </data>
+  <data name="resource.SizeInPoints7" type="System.Single, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="buttonSelect.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="buttonSelect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonSelect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="buttonSelect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 200</value>
+  </data>
+  <data name="buttonSelect.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="buttonSelect.Text" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="&gt;&gt;buttonSelect.Name" xml:space="preserve">
+    <value>buttonSelect</value>
+  </data>
+  <data name="&gt;&gt;buttonSelect.Type" xml:space="preserve">
+    <value>Infragistics.Win.Misc.UltraButton, Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;buttonSelect.Parent" xml:space="preserve">
+    <value>panelSideButton</value>
+  </data>
+  <data name="&gt;&gt;buttonSelect.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelSideButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="panelSideButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2508, 0</value>
+  </data>
+  <data name="panelSideButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="panelSideButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 994</value>
+  </data>
+  <data name="panelSideButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;panelSideButton.Name" xml:space="preserve">
+    <value>panelSideButton</value>
+  </data>
+  <data name="&gt;&gt;panelSideButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelSideButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelSideButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>21, 50</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>맑은 고딕, 14pt</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>2657, 994</value>
+  </data>
+  <data name="&gt;&gt;columnName.Name" xml:space="preserve">
+    <value>columnName</value>
+  </data>
+  <data name="&gt;&gt;columnName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnRegistrationDate.Name" xml:space="preserve">
+    <value>columnRegistrationDate</value>
+  </data>
+  <data name="&gt;&gt;columnRegistrationDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnLastModifiedDate.Name" xml:space="preserve">
+    <value>columnLastModifiedDate</value>
+  </data>
+  <data name="&gt;&gt;columnLastModifiedDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnComment.Name" xml:space="preserve">
+    <value>columnComment</value>
+  </data>
+  <data name="&gt;&gt;columnComment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnTaught.Name" xml:space="preserve">
+    <value>columnTaught</value>
+  </data>
+  <data name="&gt;&gt;columnTaught.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ModelManagerPage</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

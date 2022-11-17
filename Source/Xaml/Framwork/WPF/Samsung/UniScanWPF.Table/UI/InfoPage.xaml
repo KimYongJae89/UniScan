@@ -1,0 +1,158 @@
+﻿<Page x:Class="UniScanWPF.Table.UI.InfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UniScanWPF.Table.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="400"
+      Title="ModelPage">
+
+    <Grid>
+        <DockPanel>
+            <Grid DockPanel.Dock="Top" Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="State" BorderThickness="1" BorderBrush="Black" FontSize="26" Grid.ColumnSpan="2"
+                                        Background="{DynamicResource MainBrush}" 
+                                        Foreground="{DynamicResource FontWhiteBrush}" 
+                                        Style="{DynamicResource BasicLabel}"/>
+                <Label Content="Start Time" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="1"
+                                    Background="{DynamicResource NormalBrush}" 
+                                    Foreground="{DynamicResource FontBrush}" 
+                                    Style="{DynamicResource BasicLabel}"/>
+
+                <Label Content="{Binding LastStartTime, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1"
+                            BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                    Background="White" 
+                                    Foreground="{DynamicResource FontBrush}" 
+                                    Style="{DynamicResource BasicLabel}"/>
+                
+                <Label Content="Extract" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="2"
+                       Background="{DynamicResource NormalBrush}" 
+                       Foreground="{DynamicResource FontBrush}" 
+                       Style="{DynamicResource BasicLabel}"/>
+                <Label Name="ExtractOperatorLabel" Content="{Binding OperatorState, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1"
+                       BorderThickness="1" BorderBrush="Black" FontSize="20"
+                       Background="{Binding StateBrushBg, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                       Foreground="{DynamicResource FontBrush}" 
+                       Style="{DynamicResource BasicLabel}"/>
+                
+                <Label Content="Inspect" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="3"
+                       Background="{DynamicResource NormalBrush}" 
+                       Foreground="{DynamicResource FontBrush}" 
+                       Style="{DynamicResource BasicLabel}"/>
+                <Label Name="InspectOperatorLabel" Content="{Binding OperatorState, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1"
+                       BorderThickness="1" BorderBrush="Black" FontSize="20"
+                       Background="{Binding StateBrushBg, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                       Foreground="{DynamicResource FontBrush}" 
+                       Style="{DynamicResource BasicLabel}"/>
+                
+                <Label Content="Storing" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="4"
+                       Background="{DynamicResource NormalBrush}" 
+                       Foreground="{DynamicResource FontBrush}" 
+                       Style="{DynamicResource BasicLabel}"/>
+                <Label Name="StoringOperatorLabel" Content="{Binding OperatorState, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1"
+                       BorderThickness="1" BorderBrush="Black" FontSize="20"
+                       Background="{Binding StateBrushBg, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                       Foreground="{DynamicResource FontBrush}" 
+                       Style="{DynamicResource BasicLabel}"/>
+            </Grid>
+            
+            <Grid DockPanel.Dock="Top" Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Model" BorderThickness="1" BorderBrush="Black" FontSize="26" Grid.ColumnSpan="2"
+                                        Background="{DynamicResource MainBrush}" 
+                                        Foreground="{DynamicResource FontWhiteBrush}" 
+                                        Style="{DynamicResource BasicLabel}"/>
+                <Label Content="Name" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="1"
+                                        Background="{DynamicResource NormalBrush}" 
+                                        Foreground="{DynamicResource FontBrush}"
+                                        Style="{DynamicResource BasicLabel}"/>
+                <Label Content="Paste" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="2"
+                                        Background="{DynamicResource NormalBrush}" 
+                                        Foreground="{DynamicResource FontBrush}"
+                                        Style="{DynamicResource BasicLabel}"/>
+                <Label Content="Thickness" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="3"
+                                        Background="{DynamicResource NormalBrush}" 
+                                        Foreground="{DynamicResource FontBrush}"
+                                        Style="{DynamicResource BasicLabel}"/>
+                <Label Content="{Binding CurrentModel.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"
+                                    BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                        Background="White" 
+                                        Foreground="{DynamicResource FontBrush}" 
+                                        Style="{DynamicResource BasicLabel}"/>
+                <Label Content="{Binding CurrentModel.ModelDescription.Paste, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2"
+                                    BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                        Background="White" 
+                                        Foreground="{DynamicResource FontBrush}" 
+                                        Style="{DynamicResource BasicLabel}"/>
+                <Label Content="{Binding CurrentModel.ModelDescription.Thickness, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3"
+                                    BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                        Background="White" 
+                                        Foreground="{DynamicResource FontBrush}" 
+                                        Style="{DynamicResource BasicLabel}"/>
+            </Grid>
+            <Grid Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Inspect Pattern" BorderThickness="1" BorderBrush="Black" FontSize="20" Visibility="Hidden"
+                                            Background="{DynamicResource NormalBrush}" 
+                                            Foreground="{DynamicResource FontBrush}" 
+                                            Style="{DynamicResource BasicLabel}"/>
+                <ListView Name="InspectPatternListView" VirtualizingPanel.IsVirtualizing="True" Grid.Row="1" Visibility="Hidden"
+                                VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                                VirtualizingPanel.VirtualizationMode="Recycling"
+                                ScrollViewer.IsDeferredScrollingEnabled="True"
+                                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="Black" BorderThickness="1"
+                                ItemsSource="{Binding CurrentModel.InspectPatternList, UpdateSourceTrigger=PropertyChanged}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel VirtualizationMode="Recycling" VirtualizingPanel.IsVirtualizing="True" Orientation="Vertical" HorizontalAlignment="Center"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="{StaticResource MainBrush}" BorderThickness="1">
+                                <DockPanel>
+                                    <UniformGrid Width="200" Columns="2" DockPanel.Dock="Bottom">
+                                        <Label Content="Count" BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                                            Background="{DynamicResource LightBrush}" 
+                                                            Foreground="{DynamicResource FontBrush}" 
+                                                            Style="{DynamicResource BasicLabel}"/>
+                                        <Label Content="{Binding Count}" BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                                            Background="White" 
+                                                            Foreground="{DynamicResource FontBrush}" 
+                                                            Style="{DynamicResource BasicLabel}"/>
+                                    </UniformGrid>
+                                    <Image Height="450" Source="{Binding RefImage}" Stretch="Uniform"/>
+                                </DockPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListView>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Page>

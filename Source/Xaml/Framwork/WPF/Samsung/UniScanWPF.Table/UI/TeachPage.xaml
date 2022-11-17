@@ -1,0 +1,394 @@
+﻿<Page x:Class="UniScanWPF.Table.UI.TeachPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniScanWPF.Table.UI"
+        mc:Ignorable="d"
+      Loaded="Page_Loaded"
+      SizeChanged="Page_SizeChanged">
+    
+    <Grid Background="White">
+        <DockPanel>
+            <!-- 제목 -->
+            <Label DockPanel.Dock="Top" Content="Teach Window" BorderThickness="1" BorderBrush="Black" FontSize="26"
+                    Background="{DynamicResource MainBrush}" 
+                    Foreground="{DynamicResource FontWhiteBrush}" 
+                    Style="{DynamicResource BasicLabel}"/>
+
+            <!-- 제어버튼 -->
+            <StackPanel DockPanel.Dock="Right">
+                <Button Click="StartButton_Click" Margin="1" Height="75" Width="75" Style="{StaticResource DefaultButton}" Background="White" FontSize="16" FontWeight="Bold" ToolTip="Start" IsEnabled="{Binding Startable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/Start.png"/>
+                        <TextBlock Text="Start" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                    </Grid>
+                </Button>
+                <Button Click="StopButton_Click" Margin="1" Height="75" Width="75" Style="{StaticResource DefaultButton}" Background="White" FontSize="16" FontWeight="Bold" ToolTip="Stop" IsEnabled="{Binding Stopable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/Stop1.png"/>
+                        <TextBlock Text="Stop" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                    </Grid>
+                </Button>
+                <Button Click="DeleteButton_Click" Style="{StaticResource DefaultButton}"  Margin="1" Height="75" Width="75" Background="White" FontSize="16" FontWeight="Bold" IsEnabled="{Binding Startable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/Recyclebin+Close-256.png"/>
+                        <TextBlock Text="Delete" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                    </Grid>
+                </Button>
+                <Button Click="SaveButton_Click" Style="{StaticResource DefaultButton}"  Margin="1" Height="75" Width="75" Background="White" FontSize="16" FontWeight="Bold" IsEnabled="{Binding Startable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/Model_black.png"/>
+                        <TextBlock Text="Save" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+                    </Grid>
+                </Button>
+            </StackPanel>
+
+            <!-- 전극 선택 컨트롤 -->
+            <DockPanel DockPanel.Dock="Left" Width="800">
+                <Grid Margin="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="1">
+                        <DockPanel>
+                            <Label DockPanel.Dock="Top" Content="Inspect" BorderThickness="1" BorderBrush="Black" FontSize="24"
+                                Background="{DynamicResource NormalBrush}" 
+                                Foreground="{DynamicResource FontBrush}" 
+                                Style="{DynamicResource BasicLabel}"/>
+                            <ListView Name="InspectPatternListView"
+                                    ItemsSource="{Binding CurrentModel.InspectPatternList, UpdateSourceTrigger=PropertyChanged}"
+                                    BorderBrush="Transparent"
+                                    VirtualizingPanel.IsVirtualizing="True"
+                                    VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                                    VirtualizingPanel.VirtualizationMode="Recycling"
+                                    ScrollViewer.IsDeferredScrollingEnabled="True"
+                                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                    ScrollViewer.VerticalScrollBarVisibility="Visible">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <UniformGrid HorizontalAlignment="Center" Columns="4" Width="800" VerticalAlignment="Center"/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="{StaticResource MainBrush}" BorderThickness="1" Width="190" Height="230">
+                                            <DockPanel Width="180" Height="250">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="190"/>
+                                                        <RowDefinition Height="40"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Image Grid.Row="0" Height="180" Width="180" Source="{Binding RefImage}" Stretch="Uniform"/>
+                                                    <DockPanel Grid.Row="1" Background ="{DynamicResource LightBrush}">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="3*"/>
+                                                                <ColumnDefinition Width="1*"/>
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <Label Grid.Column="0" FontSize="20"
+                                                                   Content="{Binding Count}"
+                                                                   Foreground="{DynamicResource FontBrush}" 
+                                                                   Style="{DynamicResource BasicLabel}"
+                                                                   HorizontalAlignment="Center"/>
+
+                                                            <Label Grid.Column="1" FontSize="14"
+                                                                   Content="[EA]" 
+                                                                   Foreground="{DynamicResource FontBrush}" 
+                                                                   Style="{DynamicResource BasicLabel}"
+                                                                   HorizontalAlignment="Center"/>
+                                                        </Grid>
+                                                    </DockPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListView>
+                        </DockPanel>
+                    </Border>
+
+                    <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal"  DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Height="100">
+                        <Button Margin="5" Click="LeftButton_Click" Width="70" Height="70" ToolTip="To Inspect" Background="White" Style="{StaticResource CircleButton}">
+                            <Image Margin="13" Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/ArrowLeft.png" Width="44" Height="44">
+                                <Image.RenderTransform>
+                                    <RotateTransform CenterX="22" CenterY="22" Angle="90"/>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Button>
+                        <Button Margin="5" Click="RightButton_Click" Height="75" ToolTip="To Candidate" Width="75" Background="White" Style="{StaticResource CircleButton}">
+                            <Image Stretch="Uniform" Source="pack://siteoforigin:,,,/Resources/ArrowRight.png" Height="44" Width="44">
+                                <Image.RenderTransform>
+                                    <RotateTransform CenterX="22" CenterY="22" Angle="90"/>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Button>
+                    </StackPanel>
+
+                    <Border Grid.Column="0" Grid.Row="2" BorderBrush="Black" BorderThickness="1">
+                        <DockPanel>
+                            <Grid DockPanel.Dock="Top">
+                                <Label DockPanel.Dock="Top" Content="Candidate" BorderThickness="1" BorderBrush="Black" FontSize="24"
+                                    Background="{DynamicResource NormalBrush}" 
+                                    Foreground="{DynamicResource FontBrush}" 
+                                    Style="{DynamicResource BasicLabel}"/>
+                                <DockPanel  VerticalAlignment="Center" HorizontalAlignment="Right" Background="White" Width="200" Margin="5">
+                                    <Label DockPanel.Dock="Left" Content="Diff." BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                           Background="{DynamicResource LightBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                                    <TextBox Name="DifferenceTextBlock" Width="100"
+                                             BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"
+                                             FontSize="20" Foreground="{DynamicResource FontBrush}" TextAlignment="Center"
+                                             Text="{Binding Path=DiffGroupThreshold, UpdateSourceTrigger=LostFocus}">
+                                    </TextBox>
+                                    <Label DockPanel.Dock="Right" Content="[um]" BorderThickness="1" BorderBrush="Black" FontSize="14"
+                                           Background="{DynamicResource LightBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+                                </DockPanel>
+                            </Grid>
+
+                            <ListView Name="CandidatePatternListView"
+                                      ItemsSource="{Binding CurrentModel.CandidatePatternList, UpdateSourceTrigger=PropertyChanged}"
+                                      BorderBrush="Transparent"
+                                      VirtualizingPanel.IsVirtualizing="True"
+                                      VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                                      VirtualizingPanel.VirtualizationMode="Recycling"
+                                      ScrollViewer.IsDeferredScrollingEnabled="True"
+                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                      ScrollViewer.VerticalScrollBarVisibility="Visible">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <UniformGrid HorizontalAlignment="Center" Columns="4" Width="800" VerticalAlignment="Center"/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="{StaticResource MainBrush}" BorderThickness="1" Width="190" Height="230">
+                                            <DockPanel>
+                                                <Grid >
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="190"/>
+                                                        <RowDefinition Height="40"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Image Grid.Row="0" Height="180" Width="180" Source="{Binding RefImage}" Stretch="Uniform"/>
+                                                    <DockPanel Grid.Row="1" Background="{DynamicResource LightBrush}">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="3*"/>
+                                                                <ColumnDefinition Width="1*"/>
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <Label Grid.Column="0" Content="{Binding Count}" FontSize="20"
+                                                                   Foreground="{DynamicResource FontBrush}" 
+                                                                   Style="{DynamicResource BasicLabel}"
+                                                                   HorizontalAlignment="Center"/>
+                                                            <Label Grid.Column="1" Content="[EA]" FontSize="14"
+                                                                   Foreground="{DynamicResource FontBrush}" 
+                                                                   Style="{DynamicResource BasicLabel}"
+                                                                   HorizontalAlignment="Center"/>
+                                                        </Grid>
+                                                    </DockPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListView>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </DockPanel>
+            
+            <!-- 마진컨트롤 -->
+            <DockPanel DockPanel.Dock="Bottom">
+                <Grid Margin="2">
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <DockPanel Height="250">
+                            <Label DockPanel.Dock="Top" Content="MARGIN" BorderThickness="1" BorderBrush="Black" FontSize="24"
+                               Background="{DynamicResource NormalBrush}" Foreground="{DynamicResource FontBrush}" Style="{DynamicResource BasicLabel}"/>
+
+                            <Border Name="MarginImage" DockPanel.Dock="Right" BorderThickness="1" BorderBrush="Black" Width="150" Height="200">
+                                <Grid MouseDown="gridMargin_MouseDown">
+                                    <Image Margin="1" DockPanel.Dock="Bottom"
+                                       Source="{Binding MarginMeasurePos.BgBitmapSource, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Line Stroke="Yellow" X1="0" Y1="100" X2="200" Y2="100" StrokeDashArray="2"/>
+                                    <Line Stroke="Yellow" X1="75" Y1="0" X2="75" Y2="200" StrokeDashArray="2"/>
+                                </Grid>
+                            </Border>
+
+                            <DataGrid Name="marginDataGrid" Margin="1" HorizontalContentAlignment="Stretch" ColumnWidth="*" Height="200"
+                                     Background="White" FontSize="16" FontWeight="Bold" SelectionMode="Single" CanUserAddRows="False" CanUserResizeRows="False" AutoGenerateColumns="false"
+                                     IsEnabled="{Binding Startable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                     ItemsSource="{Binding CurrentModel.MarginMeasurePosList, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="MarginDataGrid_SelectionChanged" MouseDown="MarginDataGrid_MouseDown" >
+                                <DataGrid.ColumnHeaderStyle>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                                    </Style>
+                                </DataGrid.ColumnHeaderStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="1*" />
+                                    <DataGridTextColumn Header="FlowPosition" IsReadOnly="True" Binding="{Binding FlowPosition}" Width="1*" />
+                                    <DataGridTextColumn Header="Rectangle" IsReadOnly="True" Binding="{Binding Rectangle}" Width="2*" />
+                                    <DataGridCheckBoxColumn Header="W" Binding="{Binding UseW}"/>
+                                    <DataGridCheckBoxColumn Header="L" Binding="{Binding UseL}"/>
+                                    <DataGridTextColumn Header="SubRegions" IsReadOnly="True" Binding="{Binding SubPosCollection.Count}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </DockPanel>
+
+            <!-- 이미지 컨트롤 -->
+            <DockPanel>
+                <Grid Background="White">
+                    <Canvas Name="MainCanvas" ClipToBounds="False" Margin="0,-4,0,4">
+                        <Canvas.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="Translate"/>
+                                <ScaleTransform x:Name="Scale"/>
+                            </TransformGroup>
+                        </Canvas.RenderTransform>
+
+                        <Rectangle Name="ScanRegion"
+                                   Fill="White" Opacity="0.15"
+                                   Canvas.Top="{Binding Path=DispScanRegion.Top}"
+                                   Canvas.Left="{Binding Path=DispScanRegion.Left}"
+                                   Width="{Binding Path=DispScanRegion.Width}"
+                                   Height="{Binding Path=DispScanRegion.Height}"/>
+
+                        <Rectangle Name="RobotRegion"
+                                   Stroke="{StaticResource RedBrush}"
+                                   Canvas.Left="{Binding DispRobotRegion.Left, Mode=OneWay}"
+                                   Canvas.Top="{Binding DispRobotRegion.Top, Mode=OneWay}"
+                                   Width="{Binding DispRobotRegion.Width, Mode=OneWay}"
+                                   Height="{Binding DispRobotRegion.Height, Mode=OneWay}"/>
+
+                        <Canvas Name="ImageCanvas">
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform 
+                                        ScaleX="{Binding ImageCanvasScale, Mode=OneWay}" 
+                                        ScaleY="{Binding ImageCanvasScale, Mode=OneWay}"/>
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+
+                            <Image Name="LightTuneImage" 
+                               Canvas.Left="{Binding Path=LightTuneResult.CanvasAxisPosition.Position[0], UpdateSourceTrigger=PropertyChanged}" 
+                               Canvas.Top="{Binding Path=LightTuneResult.CanvasAxisPosition.Position[1], UpdateSourceTrigger=PropertyChanged}"
+                               Height="{Binding Path=LightTuneResult.BitmapSource.Height, UpdateSourceTrigger=PropertyChanged}"
+                               Width="{Binding Path=LightTuneResult.BitmapSource.Width, UpdateSourceTrigger=PropertyChanged}"
+                               Source="{Binding Path=LightTuneResult.BitmapSource, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Canvas>
+
+                        <Label Name="LightTuneMessage" Content="{Binding Path=LightTuneResult.Exception}" 
+                               Foreground="{StaticResource FontWhiteBrush}"
+                               Background="Transparent" FontSize="2000"
+                               Canvas.Left="{Binding Path=LightTuneResult.CanvasAxisPosition.Position[0], UpdateSourceTrigger=PropertyChanged}" 
+                               Canvas.Top="{Binding Path=LightTuneResult.CanvasAxisPosition.Position[1], UpdateSourceTrigger=PropertyChanged}"
+                               Width="6140"/>
+
+                        <Label Name="HomeLabel" 
+                               Width="{Binding MarkSize.Width, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                               Height="{Binding MarkSize.Height, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                               FontSize="{Binding MarkFontSize, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                               Canvas.Left="{Binding Path=HomeMarkPos.X, UpdateSourceTrigger=PropertyChanged}" 
+                               Canvas.Top="{Binding Path=HomeMarkPos.Y, UpdateSourceTrigger=PropertyChanged}"
+                               Style="{StaticResource CircleLabel}" Background="LightGray"  FontWeight="Bold"
+                               Content="H" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                        <Label Name="MachineCircleLabel"
+                               Width="{Binding MarkSize.Width, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                               Height="{Binding MarkSize.Height, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                               FontSize="{Binding MarkFontSize, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                               Canvas.Left="{Binding Path=CurMarkPos.X, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" 
+                               Canvas.Top="{Binding Path=CurMarkPos.Y, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                               Style="{StaticResource CircleLabel}" 
+                               Background="{Binding Path=CurMarkBrush, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" 
+                               FontWeight="Bold" Content="M" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    </Canvas>
+
+                    <Grid Margin="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="150">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Light Tune" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="0" Grid.Column="0"
+                                    Background="{DynamicResource LightBrush}" 
+                                    Foreground="{DynamicResource FontBrush}" 
+                                    Style="{DynamicResource BasicLabel}"/>
+                        <Label Name="LightTuneOperatorLabel" Content="{Binding OperatorStateString, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1"
+                                BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                        Background="{Binding StateBrushBg, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                        Foreground="{DynamicResource FontBrush}" 
+                                        Style="{DynamicResource BasicLabel}"/>
+
+                        <Label Content="Scan" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="1" Grid.Column="0"
+                                    Background="{DynamicResource LightBrush}" 
+                                    Foreground="{DynamicResource FontBrush}" 
+                                    Style="{DynamicResource BasicLabel}"/>
+                        <Label Name="ScanOperatorLabel" Content="{Binding OperatorStateString, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1"
+                                BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                        Background="{Binding StateBrushBg, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                        Foreground="{DynamicResource FontBrush}" 
+                                        Style="{DynamicResource BasicLabel}"/>
+
+                        <Label Content="Extract" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="2" Grid.Column="0"
+                                    Background="{DynamicResource LightBrush}" 
+                                    Foreground="{DynamicResource FontBrush}" 
+                                    Style="{DynamicResource BasicLabel}"/>
+                        <Label Name="ExtractOperatorLabel" Content="{Binding OperatorStateString, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1"
+                            BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                    Background="{Binding StateBrushBg, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                    Foreground="{DynamicResource FontBrush}" 
+                                    Style="{DynamicResource BasicLabel}"/>
+
+                        <Label Content="Teach" BorderThickness="1" BorderBrush="Black" FontSize="20" Grid.Row="3" Grid.Column="0"
+                                    Background="{DynamicResource LightBrush}" 
+                                    Foreground="{DynamicResource FontBrush}" 
+                                    Style="{DynamicResource BasicLabel}"/>
+                        <Label Name="TeachOperatorLabel" Content="{Binding OperatorStateString, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3"
+                            BorderThickness="1" BorderBrush="Black" FontSize="20"
+                                    Background="{Binding StateBrushBg, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                    Foreground="{DynamicResource FontBrush}" 
+                                    Style="{DynamicResource BasicLabel}"/>
+                    </Grid>
+                </Grid>
+            </DockPanel>            
+        </DockPanel>
+    </Grid>
+</Page>

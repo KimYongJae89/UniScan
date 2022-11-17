@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="UniScanG.Module.Monitor.UI.StatusControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UniScanG.Module.Monitor.UI"
+             mc:Ignorable="d" 
+             DataContext="{Binding RelativeSource={RelativeSource self}}"
+             d:DesignHeight="80" d:DesignWidth="800">
+    <Grid>
+        <StatusBar/>
+        <StatusBar Name="aa" HorizontalAlignment="Left" Padding="0">
+            <StatusBarItem Content="Connected" Margin="1" BorderThickness="1" BorderBrush="Black" Background="{Binding ColorConnected, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="Connected_MouseDoubleClick"/>
+            <StatusBarItem Content="StillImage" Margin="1" BorderThickness="1" BorderBrush="Black" Background="{Binding ColorRunStillImage, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="StillImage_MouseDoubleClick"/>
+            <StatusBarItem Content="Rewinder" Margin="1" BorderThickness="1" BorderBrush="Black" Background="{Binding ColorRewinder, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="Rewinder_MouseDoubleClick"/>
+            <StatusBarItem Content="SV SPD" Margin="1,1,0,1" BorderThickness="1,1,0,1" BorderBrush="Black" MouseDoubleClick="SVSPD_MouseDoubleClick"/>
+            <StatusBarItem Content="{Binding SVSPD, StringFormat=F01, Mode=OneWay}" Margin="0,1,1,1" BorderThickness="0,1,1,1" BorderBrush="Black" MouseDoubleClick="SVSPD_MouseDoubleClick"/>
+            <StatusBarItem Content="PV SPD" Margin="1,1,0,1" BorderThickness="1,1,0,1" BorderBrush="Black" MouseDoubleClick="PVSPD_MouseDoubleClick"/>
+            <StatusBarItem Content="{Binding PVSPD, StringFormat=F01, Mode=OneWay}" Margin="0,1,1,1" BorderThickness="0,1,1,1" BorderBrush="Black" MouseDoubleClick="PVSPD_MouseDoubleClick"/>
+            <StatusBarItem Content="PV POS" Margin="1,1,0,1" BorderThickness="1,1,0,1" BorderBrush="Black" MouseDoubleClick="PVPOS_MouseDoubleClick"/>
+            <StatusBarItem Content="{Binding PVPOS, StringFormat=F01, Mode=OneWay}" Margin="0,1,1,1" BorderThickness="0,1,1,1"  BorderBrush="Black" MouseDoubleClick="PVPOS_MouseDoubleClick"/>
+        </StatusBar>
+        <StatusBar Name="bb" HorizontalAlignment="Right" Padding="0">
+            <StatusBarItem Content="Model" Margin="1,1,0,1" BorderThickness="1,1,0,1" BorderBrush="Black" MouseDoubleClick="Model_MouseDoubleClick"/>
+            <StatusBarItem Content="{Binding Model, Mode=OneWay}" Margin="0,1,1,1" BorderThickness="0,1,1,1"  BorderBrush="Black" MouseDoubleClick="Model_MouseDoubleClick"/>
+            <StatusBarItem Content="Lot" Margin="1,1,0,1" BorderThickness="1,1,0,1" BorderBrush="Black" MouseDoubleClick="Lot_MouseDoubleClick"/>
+            <StatusBarItem Content="{Binding Lot, Mode=OneWay}" Margin="0,1,1,1" BorderThickness="0,1,1,1"  BorderBrush="Black" MouseDoubleClick="Lot_MouseDoubleClick"/>
+            <StatusBarItem Content="Worker" Margin="1,1,0,1" BorderThickness="1,1,0,1" BorderBrush="Black" MouseDoubleClick="Worker_MouseDoubleClick"/>
+            <StatusBarItem Content="{Binding Worker, Mode=OneWay}" Margin="0,1,1,1" BorderThickness="0,1,1,1"  BorderBrush="Black" MouseDoubleClick="Worker_MouseDoubleClick"/>
+        </StatusBar>
+    </Grid>
+</UserControl>

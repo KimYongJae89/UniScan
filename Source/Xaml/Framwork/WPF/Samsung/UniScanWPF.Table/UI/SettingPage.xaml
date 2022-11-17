@@ -1,0 +1,444 @@
+﻿<Page x:Class="UniScanWPF.Table.UI.SettingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UniScanWPF.Table.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1800"
+      Title="SettingPage">
+    <Grid Background="LightGray" IsVisibleChanged="Grid_IsVisibleChanged">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="AUTO" />
+        </Grid.RowDefinitions>
+
+            <!-- 파라메터 -->
+        <StackPanel Grid.Row="1" Background="White" Orientation="Horizontal">
+            <UniformGrid Rows="1" Columns="4">
+           
+                <!-- 로봇 영역 -->
+                <DockPanel Name="motionDockPanel" Width="400" Margin="5">
+                    <Border BorderThickness="2" BorderBrush="Black">
+                        <StackPanel>
+                            <Label  FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                    Content="Robot Working Region"  />
+                            <Border BorderThickness="1" BorderBrush="Black" Margin="5" Padding="3">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label  Grid.Column="0" Grid.Row="1"
+                                            FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                            Content="Operation"/>
+                                    <Button Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" 
+                                            FontSize="16" Margin="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                            Click="Motion_Find_Limit_Click"
+                                            Content="Find Limit"/>
+                                    <Button Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" 
+                                            FontSize="16" Margin="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                            Click="MotionHome_Click"
+                                            Content="Home"/>
+                                </Grid>
+                            </Border>
+                            
+                            <Border BorderThickness="1" BorderBrush="Black" Margin="5" Padding="3">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Label  Grid.Column="0" Grid.Row="0"
+                                            FontSize="12" Margin="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right"
+                                            Content="[um]"/>
+                                    <Label  Grid.Column="1" Grid.Row="0"
+                                            FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                            Content="Neg"/>
+                                    <Label  Grid.Column="2" Grid.Row="0"
+                                            FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                            Content="Pos"/>
+                                    
+                                    <Label Grid.Column="0" Grid.Row="1"
+                                           FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                           Content="Axis X"/>
+                                    <TextBox  Grid.Column="1" Grid.Row="1"
+                                              FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                              Text="{Binding AxisList[0].AxisParam.NegativeLimit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <TextBox  Grid.Column="2" Grid.Row="1" 
+                                              FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                              Text="{Binding AxisList[0].AxisParam.PositiveLimit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    
+                                    <Label Grid.Column="0" Grid.Row="2" 
+                                           FontSize="16" Margin="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                           Content="Axis Y"/>
+                                    <TextBox  Grid.Column="1" Grid.Row="2" 
+                                              FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                              Text="{Binding AxisList[1].AxisParam.NegativeLimit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <TextBox  Grid.Column="2" Grid.Row="2"
+                                              FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                              Text="{Binding AxisList[1].AxisParam.PositiveLimit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </DockPanel>
+                
+                <!-- 스캔 영역 -->
+                <DockPanel Name="scanRegionDockPanel" Margin="5">
+                <Border BorderThickness="2" BorderBrush="Black">
+                    <StackPanel>
+                        <Label  Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" 
+                                FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                Content="Scan Region"  />
+
+                        <Border BorderThickness="1" BorderBrush="Black" Margin="5" Padding="5">
+                            <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                    <Label  Grid.Column="0"
+                                            Grid.Row="0"
+                                            FontSize="16"
+                                            Margin="1"
+                                            VerticalContentAlignment="Bottom"
+                                            HorizontalContentAlignment="Right"
+                                            Content="FOV" />
+                                    <TextBox  Grid.Column="1"
+                                              Grid.Row="0"
+                                              FontSize="16"
+                                              Margin="1"
+                                              VerticalContentAlignment="Center"
+                                              HorizontalContentAlignment="Center"
+                                              IsEnabled="False"
+                                              Text="{Binding FovUm, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <Label  Grid.Column="2"
+                                            Grid.Row="0"
+                                            FontSize="12"
+                                            Margin="1"
+                                            VerticalContentAlignment="Bottom"
+                                            HorizontalContentAlignment="Left"
+                                            Content="[um]" />
+
+                                    <Label  Grid.Column="0"
+                                            Grid.Row="1"
+                                            FontSize="16"
+                                            Margin="1"
+                                            VerticalContentAlignment="Bottom"
+                                            HorizontalContentAlignment="Right"
+                                            Content="Scan Count" />
+                                    <TextBox  Grid.Column="1"
+                                              Grid.Row="1"
+                                              FontSize="16"
+                                              Margin="1"
+                                              VerticalContentAlignment="Center"
+                                              HorizontalContentAlignment="Center"
+                                              IsEnabled="False"
+                                              Text="{Binding ScanCount, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <Label  Grid.Column="2"
+                                            Grid.Row="1"
+                                            FontSize="12"
+                                            Margin="1"
+                                            VerticalContentAlignment="Bottom"
+                                            HorizontalContentAlignment="Left"
+                                            Content="[EA]" />
+                                
+                                    <Label  Grid.Column="0"
+                                            Grid.Row="2"
+                                            FontSize="16"
+                                            Margin="1"
+                                            VerticalContentAlignment="Bottom"
+                                            HorizontalContentAlignment="Right"
+                                            Content="Scan Speed" />
+                                    <TextBox  Grid.Column="1"
+                                              Grid.Row="2"
+                                              FontSize="16"
+                                              Margin="1"
+                                              VerticalContentAlignment="Center"
+                                              HorizontalContentAlignment="Center"
+                                              Text="{Binding Velocity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <Label  Grid.Column="2"
+                                            Grid.Row="2"
+                                            FontSize="12"
+                                            Margin="1"
+                                            VerticalContentAlignment="Bottom"
+                                            HorizontalContentAlignment="Left"
+                                            Content="[um/s]" />
+
+                                </Grid>
+                        </Border>
+
+                            <Border BorderThickness="1" BorderBrush="Black" Margin="5" Padding="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label  Grid.Column="0" Grid.Row="0"
+                                  FontSize="12" Margin="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right"
+                                  Content="[um]"/>
+                                <Label  Grid.Column="1" Grid.Row="0"
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Content="X"/>
+                                <Label  Grid.Column="2" Grid.Row="0" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Content="Y"/>
+
+                                <Label Grid.Column="0" Grid.Row="1" 
+                               FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                               Content="SRC"/>
+                                <TextBox  Grid.Column="1" Grid.Row="1"
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Text="{Binding SrcX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox  Grid.Column="2" Grid.Row="1"
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Text="{Binding SrcY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                                <Label Grid.Column="0" Grid.Row="3"
+                               FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                               Content="DST"/>
+                                <TextBox  Grid.Column="1" Grid.Row="3" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Text="{Binding DstX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox  Grid.Column="2" Grid.Row="3" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Text="{Binding DstY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                                <Label Grid.Column="0" Grid.Row="4"
+                               FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                               Content="Overlap"/>
+                                <TextBox  Grid.Column="1" Grid.Row="4" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Text="{Binding OverlapUm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                                <Label Grid.Column="0" Grid.Row="5"
+                               FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                               Content="Length"/>
+                                <Label  Grid.Column="1" Grid.Row="5" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Content="{Binding Width, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Label  Grid.Column="2" Grid.Row="5" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Content="{Binding Height, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+
+                </Border>
+            </DockPanel>
+
+                <!-- 조명 보정 -->
+                <DockPanel Name="lightTuneDockPanel" Margin="5">
+                <Border BorderThickness="2" BorderBrush="Black">
+                    <StackPanel>
+                        <Label  FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                Content="Light Tune"  />
+                            <Border BorderThickness="1" BorderBrush="Black" Margin="5" Padding="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label  Grid.Column="0" Grid.Row="0"
+                                  FontSize="12" Margin="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right"
+                                  Content="[um]"/>
+                                <Label  Grid.Column="1" Grid.Row="0"
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Content="X"/>
+                                <Label  Grid.Column="2" Grid.Row="0" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Content="Y"/>
+
+                                <Label Grid.Column="0" Grid.Row="1" 
+                               FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                               Content="Scan Pos"/>
+                                <TextBox  Grid.Column="1" Grid.Row="1"
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Text="{Binding ScanPosition[0], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox  Grid.Column="2" Grid.Row="1"
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Text="{Binding ScanPosition[1], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                                <Label Grid.Column="0" Grid.Row="2"
+                               FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                               Content="Scan Length"/>
+                                <TextBox  Grid.Column="2" Grid.Row="2" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Text="{Binding ScanLengthUm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </Grid>
+                        </Border>
+                        
+                            <Border BorderThickness="1" BorderBrush="Black" Margin="5" Padding="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label  Grid.Column="0" Grid.Row="0"
+                                  FontSize="12" Margin="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right"
+                                  Content="[Lv]"/>
+                                <Label  Grid.Column="1" Grid.Row="0"
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Content="Top"/>
+                                <Label  Grid.Column="2" Grid.Row="0" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Content="Bottom"/>
+
+                                <Label Grid.Column="0" Grid.Row="1"
+                               FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                               Content="Light Value"/>
+                                <TextBox  Grid.Column="1" Grid.Row="1" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Text="{Binding InitialTopLightValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                  ToolTip="Initial Top Light Value"/>
+                                <TextBox  Grid.Column="2" Grid.Row="1" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Text="{Binding InitialBackLightValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                  ToolTip="Initial Back Light Value"/>
+                            </Grid>
+                        </Border>
+                            <Border BorderThickness="1" BorderBrush="Black" Margin="5" Padding="5">
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0"
+                                           FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                           Content="Target Brightness Mean"/>
+                                    <TextBox  Grid.Column="1"
+                                              FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                              Text="{Binding TargetMarginValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Grid.Column="2"
+                                           FontSize="12" Margin="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left"
+                                           Content="[Lv]"/>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0"
+                                           FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                           Content="Target Brightness Std"/>
+                                    <TextBox  Grid.Column="1"
+                                              FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                              Text="{Binding CheckStd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Grid.Column="2"
+                                           FontSize="12" Margin="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left"
+                                           Content="[Lv]"/>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0"
+                                           FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                           Content="Noise Filter Level"/>
+                                    <TextBox  Grid.Column="1"
+                                              FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                              Text="{Binding RemoveNoiseIter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Grid.Column="2"
+                                           FontSize="12" Margin="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left"
+                                           Content="[EA]"/>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+
+                <!-- 마진 측정 -->
+                <DockPanel Name="marginDockPanel" Margin="5">
+                <Border BorderThickness="2" BorderBrush="Black">
+                    <StackPanel>
+                        <Label  FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                Content="Margin Measure"  />
+                            <Border BorderThickness="1" BorderBrush="Black" Margin="5" Padding="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label  Grid.Column="0" Grid.Row="0"
+                                  FontSize="12" Margin="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right"
+                                  Content="[um]"/>
+                                <Label  Grid.Column="1" Grid.Row="0"
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Content="W"/>
+                                <Label  Grid.Column="2" Grid.Row="0" 
+                                  FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                  Content="L"/>
+
+                                <Label Grid.Column="0" Grid.Row="1"
+                                       FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                       Content="Offset"/>
+                                <TextBox  Grid.Column="1" Grid.Row="1" 
+                                          FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                          Text="{Binding MarginMeasureOffsetX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=F1}"
+                                          ToolTip="Initial Top Light Value"/>
+                                <TextBox  Grid.Column="2" Grid.Row="1" 
+                                          FontSize="16" Margin="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                          Text="{Binding MarginMeasureOffsetY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=F1}"
+                                          ToolTip="Initial Back Light Value"/>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+            </UniformGrid>
+        </StackPanel>
+        
+        <!--왼쪽 이미지-->
+        <Grid Grid.Row="0" DockPanel.Dock="Right" Background="LightBlue">
+            <Image VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Source="/Resources/SettingHelp.png" Margin="50"/>
+        </Grid>
+    </Grid>
+</Page>

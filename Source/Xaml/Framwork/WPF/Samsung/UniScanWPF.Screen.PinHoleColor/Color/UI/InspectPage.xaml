@@ -1,0 +1,57 @@
+﻿<Page x:Class="UniScanWPF.Screen.PinHoleColor.Color.UI.InspectPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UniScanWPF.Screen.PinHoleColor.Color.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="200" d:DesignWidth="500"
+      Title="InspectPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Color Sensor" BorderBrush="Black" BorderThickness="1" FontSize="42"
+               Background="{DynamicResource LightYellowBrush}" 
+               Foreground="{DynamicResource FontBrush}" 
+               Style="{DynamicResource BasicLabel}" />
+        <Grid Grid.Row="1" Background="White">
+            <DockPanel Margin="5">
+                <Grid DockPanel.Dock="Top" Height="50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Index" BorderThickness="1" BorderBrush="Black" FontSize="28"
+                       Background="{DynamicResource NormalBrush}"
+                       Foreground="{DynamicResource FontBrush}" 
+                       Style="{DynamicResource BasicLabel}"/>
+                    <Label Content="{Binding TotalNum, UpdateSourceTrigger=PropertyChanged}" BorderThickness="1" BorderBrush="Black" Grid.Column="1" FontSize="28"
+                   Foreground="{DynamicResource FontBrush}" 
+                   Style="{DynamicResource BasicLabel}" />
+                    <Label Content="NG" BorderThickness="1" BorderBrush="Black" Grid.Column="2" FontSize="28"
+                   Background="{DynamicResource LightRedBrush}" 
+                   Foreground="{DynamicResource FontBrush}" 
+                   Style="{DynamicResource BasicLabel}" />
+                    <Label Content="{Binding NGNum, UpdateSourceTrigger=PropertyChanged}" BorderThickness="1" BorderBrush="Black" Grid.Column="3" FontSize="28"
+                   Foreground="{DynamicResource FontBrush}" 
+                   Style="{DynamicResource BasicLabel}" />
+                    <Label Content="Ratio" BorderThickness="1" BorderBrush="Black" Grid.Column="4" FontSize="28"
+                   Background="{DynamicResource LightBrush}" 
+                   Foreground="{DynamicResource FontBrush}" 
+                   Style="{DynamicResource BasicLabel}" />
+                    <Label Content="{Binding Ratio, UpdateSourceTrigger=PropertyChanged}" BorderThickness="1" BorderBrush="Black" Grid.Column="5" FontSize="28"
+                   Foreground="{DynamicResource FontBrush}" 
+                   Style="{DynamicResource BasicLabel}" />
+                </Grid>
+                <Frame x:Name="ImageFrame" BorderBrush="Black" BorderThickness="1"/>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Page>

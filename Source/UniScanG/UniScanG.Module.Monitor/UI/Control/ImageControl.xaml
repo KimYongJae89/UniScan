@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="UniScanG.Module.Monitor.UI.Control.ImageControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UniScanG.Module.Monitor.UI.Control"
+             DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel Name="dockPanel" Background="LightGray">
+        <Canvas>
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="{Binding Scale, Mode=OneWay}"
+                                    ScaleY="{Binding Scale, Mode=OneWay}"/>
+                    <TranslateTransform X="{Binding Offset.X, Mode=OneWay}"
+                                        Y="{Binding Offset.Y, Mode=OneWay}"/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            
+            <Image Source="{Binding Path=BitmapSource, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Rectangle StrokeThickness="5" Stroke="{Binding MarginBrush, Mode=OneWay}" 
+                                   Canvas.Left="{Binding MarginRect.X, Mode=OneWay}" 
+                                   Canvas.Top="{Binding MarginRect.Y, Mode=OneWay}"
+                                   Width="{Binding MarginRect.Width, Mode=OneWay}" 
+                                   Height="{Binding MarginRect.Height, Mode=OneWay}" />
+            
+            <Rectangle StrokeThickness="5" Stroke="{Binding BlotBrush, Mode=OneWay}" 
+                                   Canvas.Left="{Binding BlotRect.X, Mode=OneWay}" 
+                                   Canvas.Top="{Binding BlotRect.Y, Mode=OneWay}"
+                                   Width="{Binding BlotRect.Width, Mode=OneWay}" 
+                                   Height="{Binding BlotRect.Height, Mode=OneWay}" />
+
+            <Rectangle StrokeThickness="5" Stroke="Red" 
+                                   Canvas.Left="{Binding DefectRect.X, Mode=OneWay}" 
+                                   Canvas.Top="{Binding DefectRect.Y, Mode=OneWay}"
+                                   Width="{Binding DefectRect.Width, Mode=OneWay}" 
+                                   Height="{Binding DefectRect.Height, Mode=OneWay}" />
+            
+            <Canvas Name="defectRectCanvas">
+                
+            </Canvas>
+            
+        </Canvas>
+    </DockPanel>
+</UserControl>

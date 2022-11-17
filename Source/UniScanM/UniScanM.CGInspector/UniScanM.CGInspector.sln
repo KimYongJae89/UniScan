@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1062
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniScanM.CGInspector", "UniScanM.CGInspector.csproj", "{31D44018-B406-4AB2-9E29-6A301D72C752}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+		Remote|x64 = Remote|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31D44018-B406-4AB2-9E29-6A301D72C752}.Debug|x64.ActiveCfg = Debug|x64
+		{31D44018-B406-4AB2-9E29-6A301D72C752}.Debug|x64.Build.0 = Debug|x64
+		{31D44018-B406-4AB2-9E29-6A301D72C752}.Release|x64.ActiveCfg = Release|x64
+		{31D44018-B406-4AB2-9E29-6A301D72C752}.Release|x64.Build.0 = Release|x64
+		{31D44018-B406-4AB2-9E29-6A301D72C752}.Remote|x64.ActiveCfg = Remote|x64
+		{31D44018-B406-4AB2-9E29-6A301D72C752}.Remote|x64.Build.0 = Remote|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF8A3CFD-6699-4A8D-BCC2-C0F73BB93282}
+	EndGlobalSection
+EndGlobal

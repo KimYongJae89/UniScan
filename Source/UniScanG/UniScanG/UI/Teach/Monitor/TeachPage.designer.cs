@@ -1,0 +1,144 @@
+﻿namespace UniScanG.UI.Teach.Monitor
+{
+    partial class TeachPage
+    {
+        /// <summary> 
+        /// 필수 디자이너 변수입니다.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// 사용 중인 모든 리소스를 정리합니다.
+        /// </summary>
+        /// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region 구성 요소 디자이너에서 생성한 코드
+
+        /// <summary> 
+        /// 디자이너 지원에 필요한 메서드입니다. 
+        /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panelButtonL = new System.Windows.Forms.FlowLayoutPanel();
+            this.remoteTeachingPanel = new Infragistics.Win.Misc.UltraPanel();
+            this.prevImage = new System.Windows.Forms.PictureBox();
+            this.layoutMain = new System.Windows.Forms.TableLayoutPanel();
+            this.settingPanel = new System.Windows.Forms.Panel();
+            this.panelButtonR = new System.Windows.Forms.FlowLayoutPanel();
+            this.remoteTeachingPanel.ClientArea.SuspendLayout();
+            this.remoteTeachingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prevImage)).BeginInit();
+            this.layoutMain.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panelButtonL
+            // 
+            this.panelButtonL.AutoSize = true;
+            this.panelButtonL.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelButtonL.Location = new System.Drawing.Point(0, 0);
+            this.panelButtonL.Margin = new System.Windows.Forms.Padding(0);
+            this.panelButtonL.MinimumSize = new System.Drawing.Size(50, 0);
+            this.panelButtonL.Name = "panelButtonL";
+            this.panelButtonL.Size = new System.Drawing.Size(50, 506);
+            this.panelButtonL.TabIndex = 0;
+            // 
+            // remoteTeachingPanel
+            // 
+            // 
+            // remoteTeachingPanel.ClientArea
+            // 
+            this.remoteTeachingPanel.ClientArea.Controls.Add(this.prevImage);
+            this.remoteTeachingPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.remoteTeachingPanel.Font = new System.Drawing.Font("맑은 고딕", 14F);
+            this.remoteTeachingPanel.Location = new System.Drawing.Point(1, 1);
+            this.remoteTeachingPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.remoteTeachingPanel.Name = "remoteTeachingPanel";
+            this.remoteTeachingPanel.Size = new System.Drawing.Size(277, 504);
+            this.remoteTeachingPanel.TabIndex = 2;
+            // 
+            // prevImage
+            // 
+            this.prevImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prevImage.Location = new System.Drawing.Point(0, 0);
+            this.prevImage.Margin = new System.Windows.Forms.Padding(0);
+            this.prevImage.Name = "prevImage";
+            this.prevImage.Size = new System.Drawing.Size(277, 504);
+            this.prevImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.prevImage.TabIndex = 29;
+            this.prevImage.TabStop = false;
+            // 
+            // layoutMain
+            // 
+            this.layoutMain.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.layoutMain.ColumnCount = 2;
+            this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.layoutMain.Controls.Add(this.remoteTeachingPanel, 0, 0);
+            this.layoutMain.Controls.Add(this.settingPanel, 1, 0);
+            this.layoutMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutMain.Location = new System.Drawing.Point(50, 0);
+            this.layoutMain.Margin = new System.Windows.Forms.Padding(0);
+            this.layoutMain.Name = "layoutMain";
+            this.layoutMain.RowCount = 1;
+            this.layoutMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutMain.Size = new System.Drawing.Size(580, 506);
+            this.layoutMain.TabIndex = 3;
+            // 
+            // settingPanel
+            // 
+            this.settingPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settingPanel.Location = new System.Drawing.Point(279, 1);
+            this.settingPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.settingPanel.Name = "settingPanel";
+            this.settingPanel.Size = new System.Drawing.Size(300, 504);
+            this.settingPanel.TabIndex = 0;
+            // 
+            // panelButtonR
+            // 
+            this.panelButtonR.AutoSize = true;
+            this.panelButtonR.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelButtonR.Location = new System.Drawing.Point(630, 0);
+            this.panelButtonR.Margin = new System.Windows.Forms.Padding(0);
+            this.panelButtonR.MinimumSize = new System.Drawing.Size(50, 0);
+            this.panelButtonR.Name = "panelButtonR";
+            this.panelButtonR.Size = new System.Drawing.Size(50, 506);
+            this.panelButtonR.TabIndex = 4;
+            // 
+            // TeachPage
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.layoutMain);
+            this.Controls.Add(this.panelButtonR);
+            this.Controls.Add(this.panelButtonL);
+            this.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Bold);
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Name = "TeachPage";
+            this.Size = new System.Drawing.Size(680, 506);
+            this.remoteTeachingPanel.ClientArea.ResumeLayout(false);
+            this.remoteTeachingPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.prevImage)).EndInit();
+            this.layoutMain.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.FlowLayoutPanel panelButtonL;
+        private Infragistics.Win.Misc.UltraPanel remoteTeachingPanel;
+        private System.Windows.Forms.TableLayoutPanel layoutMain;
+        private System.Windows.Forms.Panel settingPanel;
+        private System.Windows.Forms.PictureBox prevImage;
+        private System.Windows.Forms.FlowLayoutPanel panelButtonR;
+    }
+}
